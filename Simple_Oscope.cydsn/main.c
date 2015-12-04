@@ -220,7 +220,7 @@ void parseCommand(char *cmd) {
                     // REG1  Square  Arbitrary
                     //
                     // S(I)ne, S(Q)uare, Sa(W)tooth, (T)riangle, (A)rbitrary
-                    switch (*++param) {
+                    switch (*(param++)) {
                         case 'A':
                             ms = 1;
                             ws = 1;

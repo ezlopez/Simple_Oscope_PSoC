@@ -12,3 +12,6 @@
 *.cydsn/codegentemp
 *.cydsn/DP8051
 *.cydsn/Generated_Source
+*.o
+*.a
+*.lst
