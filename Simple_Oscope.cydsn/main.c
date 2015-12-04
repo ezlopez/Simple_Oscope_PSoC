@@ -18,7 +18,7 @@ char  command[RX_BUFFER_SIZE] = {0};
 
 // ADC Variables
 uint8  adcOn         = 0;
-uint8  adcRez        = DEFAULT_ADC_RESOLUTION;
+uint   adcRez        = DEFAULT_ADC_RESOLUTION;
 uint32 adcSPS        = DEFAULT_ADC_SPS;
 uint16 adcFrame[ADC_FRAME_SIZE];
 uint8  adcFrameReady = 0;
@@ -29,7 +29,7 @@ uint32   dacFreq   = DEFAULT_DAC_FREQUENCY;
 float    dacVPP    = DEFAULT_DAC_VPP;
 float    dacOffset = DEFAULT_DAC_OFFSET;
 waveform dacWave   = DEFAULT_DAC_WAVE;
-uint8    dacDuty   = DEFAULT_DAC_DUTY;
+uint    dacDuty   = DEFAULT_DAC_DUTY;
 uint8    ws        = 0;
 uint8    ms        = 0;
 
@@ -109,9 +109,25 @@ void parseCommand(char *cmd) {
                     break;
                 case 'R': // Resolution
                     DEBUG_PRINT(" Res");
+                    sscanf(param, "%d", &adcRez);
+                    // Make sure it is a valid value
+                    if (adcRez != 12 && adcRez != 10 && adcRez != 8) {
+                        DEBUG_PRINT(" Invalid resolution");
+                    }
+                    else {
+                        // Do stuff to change the resolution
+                    }
                     break;
                 case 'S': // Samples per second
                     DEBUG_PRINT(" SPS");
+                    sscanf(param, "%ld", &adcSPS);
+                    // Make sure it is a valid value
+                    if (adcSPS < 55556 || adcSPS > 1000000) { // Should #define these
+                        DEBUG_PRINT(" Invalid SPS");
+                    }
+                    else {
+                        // Do stuff to change the SPS
+                    }
                     break;
                 case 'Z': // Stop
                     DEBUG_PRINT(" Stop");
@@ -139,7 +155,6 @@ void parseCommand(char *cmd) {
             switch (*param++) {
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
-                    
                     if (!dacOn) {
                         MUX_DAC_FastSelect(ms);
                         Control_DAC_Write(ws);
@@ -147,19 +162,54 @@ void parseCommand(char *cmd) {
                         DAC_2_Start();
                         dacOn = 1;
                     }
-                    
                     break;
                 case 'D': // Duty cycle
                     DEBUG_PRINT(" Duty");
+                    
+                    sscanf(param, "%d", &dacDuty);
+                    // Make sure it is a valid value
+                    if (dacDuty > 100) {
+                        DEBUG_PRINT(" Invalid duty");
+                    }
+                    else {
+                        // Do stuff to change the duty
+                    }
                     break;
                 case 'F': // Frequency
                     DEBUG_PRINT(" Freq");
+                    
+                    sscanf(param, "%ld", &dacFreq);
+                    // Make sure it is a valid value
+                    if (dacFreq > 240000) {
+                        DEBUG_PRINT(" Invalid frequency");
+                    }
+                    else {
+                        // Do stuff to change the frequency
+                    }
                     break;
                 case 'O': // Offset
                     DEBUG_PRINT(" Offset");
+                    
+                    sscanf(param, "%f", &dacOffset);
+                    // Make sure it is a valid value
+                    if (dacOffset < 0 || dacOffset > 4.0) {
+                        DEBUG_PRINT(" Invalid offset");
+                    }
+                    else {
+                        // Do stuff to change the offset
+                    }
                     break;
                 case 'V': // Peak to Peak Voltage
                     DEBUG_PRINT(" VPP");
+                    
+                    sscanf(param, "%f", &dacVPP);
+                    // Make sure it is a valid value
+                    if (dacVPP < 0 || dacVPP > 4.0) {
+                        DEBUG_PRINT(" Invalid VPP");
+                    }
+                    else {
+                        // Do stuff to change the VPP
+                    }
                     break;
                 case 'W': // Waveform
                     DEBUG_PRINT(" Wave");
@@ -192,6 +242,7 @@ void parseCommand(char *cmd) {
                             break;
                         default:
                             // Bad parameter
+                            DEBUG_PRINT(" Invalid waveform");
                             break;
                     }
                     
@@ -222,6 +273,7 @@ void parseCommand(char *cmd) {
         // Set everything to default and uninitialize
     }
     else { // Unspecified command
+        DEBUG_PRINT("Unspecified command\n\r");
     }
 }
 
