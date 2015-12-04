@@ -1,0 +1,3 @@
+# Project and workspace configuration files
+*.cyprj.*
+*.cywrk.*
