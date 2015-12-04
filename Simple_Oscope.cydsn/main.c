@@ -89,16 +89,12 @@ void parseCommand(char *cmd) {
     char *param = cmd + 1;
     
     if (*param == 'A') {
-        #ifdef DEBUG_OUTPUT
-        UART_PutString("ADC");
-        #endif
+        DEBUG_PRINT("ADC");
         ++param;
         while (*param != '#') {
             switch (*param++) {
                 case 'A': // Start
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Start");
-                    #endif
+                    DEBUG_PRINT(" Start");
                     
                     if (!adcOn) {
                         ADC_StartConvert();
@@ -109,24 +105,16 @@ void parseCommand(char *cmd) {
                     
                     break;
                 case 'F': // Samples per frame
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" SPF");
-                    #endif
+                    DEBUG_PRINT(" SPF");
                     break;
                 case 'R': // Resolution
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Res");
-                    #endif
+                    DEBUG_PRINT(" Res");
                     break;
                 case 'S': // Samples per second
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" SPS");
-                    #endif
+                    DEBUG_PRINT(" SPS");
                     break;
                 case 'Z': // Stop
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Stop");
-                    #endif
+                    DEBUG_PRINT(" Stop");
                     
                     if (adcOn) {
                         TIMER_DMA_Stop();
@@ -137,28 +125,20 @@ void parseCommand(char *cmd) {
                     
                     break;
                 default:  // Unexpected parameter
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Unknown");
-                    #endif
+                    DEBUG_PRINT(" Unknown");
                     break;
             }
             param = strpbrk(param, ADC_PARAMS);
         }
-        #ifdef DEBUG_OUTPUT
-        UART_PutString("\n\r");
-        #endif
+        DEBUG_PRINT("\n\r");
     }
     else if (*param == 'D') {
-        #ifdef DEBUG_OUTPUT
-        UART_PutString("DAC");
-        #endif
+        DEBUG_PRINT("DAC");
         ++param;
         while (*param != '#') {
             switch (*param++) {
                 case 'A': // Start
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Start");
-                    #endif
+                    DEBUG_PRINT(" Start");
                     
                     if (!dacOn) {
                         MUX_DAC_FastSelect(ms);
@@ -170,29 +150,19 @@ void parseCommand(char *cmd) {
                     
                     break;
                 case 'D': // Duty cycle
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Duty");
-                    #endif
+                    DEBUG_PRINT(" Duty");
                     break;
                 case 'F': // Frequency
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Freq");
-                    #endif
+                    DEBUG_PRINT(" Freq");
                     break;
                 case 'O': // Offset
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Offset");
-                    #endif
+                    DEBUG_PRINT(" Offset");
                     break;
                 case 'V': // Peak to Peak Voltage
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" VPP");
-                    #endif
+                    DEBUG_PRINT(" VPP");
                     break;
                 case 'W': // Waveform
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Wave");
-                    #endif
+                    DEBUG_PRINT(" Wave");
                     
                     // Settings for current DAC setup
                     //       MUX 0   MUX 1
@@ -230,9 +200,7 @@ void parseCommand(char *cmd) {
                     
                     break;
                 case 'Z': // Stop
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Stop");
-                    #endif
+                    DEBUG_PRINT(" Stop");
                     
                     if (dacOn) {
                         MUX_DAC_DisconnectAll();
@@ -243,16 +211,12 @@ void parseCommand(char *cmd) {
                     
                     break;
                 default:  // Unexpected parameter
-                    #ifdef DEBUG_OUTPUT
-                    UART_PutString(" Unknown");
-                    #endif
+                    DEBUG_PRINT(" Unknown");
                     break;
             }
             param = strpbrk(param, DAC_PARAMS);
         }
-        #ifdef DEBUG_OUTPUT
-        UART_PutString("\n\r");
-        #endif
+        DEBUG_PRINT("\n\r");
     }
     else if (strcmp(command, PC_DISCONNECT) == 0) {
         // Set everything to default and uninitialize
@@ -278,9 +242,7 @@ CY_ISR(UART_RX_INTER) {
             }
         }
         else {
-            #ifdef DEBUG_OUTPUT
-            UART_PutString("Random bytes");
-            #endif
+            DEBUG_PRINT("Random bytes\n\r");
         }
     }
     
@@ -294,17 +256,13 @@ CY_ISR(UART_RX_INTER) {
 
 // Used to reenable the ADC to MEM DMA so that another frame can be captured
 CY_ISR(TIMER_DMA_INTER) {
-    #ifdef DEBUG_OUTPUT
-    UART_PutString("DMA Reenabled\r\n");
-    #endif
+    DEBUG_PRINT("DMa Reenabled\r\n");
     CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
 }
 
 // Used to notify Main that a frame is ready for transmission
 CY_ISR(DMA_FRAME_INTER) {
-    #ifdef DEBUG_OUTPUT
-    UART_PutString("Frame Captured\r\n");
-    #endif
+    DEBUG_PRINT("Frame Captured\r\n");
     adcFrameReady = 1;
 }
 

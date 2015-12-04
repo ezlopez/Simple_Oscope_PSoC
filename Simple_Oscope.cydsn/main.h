@@ -24,8 +24,16 @@
 #define DMA_ADC_MEM_SRC_BASE (CYDEV_PERIPH_BASE)
 #define DMA_ADC_MEM_DST_BASE (CYDEV_SRAM_BASE)
 
-// Uncomment for debug output
+// Uncomment to enable debug output
 //#define DEBUG_OUTPUT
+
+#ifdef DEBUG_OUTPUT
+    #define DEBUG_PRINT(x) {\
+            UART_PutString(x);\
+            }
+#else
+    #define DEBUG_PRINT(x)
+#endif
 
 typedef enum {SINE, SQUARE, SAW, TRIANGLE, ARB} waveform;
 void parseCommand(char *cmd);
