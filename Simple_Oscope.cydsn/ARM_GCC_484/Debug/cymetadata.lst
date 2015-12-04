@@ -1,0 +1,2004 @@
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_meta_configecc
+  19              		.section	.cyconfigecc,"a",%progbits
+  20              		.align	2
+  21              		.type	cy_meta_configecc, %object
+  22              		.size	cy_meta_configecc, 1420
+  23              	cy_meta_configecc:
+  24 0000 02       		.byte	2
+  25 0001 5A       		.byte	90
+  26 0002 00       		.byte	0
+  27 0003 40       		.byte	64
+  28 0004 01       		.byte	1
+  29 0005 64       		.byte	100
+  30 0006 00       		.byte	0
+  31 0007 40       		.byte	64
+  32 0008 03       		.byte	3
+  33 0009 65       		.byte	101
+  34 000a 00       		.byte	0
+  35 000b 40       		.byte	64
+  36 000c 02       		.byte	2
+  37 000d 07       		.byte	7
+  38 000e 01       		.byte	1
+  39 000f 40       		.byte	64
+  40 0010 5F       		.byte	95
+  41 0011 08       		.byte	8
+  42 0012 01       		.byte	1
+  43 0013 40       		.byte	64
+  44 0014 36       		.byte	54
+  45 0015 09       		.byte	9
+  46 0016 01       		.byte	1
+  47 0017 40       		.byte	64
+  48 0018 2D       		.byte	45
+  49 0019 14       		.byte	20
+  50 001a 01       		.byte	1
+  51 001b 40       		.byte	64
+  52 001c 12       		.byte	18
+  53 001d 15       		.byte	21
+  54 001e 01       		.byte	1
+  55 001f 40       		.byte	64
+  56 0020 32       		.byte	50
+  57 0021 16       		.byte	22
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 2
+
+
+  58 0022 01       		.byte	1
+  59 0023 40       		.byte	64
+  60 0024 12       		.byte	18
+  61 0025 17       		.byte	23
+  62 0026 01       		.byte	1
+  63 0027 40       		.byte	64
+  64 0028 3D       		.byte	61
+  65 0029 18       		.byte	24
+  66 002a 01       		.byte	1
+  67 002b 40       		.byte	64
+  68 002c 32       		.byte	50
+  69 002d 19       		.byte	25
+  70 002e 01       		.byte	1
+  71 002f 40       		.byte	64
+  72 0030 0B       		.byte	11
+  73 0031 1A       		.byte	26
+  74 0032 01       		.byte	1
+  75 0033 40       		.byte	64
+  76 0034 48       		.byte	72
+  77 0035 1B       		.byte	27
+  78 0036 01       		.byte	1
+  79 0037 40       		.byte	64
+  80 0038 0A       		.byte	10
+  81 0039 40       		.byte	64
+  82 003a 01       		.byte	1
+  83 003b 40       		.byte	64
+  84 003c 07       		.byte	7
+  85 003d 41       		.byte	65
+  86 003e 01       		.byte	1
+  87 003f 40       		.byte	64
+  88 0040 06       		.byte	6
+  89 0041 42       		.byte	66
+  90 0042 01       		.byte	1
+  91 0043 40       		.byte	64
+  92 0044 0A       		.byte	10
+  93 0045 43       		.byte	67
+  94 0046 01       		.byte	1
+  95 0047 40       		.byte	64
+  96 0048 02       		.byte	2
+  97 0049 44       		.byte	68
+  98 004a 01       		.byte	1
+  99 004b 40       		.byte	64
+ 100 004c 01       		.byte	1
+ 101 004d 45       		.byte	69
+ 102 004e 01       		.byte	1
+ 103 004f 40       		.byte	64
+ 104 0050 01       		.byte	1
+ 105 0051 46       		.byte	70
+ 106 0052 01       		.byte	1
+ 107 0053 40       		.byte	64
+ 108 0054 03       		.byte	3
+ 109 0055 47       		.byte	71
+ 110 0056 01       		.byte	1
+ 111 0057 40       		.byte	64
+ 112 0058 0B       		.byte	11
+ 113 0059 48       		.byte	72
+ 114 005a 01       		.byte	1
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 3
+
+
+ 115 005b 40       		.byte	64
+ 116 005c 0B       		.byte	11
+ 117 005d 49       		.byte	73
+ 118 005e 01       		.byte	1
+ 119 005f 40       		.byte	64
+ 120 0060 07       		.byte	7
+ 121 0061 4C       		.byte	76
+ 122 0062 01       		.byte	1
+ 123 0063 40       		.byte	64
+ 124 0064 0A       		.byte	10
+ 125 0065 4D       		.byte	77
+ 126 0066 01       		.byte	1
+ 127 0067 40       		.byte	64
+ 128 0068 06       		.byte	6
+ 129 0069 50       		.byte	80
+ 130 006a 01       		.byte	1
+ 131 006b 40       		.byte	64
+ 132 006c 03       		.byte	3
+ 133 006d 51       		.byte	81
+ 134 006e 01       		.byte	1
+ 135 006f 40       		.byte	64
+ 136 0070 87       		.byte	-121
+ 137 0071 01       		.byte	1
+ 138 0072 9F       		.byte	-97
+ 139 0073 01       		.byte	1
+ 140 0074 89       		.byte	-119
+ 141 0075 0F       		.byte	15
+ 142 0076 87       		.byte	-121
+ 143 0077 0D       		.byte	13
+ 144 0078 88       		.byte	-120
+ 145 0079 38       		.byte	56
+ 146 007a 8B       		.byte	-117
+ 147 007b 72       		.byte	114
+ 148 007c E2       		.byte	-30
+ 149 007d 04       		.byte	4
+ 150 007e E6       		.byte	-26
+ 151 007f 04       		.byte	4
+ 152 0080 02       		.byte	2
+ 153 0081 0C       		.byte	12
+ 154 0082 07       		.byte	7
+ 155 0083 08       		.byte	8
+ 156 0084 0B       		.byte	11
+ 157 0085 05       		.byte	5
+ 158 0086 0C       		.byte	12
+ 159 0087 0C       		.byte	12
+ 160 0088 0E       		.byte	14
+ 161 0089 03       		.byte	3
+ 162 008a 10       		.byte	16
+ 163 008b 01       		.byte	1
+ 164 008c 11       		.byte	17
+ 165 008d 03       		.byte	3
+ 166 008e 12       		.byte	18
+ 167 008f 06       		.byte	6
+ 168 0090 13       		.byte	19
+ 169 0091 14       		.byte	20
+ 170 0092 15       		.byte	21
+ 171 0093 03       		.byte	3
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 4
+
+
+ 172 0094 16       		.byte	22
+ 173 0095 03       		.byte	3
+ 174 0096 17       		.byte	23
+ 175 0097 0C       		.byte	12
+ 176 0098 21       		.byte	33
+ 177 0099 1A       		.byte	26
+ 178 009a 23       		.byte	35
+ 179 009b 04       		.byte	4
+ 180 009c 24       		.byte	36
+ 181 009d 01       		.byte	1
+ 182 009e 26       		.byte	38
+ 183 009f 0E       		.byte	14
+ 184 00a0 2A       		.byte	42
+ 185 00a1 08       		.byte	8
+ 186 00a2 2F       		.byte	47
+ 187 00a3 18       		.byte	24
+ 188 00a4 33       		.byte	51
+ 189 00a5 03       		.byte	3
+ 190 00a6 35       		.byte	53
+ 191 00a7 1C       		.byte	28
+ 192 00a8 36       		.byte	54
+ 193 00a9 0F       		.byte	15
+ 194 00aa 39       		.byte	57
+ 195 00ab 08       		.byte	8
+ 196 00ac 3A       		.byte	58
+ 197 00ad 80       		.byte	-128
+ 198 00ae 3B       		.byte	59
+ 199 00af 20       		.byte	32
+ 200 00b0 3F       		.byte	63
+ 201 00b1 04       		.byte	4
+ 202 00b2 40       		.byte	64
+ 203 00b3 02       		.byte	2
+ 204 00b4 47       		.byte	71
+ 205 00b5 04       		.byte	4
+ 206 00b6 49       		.byte	73
+ 207 00b7 FF       		.byte	-1
+ 208 00b8 4A       		.byte	74
+ 209 00b9 07       		.byte	7
+ 210 00ba 4B       		.byte	75
+ 211 00bb FF       		.byte	-1
+ 212 00bc 4C       		.byte	76
+ 213 00bd 40       		.byte	64
+ 214 00be 4D       		.byte	77
+ 215 00bf 20       		.byte	32
+ 216 00c0 4E       		.byte	78
+ 217 00c1 F0       		.byte	-16
+ 218 00c2 4F       		.byte	79
+ 219 00c3 05       		.byte	5
+ 220 00c4 50       		.byte	80
+ 221 00c5 08       		.byte	8
+ 222 00c6 58       		.byte	88
+ 223 00c7 04       		.byte	4
+ 224 00c8 59       		.byte	89
+ 225 00c9 04       		.byte	4
+ 226 00ca 5A       		.byte	90
+ 227 00cb 04       		.byte	4
+ 228 00cc 5F       		.byte	95
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 5
+
+
+ 229 00cd 01       		.byte	1
+ 230 00ce 60       		.byte	96
+ 231 00cf 40       		.byte	64
+ 232 00d0 61       		.byte	97
+ 233 00d1 A8       		.byte	-88
+ 234 00d2 62       		.byte	98
+ 235 00d3 40       		.byte	64
+ 236 00d4 63       		.byte	99
+ 237 00d5 20       		.byte	32
+ 238 00d6 80       		.byte	-128
+ 239 00d7 09       		.byte	9
+ 240 00d8 82       		.byte	-126
+ 241 00d9 10       		.byte	16
+ 242 00da 84       		.byte	-124
+ 243 00db 2C       		.byte	44
+ 244 00dc 85       		.byte	-123
+ 245 00dd 13       		.byte	19
+ 246 00de 86       		.byte	-122
+ 247 00df 11       		.byte	17
+ 248 00e0 87       		.byte	-121
+ 249 00e1 04       		.byte	4
+ 250 00e2 89       		.byte	-119
+ 251 00e3 03       		.byte	3
+ 252 00e4 8B       		.byte	-117
+ 253 00e5 14       		.byte	20
+ 254 00e6 8C       		.byte	-116
+ 255 00e7 30       		.byte	48
+ 256 00e8 8D       		.byte	-115
+ 257 00e9 0A       		.byte	10
+ 258 00ea 8E       		.byte	-114
+ 259 00eb 0C       		.byte	12
+ 260 00ec 8F       		.byte	-113
+ 261 00ed 14       		.byte	20
+ 262 00ee 90       		.byte	-112
+ 263 00ef 1C       		.byte	28
+ 264 00f0 91       		.byte	-111
+ 265 00f1 13       		.byte	19
+ 266 00f2 92       		.byte	-110
+ 267 00f3 22       		.byte	34
+ 268 00f4 93       		.byte	-109
+ 269 00f5 0C       		.byte	12
+ 270 00f6 94       		.byte	-108
+ 271 00f7 10       		.byte	16
+ 272 00f8 9A       		.byte	-102
+ 273 00f9 03       		.byte	3
+ 274 00fa 9B       		.byte	-101
+ 275 00fb 15       		.byte	21
+ 276 00fc A1       		.byte	-95
+ 277 00fd 20       		.byte	32
+ 278 00fe A4       		.byte	-92
+ 279 00ff 40       		.byte	64
+ 280 0100 A8       		.byte	-88
+ 281 0101 14       		.byte	20
+ 282 0102 AF       		.byte	-81
+ 283 0103 08       		.byte	8
+ 284 0104 B1       		.byte	-79
+ 285 0105 0F       		.byte	15
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 6
+
+
+ 286 0106 B3       		.byte	-77
+ 287 0107 20       		.byte	32
+ 288 0108 B4       		.byte	-76
+ 289 0109 1F       		.byte	31
+ 290 010a B6       		.byte	-74
+ 291 010b 60       		.byte	96
+ 292 010c B7       		.byte	-73
+ 293 010d 10       		.byte	16
+ 294 010e B8       		.byte	-72
+ 295 010f 80       		.byte	-128
+ 296 0110 BB       		.byte	-69
+ 297 0111 02       		.byte	2
+ 298 0112 BF       		.byte	-65
+ 299 0113 44       		.byte	68
+ 300 0114 C0       		.byte	-64
+ 301 0115 53       		.byte	83
+ 302 0116 C1       		.byte	-63
+ 303 0117 02       		.byte	2
+ 304 0118 C5       		.byte	-59
+ 305 0119 E0       		.byte	-32
+ 306 011a C6       		.byte	-58
+ 307 011b C0       		.byte	-64
+ 308 011c C7       		.byte	-57
+ 309 011d 0B       		.byte	11
+ 310 011e C8       		.byte	-56
+ 311 011f 1A       		.byte	26
+ 312 0120 C9       		.byte	-55
+ 313 0121 FF       		.byte	-1
+ 314 0122 CA       		.byte	-54
+ 315 0123 FF       		.byte	-1
+ 316 0124 CB       		.byte	-53
+ 317 0125 FF       		.byte	-1
+ 318 0126 CE       		.byte	-50
+ 319 0127 F0       		.byte	-16
+ 320 0128 CF       		.byte	-49
+ 321 0129 44       		.byte	68
+ 322 012a D0       		.byte	-48
+ 323 012b 0C       		.byte	12
+ 324 012c D4       		.byte	-44
+ 325 012d 01       		.byte	1
+ 326 012e D8       		.byte	-40
+ 327 012f 04       		.byte	4
+ 328 0130 D9       		.byte	-39
+ 329 0131 04       		.byte	4
+ 330 0132 DA       		.byte	-38
+ 331 0133 04       		.byte	4
+ 332 0134 DB       		.byte	-37
+ 333 0135 04       		.byte	4
+ 334 0136 DF       		.byte	-33
+ 335 0137 01       		.byte	1
+ 336 0138 E6       		.byte	-26
+ 337 0139 C0       		.byte	-64
+ 338 013a EA       		.byte	-22
+ 339 013b 40       		.byte	64
+ 340 013c EB       		.byte	-21
+ 341 013d 02       		.byte	2
+ 342 013e 00       		.byte	0
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 7
+
+
+ 343 013f 05       		.byte	5
+ 344 0140 02       		.byte	2
+ 345 0141 02       		.byte	2
+ 346 0142 04       		.byte	4
+ 347 0143 21       		.byte	33
+ 348 0144 05       		.byte	5
+ 349 0145 60       		.byte	96
+ 350 0146 09       		.byte	9
+ 351 0147 04       		.byte	4
+ 352 0148 0A       		.byte	10
+ 353 0149 04       		.byte	4
+ 354 014a 0B       		.byte	11
+ 355 014b 80       		.byte	-128
+ 356 014c 0F       		.byte	15
+ 357 014d 60       		.byte	96
+ 358 014e 10       		.byte	16
+ 359 014f 28       		.byte	40
+ 360 0150 16       		.byte	22
+ 361 0151 08       		.byte	8
+ 362 0152 17       		.byte	23
+ 363 0153 08       		.byte	8
+ 364 0154 18       		.byte	24
+ 365 0155 01       		.byte	1
+ 366 0156 19       		.byte	25
+ 367 0157 80       		.byte	-128
+ 368 0158 1A       		.byte	26
+ 369 0159 04       		.byte	4
+ 370 015a 1D       		.byte	29
+ 371 015b 40       		.byte	64
+ 372 015c 1F       		.byte	31
+ 373 015d 40       		.byte	64
+ 374 015e 22       		.byte	34
+ 375 015f 46       		.byte	70
+ 376 0160 23       		.byte	35
+ 377 0161 40       		.byte	64
+ 378 0162 24       		.byte	36
+ 379 0163 04       		.byte	4
+ 380 0164 27       		.byte	39
+ 381 0165 28       		.byte	40
+ 382 0166 29       		.byte	41
+ 383 0167 81       		.byte	-127
+ 384 0168 2D       		.byte	45
+ 385 0169 80       		.byte	-128
+ 386 016a 2F       		.byte	47
+ 387 016b 40       		.byte	64
+ 388 016c 30       		.byte	48
+ 389 016d 20       		.byte	32
+ 390 016e 32       		.byte	50
+ 391 016f 02       		.byte	2
+ 392 0170 36       		.byte	54
+ 393 0171 02       		.byte	2
+ 394 0172 37       		.byte	55
+ 395 0173 08       		.byte	8
+ 396 0174 38       		.byte	56
+ 397 0175 24       		.byte	36
+ 398 0176 3B       		.byte	59
+ 399 0177 80       		.byte	-128
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 8
+
+
+ 400 0178 3D       		.byte	61
+ 401 0179 08       		.byte	8
+ 402 017a 3F       		.byte	63
+ 403 017b 20       		.byte	32
+ 404 017c 40       		.byte	64
+ 405 017d 04       		.byte	4
+ 406 017e 42       		.byte	66
+ 407 017f 20       		.byte	32
+ 408 0180 47       		.byte	71
+ 409 0181 20       		.byte	32
+ 410 0182 49       		.byte	73
+ 411 0183 01       		.byte	1
+ 412 0184 4A       		.byte	74
+ 413 0185 02       		.byte	2
+ 414 0186 50       		.byte	80
+ 415 0187 18       		.byte	24
+ 416 0188 54       		.byte	84
+ 417 0189 20       		.byte	32
+ 418 018a 55       		.byte	85
+ 419 018b 04       		.byte	4
+ 420 018c 56       		.byte	86
+ 421 018d 28       		.byte	40
+ 422 018e 57       		.byte	87
+ 423 018f 10       		.byte	16
+ 424 0190 59       		.byte	89
+ 425 0191 21       		.byte	33
+ 426 0192 5A       		.byte	90
+ 427 0193 88       		.byte	-120
+ 428 0194 81       		.byte	-127
+ 429 0195 10       		.byte	16
+ 430 0196 83       		.byte	-125
+ 431 0197 02       		.byte	2
+ 432 0198 C0       		.byte	-64
+ 433 0199 9D       		.byte	-99
+ 434 019a C2       		.byte	-62
+ 435 019b 3E       		.byte	62
+ 436 019c C4       		.byte	-60
+ 437 019d 66       		.byte	102
+ 438 019e CA       		.byte	-54
+ 439 019f 99       		.byte	-103
+ 440 01a0 CC       		.byte	-52
+ 441 01a1 C5       		.byte	-59
+ 442 01a2 CE       		.byte	-50
+ 443 01a3 6E       		.byte	110
+ 444 01a4 D0       		.byte	-48
+ 445 01a5 26       		.byte	38
+ 446 01a6 D2       		.byte	-46
+ 447 01a7 08       		.byte	8
+ 448 01a8 D6       		.byte	-42
+ 449 01a9 0F       		.byte	15
+ 450 01aa 40       		.byte	64
+ 451 01ab 45       		.byte	69
+ 452 01ac 49       		.byte	73
+ 453 01ad FF       		.byte	-1
+ 454 01ae 4A       		.byte	74
+ 455 01af FF       		.byte	-1
+ 456 01b0 4B       		.byte	75
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 9
+
+
+ 457 01b1 FF       		.byte	-1
+ 458 01b2 4F       		.byte	79
+ 459 01b3 01       		.byte	1
+ 460 01b4 50       		.byte	80
+ 461 01b5 18       		.byte	24
+ 462 01b6 5A       		.byte	90
+ 463 01b7 04       		.byte	4
+ 464 01b8 5D       		.byte	93
+ 465 01b9 09       		.byte	9
+ 466 01ba 5F       		.byte	95
+ 467 01bb 01       		.byte	1
+ 468 01bc 60       		.byte	96
+ 469 01bd 40       		.byte	64
+ 470 01be 62       		.byte	98
+ 471 01bf 40       		.byte	64
+ 472 01c0 64       		.byte	100
+ 473 01c1 40       		.byte	64
+ 474 01c2 65       		.byte	101
+ 475 01c3 40       		.byte	64
+ 476 01c4 66       		.byte	102
+ 477 01c5 80       		.byte	-128
+ 478 01c6 68       		.byte	104
+ 479 01c7 80       		.byte	-128
+ 480 01c8 6A       		.byte	106
+ 481 01c9 80       		.byte	-128
+ 482 01ca 6C       		.byte	108
+ 483 01cb 80       		.byte	-128
+ 484 01cc 6E       		.byte	110
+ 485 01cd 80       		.byte	-128
+ 486 01ce 82       		.byte	-126
+ 487 01cf 01       		.byte	1
+ 488 01d0 92       		.byte	-110
+ 489 01d1 01       		.byte	1
+ 490 01d2 B6       		.byte	-74
+ 491 01d3 01       		.byte	1
+ 492 01d4 C0       		.byte	-64
+ 493 01d5 45       		.byte	69
+ 494 01d6 C9       		.byte	-55
+ 495 01d7 FF       		.byte	-1
+ 496 01d8 CA       		.byte	-54
+ 497 01d9 FF       		.byte	-1
+ 498 01da CB       		.byte	-53
+ 499 01db FF       		.byte	-1
+ 500 01dc CD       		.byte	-51
+ 501 01dd 83       		.byte	-125
+ 502 01de CE       		.byte	-50
+ 503 01df 03       		.byte	3
+ 504 01e0 CF       		.byte	-49
+ 505 01e1 01       		.byte	1
+ 506 01e2 D0       		.byte	-48
+ 507 01e3 18       		.byte	24
+ 508 01e4 D2       		.byte	-46
+ 509 01e5 80       		.byte	-128
+ 510 01e6 D8       		.byte	-40
+ 511 01e7 04       		.byte	4
+ 512 01e8 DA       		.byte	-38
+ 513 01e9 04       		.byte	4
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 10
+
+
+ 514 01ea DB       		.byte	-37
+ 515 01eb 04       		.byte	4
+ 516 01ec DC       		.byte	-36
+ 517 01ed 09       		.byte	9
+ 518 01ee DD       		.byte	-35
+ 519 01ef 99       		.byte	-103
+ 520 01f0 DF       		.byte	-33
+ 521 01f1 01       		.byte	1
+ 522 01f2 E0       		.byte	-32
+ 523 01f3 40       		.byte	64
+ 524 01f4 E2       		.byte	-30
+ 525 01f5 40       		.byte	64
+ 526 01f6 E4       		.byte	-28
+ 527 01f7 40       		.byte	64
+ 528 01f8 E5       		.byte	-27
+ 529 01f9 40       		.byte	64
+ 530 01fa E6       		.byte	-26
+ 531 01fb 80       		.byte	-128
+ 532 01fc E8       		.byte	-24
+ 533 01fd 80       		.byte	-128
+ 534 01fe EA       		.byte	-22
+ 535 01ff 80       		.byte	-128
+ 536 0200 EC       		.byte	-20
+ 537 0201 80       		.byte	-128
+ 538 0202 EE       		.byte	-18
+ 539 0203 80       		.byte	-128
+ 540 0204 06       		.byte	6
+ 541 0205 80       		.byte	-128
+ 542 0206 0C       		.byte	12
+ 543 0207 02       		.byte	2
+ 544 0208 1F       		.byte	31
+ 545 0209 80       		.byte	-128
+ 546 020a 42       		.byte	66
+ 547 020b 80       		.byte	-128
+ 548 020c 46       		.byte	70
+ 549 020d 80       		.byte	-128
+ 550 020e 48       		.byte	72
+ 551 020f 02       		.byte	2
+ 552 0210 4C       		.byte	76
+ 553 0211 02       		.byte	2
+ 554 0212 76       		.byte	118
+ 555 0213 80       		.byte	-128
+ 556 0214 87       		.byte	-121
+ 557 0215 80       		.byte	-128
+ 558 0216 9E       		.byte	-98
+ 559 0217 80       		.byte	-128
+ 560 0218 A0       		.byte	-96
+ 561 0219 02       		.byte	2
+ 562 021a C0       		.byte	-64
+ 563 021b 10       		.byte	16
+ 564 021c C2       		.byte	-62
+ 565 021d 10       		.byte	16
+ 566 021e D0       		.byte	-48
+ 567 021f 81       		.byte	-127
+ 568 0220 D2       		.byte	-46
+ 569 0221 18       		.byte	24
+ 570 0222 E4       		.byte	-28
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 11
+
+
+ 571 0223 80       		.byte	-128
+ 572 0224 E6       		.byte	-26
+ 573 0225 06       		.byte	6
+ 574 0226 EC       		.byte	-20
+ 575 0227 01       		.byte	1
+ 576 0228 40       		.byte	64
+ 577 0229 45       		.byte	69
+ 578 022a 49       		.byte	73
+ 579 022b FF       		.byte	-1
+ 580 022c 4A       		.byte	74
+ 581 022d FF       		.byte	-1
+ 582 022e 4B       		.byte	75
+ 583 022f FF       		.byte	-1
+ 584 0230 4D       		.byte	77
+ 585 0231 83       		.byte	-125
+ 586 0232 4E       		.byte	78
+ 587 0233 03       		.byte	3
+ 588 0234 4F       		.byte	79
+ 589 0235 01       		.byte	1
+ 590 0236 50       		.byte	80
+ 591 0237 18       		.byte	24
+ 592 0238 5A       		.byte	90
+ 593 0239 04       		.byte	4
+ 594 023a 5D       		.byte	93
+ 595 023b 09       		.byte	9
+ 596 023c 5F       		.byte	95
+ 597 023d 01       		.byte	1
+ 598 023e 60       		.byte	96
+ 599 023f 40       		.byte	64
+ 600 0240 62       		.byte	98
+ 601 0241 40       		.byte	64
+ 602 0242 64       		.byte	100
+ 603 0243 40       		.byte	64
+ 604 0244 65       		.byte	101
+ 605 0245 40       		.byte	64
+ 606 0246 66       		.byte	102
+ 607 0247 80       		.byte	-128
+ 608 0248 68       		.byte	104
+ 609 0249 80       		.byte	-128
+ 610 024a 6A       		.byte	106
+ 611 024b 80       		.byte	-128
+ 612 024c 6C       		.byte	108
+ 613 024d 80       		.byte	-128
+ 614 024e 6E       		.byte	110
+ 615 024f 80       		.byte	-128
+ 616 0250 8F       		.byte	-113
+ 617 0251 01       		.byte	1
+ 618 0252 93       		.byte	-109
+ 619 0253 01       		.byte	1
+ 620 0254 B7       		.byte	-73
+ 621 0255 01       		.byte	1
+ 622 0256 BF       		.byte	-65
+ 623 0257 40       		.byte	64
+ 624 0258 C0       		.byte	-64
+ 625 0259 45       		.byte	69
+ 626 025a C5       		.byte	-59
+ 627 025b EC       		.byte	-20
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 12
+
+
+ 628 025c C7       		.byte	-57
+ 629 025d 20       		.byte	32
+ 630 025e C8       		.byte	-56
+ 631 025f 23       		.byte	35
+ 632 0260 C9       		.byte	-55
+ 633 0261 FF       		.byte	-1
+ 634 0262 CA       		.byte	-54
+ 635 0263 FF       		.byte	-1
+ 636 0264 CB       		.byte	-53
+ 637 0265 FF       		.byte	-1
+ 638 0266 CD       		.byte	-51
+ 639 0267 83       		.byte	-125
+ 640 0268 CE       		.byte	-50
+ 641 0269 03       		.byte	3
+ 642 026a CF       		.byte	-49
+ 643 026b 01       		.byte	1
+ 644 026c D0       		.byte	-48
+ 645 026d 18       		.byte	24
+ 646 026e D4       		.byte	-44
+ 647 026f 01       		.byte	1
+ 648 0270 D9       		.byte	-39
+ 649 0271 04       		.byte	4
+ 650 0272 DA       		.byte	-38
+ 651 0273 04       		.byte	4
+ 652 0274 DB       		.byte	-37
+ 653 0275 04       		.byte	4
+ 654 0276 DD       		.byte	-35
+ 655 0277 99       		.byte	-103
+ 656 0278 DF       		.byte	-33
+ 657 0279 01       		.byte	1
+ 658 027a E0       		.byte	-32
+ 659 027b 40       		.byte	64
+ 660 027c E2       		.byte	-30
+ 661 027d 40       		.byte	64
+ 662 027e E4       		.byte	-28
+ 663 027f 40       		.byte	64
+ 664 0280 E5       		.byte	-27
+ 665 0281 40       		.byte	64
+ 666 0282 E6       		.byte	-26
+ 667 0283 80       		.byte	-128
+ 668 0284 E8       		.byte	-24
+ 669 0285 80       		.byte	-128
+ 670 0286 EA       		.byte	-22
+ 671 0287 80       		.byte	-128
+ 672 0288 EC       		.byte	-20
+ 673 0289 80       		.byte	-128
+ 674 028a EE       		.byte	-18
+ 675 028b 80       		.byte	-128
+ 676 028c 22       		.byte	34
+ 677 028d 40       		.byte	64
+ 678 028e 30       		.byte	48
+ 679 028f 02       		.byte	2
+ 680 0290 3A       		.byte	58
+ 681 0291 80       		.byte	-128
+ 682 0292 42       		.byte	66
+ 683 0293 80       		.byte	-128
+ 684 0294 46       		.byte	70
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 13
+
+
+ 685 0295 80       		.byte	-128
+ 686 0296 48       		.byte	72
+ 687 0297 02       		.byte	2
+ 688 0298 49       		.byte	73
+ 689 0299 06       		.byte	6
+ 690 029a 4C       		.byte	76
+ 691 029b 02       		.byte	2
+ 692 029c 50       		.byte	80
+ 693 029d 02       		.byte	2
+ 694 029e 59       		.byte	89
+ 695 029f 06       		.byte	6
+ 696 02a0 5A       		.byte	90
+ 697 02a1 80       		.byte	-128
+ 698 02a2 CC       		.byte	-52
+ 699 02a3 01       		.byte	1
+ 700 02a4 CE       		.byte	-50
+ 701 02a5 08       		.byte	8
+ 702 02a6 D0       		.byte	-48
+ 703 02a7 81       		.byte	-127
+ 704 02a8 D2       		.byte	-46
+ 705 02a9 18       		.byte	24
+ 706 02aa D6       		.byte	-42
+ 707 02ab 0B       		.byte	11
+ 708 02ac E2       		.byte	-30
+ 709 02ad 08       		.byte	8
+ 710 02ae EE       		.byte	-18
+ 711 02af 04       		.byte	4
+ 712 02b0 01       		.byte	1
+ 713 02b1 08       		.byte	8
+ 714 02b2 02       		.byte	2
+ 715 02b3 40       		.byte	64
+ 716 02b4 04       		.byte	4
+ 717 02b5 18       		.byte	24
+ 718 02b6 05       		.byte	5
+ 719 02b7 33       		.byte	51
+ 720 02b8 08       		.byte	8
+ 721 02b9 08       		.byte	8
+ 722 02ba 09       		.byte	9
+ 723 02bb 0F       		.byte	15
+ 724 02bc 0B       		.byte	11
+ 725 02bd 70       		.byte	112
+ 726 02be 0C       		.byte	12
+ 727 02bf 10       		.byte	16
+ 728 02c0 0F       		.byte	15
+ 729 02c1 73       		.byte	115
+ 730 02c2 10       		.byte	16
+ 731 02c3 01       		.byte	1
+ 732 02c4 11       		.byte	17
+ 733 02c5 22       		.byte	34
+ 734 02c6 14       		.byte	20
+ 735 02c7 39       		.byte	57
+ 736 02c8 15       		.byte	21
+ 737 02c9 7F       		.byte	127
+ 738 02ca 16       		.byte	22
+ 739 02cb 04       		.byte	4
+ 740 02cc 18       		.byte	24
+ 741 02cd 3F       		.byte	63
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 14
+
+
+ 742 02ce 19       		.byte	25
+ 743 02cf 73       		.byte	115
+ 744 02d0 1B       		.byte	27
+ 745 02d1 0C       		.byte	12
+ 746 02d2 1E       		.byte	30
+ 747 02d3 40       		.byte	64
+ 748 02d4 21       		.byte	33
+ 749 02d5 11       		.byte	17
+ 750 02d6 22       		.byte	34
+ 751 02d7 26       		.byte	38
+ 752 02d8 23       		.byte	35
+ 753 02d9 80       		.byte	-128
+ 754 02da 24       		.byte	36
+ 755 02db 27       		.byte	39
+ 756 02dc 25       		.byte	37
+ 757 02dd 04       		.byte	4
+ 758 02de 26       		.byte	38
+ 759 02df 18       		.byte	24
+ 760 02e0 28       		.byte	40
+ 761 02e1 19       		.byte	25
+ 762 02e2 29       		.byte	41
+ 763 02e3 0C       		.byte	12
+ 764 02e4 2A       		.byte	42
+ 765 02e5 22       		.byte	34
+ 766 02e6 2D       		.byte	45
+ 767 02e7 0C       		.byte	12
+ 768 02e8 2E       		.byte	46
+ 769 02e9 01       		.byte	1
+ 770 02ea 2F       		.byte	47
+ 771 02eb 73       		.byte	115
+ 772 02ec 30       		.byte	48
+ 773 02ed 40       		.byte	64
+ 774 02ee 31       		.byte	49
+ 775 02ef 80       		.byte	-128
+ 776 02f0 32       		.byte	50
+ 777 02f1 1F       		.byte	31
+ 778 02f2 33       		.byte	51
+ 779 02f3 4C       		.byte	76
+ 780 02f4 35       		.byte	53
+ 781 02f5 0F       		.byte	15
+ 782 02f6 36       		.byte	54
+ 783 02f7 38       		.byte	56
+ 784 02f8 37       		.byte	55
+ 785 02f9 30       		.byte	48
+ 786 02fa 3A       		.byte	58
+ 787 02fb 28       		.byte	40
+ 788 02fc 3B       		.byte	59
+ 789 02fd 28       		.byte	40
+ 790 02fe 3E       		.byte	62
+ 791 02ff 01       		.byte	1
+ 792 0300 54       		.byte	84
+ 793 0301 18       		.byte	24
+ 794 0302 56       		.byte	86
+ 795 0303 04       		.byte	4
+ 796 0304 58       		.byte	88
+ 797 0305 04       		.byte	4
+ 798 0306 59       		.byte	89
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 15
+
+
+ 799 0307 04       		.byte	4
+ 800 0308 5B       		.byte	91
+ 801 0309 04       		.byte	4
+ 802 030a 5F       		.byte	95
+ 803 030b 01       		.byte	1
+ 804 030c 92       		.byte	-110
+ 805 030d 06       		.byte	6
+ 806 030e 93       		.byte	-109
+ 807 030f 01       		.byte	1
+ 808 0310 98       		.byte	-104
+ 809 0311 01       		.byte	1
+ 810 0312 AC       		.byte	-84
+ 811 0313 02       		.byte	2
+ 812 0314 AE       		.byte	-82
+ 813 0315 04       		.byte	4
+ 814 0316 B0       		.byte	-80
+ 815 0317 02       		.byte	2
+ 816 0318 B1       		.byte	-79
+ 817 0319 01       		.byte	1
+ 818 031a B2       		.byte	-78
+ 819 031b 01       		.byte	1
+ 820 031c B4       		.byte	-76
+ 821 031d 04       		.byte	4
+ 822 031e BE       		.byte	-66
+ 823 031f 15       		.byte	21
+ 824 0320 D8       		.byte	-40
+ 825 0321 04       		.byte	4
+ 826 0322 D9       		.byte	-39
+ 827 0323 04       		.byte	4
+ 828 0324 DB       		.byte	-37
+ 829 0325 04       		.byte	4
+ 830 0326 DC       		.byte	-36
+ 831 0327 20       		.byte	32
+ 832 0328 DF       		.byte	-33
+ 833 0329 01       		.byte	1
+ 834 032a 06       		.byte	6
+ 835 032b 7A       		.byte	122
+ 836 032c 08       		.byte	8
+ 837 032d 02       		.byte	2
+ 838 032e 0A       		.byte	10
+ 839 032f 04       		.byte	4
+ 840 0330 0C       		.byte	12
+ 841 0331 40       		.byte	64
+ 842 0332 0D       		.byte	13
+ 843 0333 09       		.byte	9
+ 844 0334 0E       		.byte	14
+ 845 0335 09       		.byte	9
+ 846 0336 12       		.byte	18
+ 847 0337 02       		.byte	2
+ 848 0338 16       		.byte	22
+ 849 0339 80       		.byte	-128
+ 850 033a 17       		.byte	23
+ 851 033b 58       		.byte	88
+ 852 033c 19       		.byte	25
+ 853 033d 10       		.byte	16
+ 854 033e 1A       		.byte	26
+ 855 033f 20       		.byte	32
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 16
+
+
+ 856 0340 1B       		.byte	27
+ 857 0341 02       		.byte	2
+ 858 0342 1D       		.byte	29
+ 859 0343 08       		.byte	8
+ 860 0344 1E       		.byte	30
+ 861 0345 09       		.byte	9
+ 862 0346 1F       		.byte	31
+ 863 0347 19       		.byte	25
+ 864 0348 22       		.byte	34
+ 865 0349 02       		.byte	2
+ 866 034a 24       		.byte	36
+ 867 034b 11       		.byte	17
+ 868 034c 25       		.byte	37
+ 869 034d 04       		.byte	4
+ 870 034e 26       		.byte	38
+ 871 034f 10       		.byte	16
+ 872 0350 27       		.byte	39
+ 873 0351 58       		.byte	88
+ 874 0352 2C       		.byte	44
+ 875 0353 21       		.byte	33
+ 876 0354 2E       		.byte	46
+ 877 0355 28       		.byte	40
+ 878 0356 2F       		.byte	47
+ 879 0357 80       		.byte	-128
+ 880 0358 30       		.byte	48
+ 881 0359 02       		.byte	2
+ 882 035a 36       		.byte	54
+ 883 035b 15       		.byte	21
+ 884 035c 3C       		.byte	60
+ 885 035d 14       		.byte	20
+ 886 035e 3D       		.byte	61
+ 887 035f 80       		.byte	-128
+ 888 0360 3E       		.byte	62
+ 889 0361 82       		.byte	-126
+ 890 0362 5C       		.byte	92
+ 891 0363 01       		.byte	1
+ 892 0364 67       		.byte	103
+ 893 0365 8A       		.byte	-118
+ 894 0366 68       		.byte	104
+ 895 0367 02       		.byte	2
+ 896 0368 79       		.byte	121
+ 897 0369 02       		.byte	2
+ 898 036a 7B       		.byte	123
+ 899 036b 80       		.byte	-128
+ 900 036c 82       		.byte	-126
+ 901 036d 10       		.byte	16
+ 902 036e 87       		.byte	-121
+ 903 036f 40       		.byte	64
+ 904 0370 88       		.byte	-120
+ 905 0371 01       		.byte	1
+ 906 0372 89       		.byte	-119
+ 907 0373 08       		.byte	8
+ 908 0374 92       		.byte	-110
+ 909 0375 04       		.byte	4
+ 910 0376 9D       		.byte	-99
+ 911 0377 10       		.byte	16
+ 912 0378 A7       		.byte	-89
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 17
+
+
+ 913 0379 02       		.byte	2
+ 914 037a C0       		.byte	-64
+ 915 037b F0       		.byte	-16
+ 916 037c C2       		.byte	-62
+ 917 037d FA       		.byte	-6
+ 918 037e C4       		.byte	-60
+ 919 037f F1       		.byte	-15
+ 920 0380 CA       		.byte	-54
+ 921 0381 F0       		.byte	-16
+ 922 0382 CC       		.byte	-52
+ 923 0383 E1       		.byte	-31
+ 924 0384 CE       		.byte	-50
+ 925 0385 F0       		.byte	-16
+ 926 0386 D6       		.byte	-42
+ 927 0387 80       		.byte	-128
+ 928 0388 D8       		.byte	-40
+ 929 0389 B0       		.byte	-80
+ 930 038a E4       		.byte	-28
+ 931 038b 04       		.byte	4
+ 932 038c EE       		.byte	-18
+ 933 038d 04       		.byte	4
+ 934 038e 00       		.byte	0
+ 935 038f 04       		.byte	4
+ 936 0390 02       		.byte	2
+ 937 0391 01       		.byte	1
+ 938 0392 1E       		.byte	30
+ 939 0393 05       		.byte	5
+ 940 0394 2E       		.byte	46
+ 941 0395 02       		.byte	2
+ 942 0396 30       		.byte	48
+ 943 0397 02       		.byte	2
+ 944 0398 34       		.byte	52
+ 945 0399 04       		.byte	4
+ 946 039a 36       		.byte	54
+ 947 039b 01       		.byte	1
+ 948 039c 3E       		.byte	62
+ 949 039d 50       		.byte	80
+ 950 039e 58       		.byte	88
+ 951 039f 04       		.byte	4
+ 952 03a0 5C       		.byte	92
+ 953 03a1 01       		.byte	1
+ 954 03a2 5F       		.byte	95
+ 955 03a3 01       		.byte	1
+ 956 03a4 01       		.byte	1
+ 957 03a5 02       		.byte	2
+ 958 03a6 05       		.byte	5
+ 959 03a7 41       		.byte	65
+ 960 03a8 06       		.byte	6
+ 961 03a9 24       		.byte	36
+ 962 03aa 0A       		.byte	10
+ 963 03ab 01       		.byte	1
+ 964 03ac 0D       		.byte	13
+ 965 03ad 08       		.byte	8
+ 966 03ae 0E       		.byte	14
+ 967 03af 06       		.byte	6
+ 968 03b0 10       		.byte	16
+ 969 03b1 02       		.byte	2
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 18
+
+
+ 970 03b2 14       		.byte	20
+ 971 03b3 80       		.byte	-128
+ 972 03b4 17       		.byte	23
+ 973 03b5 14       		.byte	20
+ 974 03b6 19       		.byte	25
+ 975 03b7 02       		.byte	2
+ 976 03b8 1A       		.byte	26
+ 977 03b9 02       		.byte	2
+ 978 03ba 1B       		.byte	27
+ 979 03bb 20       		.byte	32
+ 980 03bc 1D       		.byte	29
+ 981 03bd 01       		.byte	1
+ 982 03be 1E       		.byte	30
+ 983 03bf 02       		.byte	2
+ 984 03c0 1F       		.byte	31
+ 985 03c1 44       		.byte	68
+ 986 03c2 24       		.byte	36
+ 987 03c3 06       		.byte	6
+ 988 03c4 25       		.byte	37
+ 989 03c5 40       		.byte	64
+ 990 03c6 26       		.byte	38
+ 991 03c7 14       		.byte	20
+ 992 03c8 27       		.byte	39
+ 993 03c9 40       		.byte	64
+ 994 03ca 2E       		.byte	46
+ 995 03cb 2C       		.byte	44
+ 996 03cc 2F       		.byte	47
+ 997 03cd 5A       		.byte	90
+ 998 03ce 34       		.byte	52
+ 999 03cf 80       		.byte	-128
+ 1000 03d0 35       		.byte	53
+ 1001 03d1 80       		.byte	-128
+ 1002 03d2 36       		.byte	54
+ 1003 03d3 10       		.byte	16
+ 1004 03d4 37       		.byte	55
+ 1005 03d5 04       		.byte	4
+ 1006 03d6 3C       		.byte	60
+ 1007 03d7 02       		.byte	2
+ 1008 03d8 3D       		.byte	61
+ 1009 03d9 04       		.byte	4
+ 1010 03da 3F       		.byte	63
+ 1011 03db 80       		.byte	-128
+ 1012 03dc 44       		.byte	68
+ 1013 03dd 40       		.byte	64
+ 1014 03de 45       		.byte	69
+ 1015 03df 08       		.byte	8
+ 1016 03e0 46       		.byte	70
+ 1017 03e1 08       		.byte	8
+ 1018 03e2 47       		.byte	71
+ 1019 03e3 48       		.byte	72
+ 1020 03e4 4C       		.byte	76
+ 1021 03e5 01       		.byte	1
+ 1022 03e6 56       		.byte	86
+ 1023 03e7 44       		.byte	68
+ 1024 03e8 5E       		.byte	94
+ 1025 03e9 08       		.byte	8
+ 1026 03ea 6D       		.byte	109
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 19
+
+
+ 1027 03eb 04       		.byte	4
+ 1028 03ec 6F       		.byte	111
+ 1029 03ed 16       		.byte	22
+ 1030 03ee 74       		.byte	116
+ 1031 03ef 20       		.byte	32
+ 1032 03f0 76       		.byte	118
+ 1033 03f1 12       		.byte	18
+ 1034 03f2 83       		.byte	-125
+ 1035 03f3 20       		.byte	32
+ 1036 03f4 86       		.byte	-122
+ 1037 03f5 01       		.byte	1
+ 1038 03f6 88       		.byte	-120
+ 1039 03f7 01       		.byte	1
+ 1040 03f8 89       		.byte	-119
+ 1041 03f9 40       		.byte	64
+ 1042 03fa 8A       		.byte	-118
+ 1043 03fb 01       		.byte	1
+ 1044 03fc 8B       		.byte	-117
+ 1045 03fd 80       		.byte	-128
+ 1046 03fe 8D       		.byte	-115
+ 1047 03ff 84       		.byte	-124
+ 1048 0400 93       		.byte	-109
+ 1049 0401 20       		.byte	32
+ 1050 0402 94       		.byte	-108
+ 1051 0403 04       		.byte	4
+ 1052 0404 97       		.byte	-105
+ 1053 0405 08       		.byte	8
+ 1054 0406 98       		.byte	-104
+ 1055 0407 40       		.byte	64
+ 1056 0408 9B       		.byte	-101
+ 1057 0409 08       		.byte	8
+ 1058 040a 9E       		.byte	-98
+ 1059 040b 52       		.byte	82
+ 1060 040c A0       		.byte	-96
+ 1061 040d 02       		.byte	2
+ 1062 040e A1       		.byte	-95
+ 1063 040f 04       		.byte	4
+ 1064 0410 A3       		.byte	-93
+ 1065 0411 48       		.byte	72
+ 1066 0412 A4       		.byte	-92
+ 1067 0413 20       		.byte	32
+ 1068 0414 A5       		.byte	-91
+ 1069 0415 40       		.byte	64
+ 1070 0416 A6       		.byte	-90
+ 1071 0417 01       		.byte	1
+ 1072 0418 A7       		.byte	-89
+ 1073 0419 80       		.byte	-128
+ 1074 041a A8       		.byte	-88
+ 1075 041b 02       		.byte	2
+ 1076 041c B7       		.byte	-73
+ 1077 041d 48       		.byte	72
+ 1078 041e C0       		.byte	-64
+ 1079 041f F8       		.byte	-8
+ 1080 0420 C2       		.byte	-62
+ 1081 0421 E1       		.byte	-31
+ 1082 0422 C4       		.byte	-60
+ 1083 0423 71       		.byte	113
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 20
+
+
+ 1084 0424 CA       		.byte	-54
+ 1085 0425 F0       		.byte	-16
+ 1086 0426 CC       		.byte	-52
+ 1087 0427 70       		.byte	112
+ 1088 0428 CE       		.byte	-50
+ 1089 0429 D0       		.byte	-48
+ 1090 042a D0       		.byte	-48
+ 1091 042b F0       		.byte	-16
+ 1092 042c D2       		.byte	-46
+ 1093 042d 10       		.byte	16
+ 1094 042e D6       		.byte	-42
+ 1095 042f 40       		.byte	64
+ 1096 0430 E4       		.byte	-28
+ 1097 0431 80       		.byte	-128
+ 1098 0432 EC       		.byte	-20
+ 1099 0433 01       		.byte	1
+ 1100 0434 30       		.byte	48
+ 1101 0435 02       		.byte	2
+ 1102 0436 36       		.byte	54
+ 1103 0437 82       		.byte	-126
+ 1104 0438 3B       		.byte	59
+ 1105 0439 02       		.byte	2
+ 1106 043a 3D       		.byte	61
+ 1107 043b 44       		.byte	68
+ 1108 043c 43       		.byte	67
+ 1109 043d 10       		.byte	16
+ 1110 043e 79       		.byte	121
+ 1111 043f 40       		.byte	64
+ 1112 0440 7A       		.byte	122
+ 1113 0441 02       		.byte	2
+ 1114 0442 CC       		.byte	-52
+ 1115 0443 E0       		.byte	-32
+ 1116 0444 CE       		.byte	-50
+ 1117 0445 E0       		.byte	-32
+ 1118 0446 D0       		.byte	-48
+ 1119 0447 10       		.byte	16
+ 1120 0448 3C       		.byte	60
+ 1121 0449 40       		.byte	64
+ 1122 044a 95       		.byte	-107
+ 1123 044b 44       		.byte	68
+ 1124 044c 97       		.byte	-105
+ 1125 044d 02       		.byte	2
+ 1126 044e 9F       		.byte	-97
+ 1127 044f 10       		.byte	16
+ 1128 0450 A4       		.byte	-92
+ 1129 0451 02       		.byte	2
+ 1130 0452 A6       		.byte	-90
+ 1131 0453 80       		.byte	-128
+ 1132 0454 CE       		.byte	-50
+ 1133 0455 20       		.byte	32
+ 1134 0456 94       		.byte	-108
+ 1135 0457 40       		.byte	64
+ 1136 0458 95       		.byte	-107
+ 1137 0459 44       		.byte	68
+ 1138 045a 97       		.byte	-105
+ 1139 045b 02       		.byte	2
+ 1140 045c 9F       		.byte	-97
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 21
+
+
+ 1141 045d 10       		.byte	16
+ 1142 045e A4       		.byte	-92
+ 1143 045f 02       		.byte	2
+ 1144 0460 A6       		.byte	-90
+ 1145 0461 80       		.byte	-128
+ 1146 0462 80       		.byte	-128
+ 1147 0463 40       		.byte	64
+ 1148 0464 83       		.byte	-125
+ 1149 0465 10       		.byte	16
+ 1150 0466 94       		.byte	-108
+ 1151 0467 40       		.byte	64
+ 1152 0468 95       		.byte	-107
+ 1153 0469 44       		.byte	68
+ 1154 046a 97       		.byte	-105
+ 1155 046b 02       		.byte	2
+ 1156 046c 9F       		.byte	-97
+ 1157 046d 10       		.byte	16
+ 1158 046e A4       		.byte	-92
+ 1159 046f 02       		.byte	2
+ 1160 0470 A6       		.byte	-90
+ 1161 0471 80       		.byte	-128
+ 1162 0472 E2       		.byte	-30
+ 1163 0473 20       		.byte	32
+ 1164 0474 E6       		.byte	-26
+ 1165 0475 20       		.byte	32
+ 1166 0476 30       		.byte	48
+ 1167 0477 80       		.byte	-128
+ 1168 0478 CC       		.byte	-52
+ 1169 0479 08       		.byte	8
+ 1170 047a A4       		.byte	-92
+ 1171 047b 80       		.byte	-128
+ 1172 047c A4       		.byte	-92
+ 1173 047d 80       		.byte	-128
+ 1174 047e 32       		.byte	50
+ 1175 047f 40       		.byte	64
+ 1176 0480 A4       		.byte	-92
+ 1177 0481 80       		.byte	-128
+ 1178 0482 CC       		.byte	-52
+ 1179 0483 08       		.byte	8
+ 1180 0484 20       		.byte	32
+ 1181 0485 20       		.byte	32
+ 1182 0486 24       		.byte	36
+ 1183 0487 10       		.byte	16
+ 1184 0488 84       		.byte	-124
+ 1185 0489 02       		.byte	2
+ 1186 048a 95       		.byte	-107
+ 1187 048b 04       		.byte	4
+ 1188 048c 97       		.byte	-105
+ 1189 048d 02       		.byte	2
+ 1190 048e A4       		.byte	-92
+ 1191 048f 02       		.byte	2
+ 1192 0490 A6       		.byte	-90
+ 1193 0491 80       		.byte	-128
+ 1194 0492 A9       		.byte	-87
+ 1195 0493 40       		.byte	64
+ 1196 0494 C8       		.byte	-56
+ 1197 0495 C0       		.byte	-64
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 22
+
+
+ 1198 0496 E2       		.byte	-30
+ 1199 0497 10       		.byte	16
+ 1200 0498 EE       		.byte	-18
+ 1201 0499 20       		.byte	32
+ 1202 049a 83       		.byte	-125
+ 1203 049b 01       		.byte	1
+ 1204 049c 85       		.byte	-123
+ 1205 049d 04       		.byte	4
+ 1206 049e 86       		.byte	-122
+ 1207 049f 80       		.byte	-128
+ 1208 04a0 88       		.byte	-120
+ 1209 04a1 10       		.byte	16
+ 1210 04a2 95       		.byte	-107
+ 1211 04a3 04       		.byte	4
+ 1212 04a4 97       		.byte	-105
+ 1213 04a5 02       		.byte	2
+ 1214 04a6 A0       		.byte	-96
+ 1215 04a7 10       		.byte	16
+ 1216 04a8 A6       		.byte	-90
+ 1217 04a9 80       		.byte	-128
+ 1218 04aa A8       		.byte	-88
+ 1219 04ab 10       		.byte	16
+ 1220 04ac E6       		.byte	-26
+ 1221 04ad 70       		.byte	112
+ 1222 04ae EC       		.byte	-20
+ 1223 04af 80       		.byte	-128
+ 1224 04b0 1D       		.byte	29
+ 1225 04b1 10       		.byte	16
+ 1226 04b2 81       		.byte	-127
+ 1227 04b3 02       		.byte	2
+ 1228 04b4 96       		.byte	-106
+ 1229 04b5 80       		.byte	-128
+ 1230 04b6 9D       		.byte	-99
+ 1231 04b7 10       		.byte	16
+ 1232 04b8 A4       		.byte	-92
+ 1233 04b9 80       		.byte	-128
+ 1234 04ba A9       		.byte	-87
+ 1235 04bb 10       		.byte	16
+ 1236 04bc C6       		.byte	-58
+ 1237 04bd 01       		.byte	1
+ 1238 04be 10       		.byte	16
+ 1239 04bf 40       		.byte	64
+ 1240 04c0 75       		.byte	117
+ 1241 04c1 02       		.byte	2
+ 1242 04c2 88       		.byte	-120
+ 1243 04c3 C0       		.byte	-64
+ 1244 04c4 99       		.byte	-103
+ 1245 04c5 02       		.byte	2
+ 1246 04c6 A4       		.byte	-92
+ 1247 04c7 80       		.byte	-128
+ 1248 04c8 AA       		.byte	-86
+ 1249 04c9 40       		.byte	64
+ 1250 04ca C4       		.byte	-60
+ 1251 04cb 08       		.byte	8
+ 1252 04cc DE       		.byte	-34
+ 1253 04cd 04       		.byte	4
+ 1254 04ce E2       		.byte	-30
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 23
+
+
+ 1255 04cf 01       		.byte	1
+ 1256 04d0 E4       		.byte	-28
+ 1257 04d1 01       		.byte	1
+ 1258 04d2 00       		.byte	0
+ 1259 04d3 01       		.byte	1
+ 1260 04d4 0C       		.byte	12
+ 1261 04d5 01       		.byte	1
+ 1262 04d6 10       		.byte	16
+ 1263 04d7 07       		.byte	7
+ 1264 04d8 11       		.byte	17
+ 1265 04d9 01       		.byte	1
+ 1266 04da 1B       		.byte	27
+ 1267 04db 01       		.byte	1
+ 1268 04dc 1C       		.byte	28
+ 1269 04dd 07       		.byte	7
+ 1270 04de 00       		.byte	0
+ 1271 04df FD       		.byte	-3
+ 1272 04e0 10       		.byte	16
+ 1273 04e1 AA       		.byte	-86
+ 1274 04e2 11       		.byte	17
+ 1275 04e3 02       		.byte	2
+ 1276 04e4 80       		.byte	-128
+ 1277 04e5 80       		.byte	-128
+ 1278 04e6 00       		.byte	0
+ 1279 04e7 00       		.byte	0
+ 1280 04e8 40       		.byte	64
+ 1281 04e9 00       		.byte	0
+ 1282 04ea 00       		.byte	0
+ 1283 04eb 00       		.byte	0
+ 1284 04ec 00       		.byte	0
+ 1285 04ed 02       		.byte	2
+ 1286 04ee 04       		.byte	4
+ 1287 04ef 14       		.byte	20
+ 1288 04f0 00       		.byte	0
+ 1289 04f1 4E       		.byte	78
+ 1290 04f2 08       		.byte	8
+ 1291 04f3 00       		.byte	0
+ 1292 04f4 00       		.byte	0
+ 1293 04f5 00       		.byte	0
+ 1294 04f6 04       		.byte	4
+ 1295 04f7 00       		.byte	0
+ 1296 04f8 01       		.byte	1
+ 1297 04f9 01       		.byte	1
+ 1298 04fa 02       		.byte	2
+ 1299 04fb 00       		.byte	0
+ 1300 04fc 00       		.byte	0
+ 1301 04fd 00       		.byte	0
+ 1302 04fe 00       		.byte	0
+ 1303 04ff 00       		.byte	0
+ 1304 0500 08       		.byte	8
+ 1305 0501 4E       		.byte	78
+ 1306 0502 00       		.byte	0
+ 1307 0503 00       		.byte	0
+ 1308 0504 08       		.byte	8
+ 1309 0505 04       		.byte	4
+ 1310 0506 00       		.byte	0
+ 1311 0507 2A       		.byte	42
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 24
+
+
+ 1312 0508 02       		.byte	2
+ 1313 0509 01       		.byte	1
+ 1314 050a 01       		.byte	1
+ 1315 050b 00       		.byte	0
+ 1316 050c 00       		.byte	0
+ 1317 050d 08       		.byte	8
+ 1318 050e 08       		.byte	8
+ 1319 050f 14       		.byte	20
+ 1320 0510 03       		.byte	3
+ 1321 0511 01       		.byte	1
+ 1322 0512 00       		.byte	0
+ 1323 0513 00       		.byte	0
+ 1324 0514 03       		.byte	3
+ 1325 0515 01       		.byte	1
+ 1326 0516 00       		.byte	0
+ 1327 0517 00       		.byte	0
+ 1328 0518 00       		.byte	0
+ 1329 0519 40       		.byte	64
+ 1330 051a 00       		.byte	0
+ 1331 051b 00       		.byte	0
+ 1332 051c 08       		.byte	8
+ 1333 051d 30       		.byte	48
+ 1334 051e 04       		.byte	4
+ 1335 051f 01       		.byte	1
+ 1336 0520 00       		.byte	0
+ 1337 0521 0E       		.byte	14
+ 1338 0522 03       		.byte	3
+ 1339 0523 40       		.byte	64
+ 1340 0524 02       		.byte	2
+ 1341 0525 00       		.byte	0
+ 1342 0526 00       		.byte	0
+ 1343 0527 00       		.byte	0
+ 1344 0528 00       		.byte	0
+ 1345 0529 00       		.byte	0
+ 1346 052a 04       		.byte	4
+ 1347 052b 05       		.byte	5
+ 1348 052c 35       		.byte	53
+ 1349 052d 02       		.byte	2
+ 1350 052e 04       		.byte	4
+ 1351 052f 00       		.byte	0
+ 1352 0530 01       		.byte	1
+ 1353 0531 00       		.byte	0
+ 1354 0532 0C       		.byte	12
+ 1355 0533 0E       		.byte	14
+ 1356 0534 14       		.byte	20
+ 1357 0535 FF       		.byte	-1
+ 1358 0536 FF       		.byte	-1
+ 1359 0537 FF       		.byte	-1
+ 1360 0538 62       		.byte	98
+ 1361 0539 A0       		.byte	-96
+ 1362 053a F0       		.byte	-16
+ 1363 053b 41       		.byte	65
+ 1364 053c 0C       		.byte	12
+ 1365 053d 00       		.byte	0
+ 1366 053e 00       		.byte	0
+ 1367 053f 00       		.byte	0
+ 1368 0540 00       		.byte	0
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 25
+
+
+ 1369 0541 00       		.byte	0
+ 1370 0542 02       		.byte	2
+ 1371 0543 12       		.byte	18
+ 1372 0544 04       		.byte	4
+ 1373 0545 04       		.byte	4
+ 1374 0546 04       		.byte	4
+ 1375 0547 04       		.byte	4
+ 1376 0548 00       		.byte	0
+ 1377 0549 00       		.byte	0
+ 1378 054a 00       		.byte	0
+ 1379 054b 01       		.byte	1
+ 1380 054c 00       		.byte	0
+ 1381 054d 00       		.byte	0
+ 1382 054e 00       		.byte	0
+ 1383 054f 00       		.byte	0
+ 1384 0550 00       		.byte	0
+ 1385 0551 00       		.byte	0
+ 1386 0552 40       		.byte	64
+ 1387 0553 02       		.byte	2
+ 1388 0554 00       		.byte	0
+ 1389 0555 10       		.byte	16
+ 1390 0556 30       		.byte	48
+ 1391 0557 10       		.byte	16
+ 1392 0558 00       		.byte	0
+ 1393 0559 10       		.byte	16
+ 1394 055a 10       		.byte	16
+ 1395 055b 12       		.byte	18
+ 1396 055c 00       		.byte	0
+ 1397 055d 00       		.byte	0
+ 1398 055e 00       		.byte	0
+ 1399 055f 00       		.byte	0
+ 1400 0560 00       		.byte	0
+ 1401 0561 00       		.byte	0
+ 1402 0562 00       		.byte	0
+ 1403 0563 00       		.byte	0
+ 1404 0564 00       		.byte	0
+ 1405 0565 00       		.byte	0
+ 1406 0566 00       		.byte	0
+ 1407 0567 00       		.byte	0
+ 1408 0568 00       		.byte	0
+ 1409 0569 00       		.byte	0
+ 1410 056a 00       		.byte	0
+ 1411 056b 00       		.byte	0
+ 1412 056c 80       		.byte	-128
+ 1413 056d 00       		.byte	0
+ 1414 056e 40       		.byte	64
+ 1415 056f 80       		.byte	-128
+ 1416 0570 80       		.byte	-128
+ 1417 0571 00       		.byte	0
+ 1418 0572 80       		.byte	-128
+ 1419 0573 00       		.byte	0
+ 1420 0574 00       		.byte	0
+ 1421 0575 00       		.byte	0
+ 1422 0576 00       		.byte	0
+ 1423 0577 00       		.byte	0
+ 1424 0578 00       		.byte	0
+ 1425 0579 00       		.byte	0
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 26
+
+
+ 1426 057a 00       		.byte	0
+ 1427 057b 00       		.byte	0
+ 1428 057c 00       		.byte	0
+ 1429 057d 00       		.byte	0
+ 1430 057e 80       		.byte	-128
+ 1431 057f 00       		.byte	0
+ 1432 0580 00       		.byte	0
+ 1433 0581 00       		.byte	0
+ 1434 0582 00       		.byte	0
+ 1435 0583 00       		.byte	0
+ 1436 0584 00       		.byte	0
+ 1437 0585 00       		.byte	0
+ 1438 0586 02       		.byte	2
+ 1439 0587 00       		.byte	0
+ 1440 0588 17       		.byte	23
+ 1441 0589 00       		.byte	0
+ 1442 058a 18       		.byte	24
+ 1443 058b 01       		.byte	1
+ 1444              		.global	cy_meta_custnvl
+ 1445              		.section	.cycustnvl,"a",%progbits
+ 1446              		.align	2
+ 1447              		.type	cy_meta_custnvl, %object
+ 1448              		.size	cy_meta_custnvl, 4
+ 1449              	cy_meta_custnvl:
+ 1450 0000 00       		.byte	0
+ 1451 0001 00       		.byte	0
+ 1452 0002 40       		.byte	64
+ 1453 0003 05       		.byte	5
+ 1454              		.global	cy_meta_wonvl
+ 1455              		.section	.cywolatch,"a",%progbits
+ 1456              		.align	2
+ 1457              		.type	cy_meta_wonvl, %object
+ 1458              		.size	cy_meta_wonvl, 4
+ 1459              	cy_meta_wonvl:
+ 1460 0000 BC       		.byte	-68
+ 1461 0001 90       		.byte	-112
+ 1462 0002 AC       		.byte	-84
+ 1463 0003 AF       		.byte	-81
+ 1464              		.global	cy_meta_flashprotect
+ 1465              		.section	.cyflashprotect,"a",%progbits
+ 1466              		.align	2
+ 1467              		.type	cy_meta_flashprotect, %object
+ 1468              		.size	cy_meta_flashprotect, 256
+ 1469              	cy_meta_flashprotect:
+ 1470 0000 00000000 		.space	256
+ 1470      00000000 
+ 1470      00000000 
+ 1470      00000000 
+ 1470      00000000 
+ 1471              		.global	cy_metadata
+ 1472              		.section	.cymeta,"a",%progbits
+ 1473              		.align	2
+ 1474              		.type	cy_metadata, %object
+ 1475              		.size	cy_metadata, 12
+ 1476              	cy_metadata:
+ 1477 0000 00       		.byte	0
+ 1478 0001 01       		.byte	1
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 27
+
+
+ 1479 0002 2E       		.byte	46
+ 1480 0003 16       		.byte	22
+ 1481 0004 10       		.byte	16
+ 1482 0005 69       		.byte	105
+ 1483 0006 00       		.byte	0
+ 1484 0007 01       		.byte	1
+ 1485 0008 00       		.byte	0
+ 1486 0009 00       		.byte	0
+ 1487 000a 00       		.byte	0
+ 1488 000b 00       		.byte	0
+ 1489              		.text
+ 1490              	.Letext0:
+ 1491              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 1492              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1493              		.section	.debug_info,"",%progbits
+ 1494              	.Ldebug_info0:
+ 1495 0000 37010000 		.4byte	0x137
+ 1496 0004 0400     		.2byte	0x4
+ 1497 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1498 000a 04       		.byte	0x4
+ 1499 000b 01       		.uleb128 0x1
+ 1500 000c E5000000 		.4byte	.LASF18
+ 1501 0010 01       		.byte	0x1
+ 1502 0011 2D000000 		.4byte	.LASF19
+ 1503 0015 00000000 		.4byte	.LASF20
+ 1504 0019 00000000 		.4byte	.Ldebug_line0
+ 1505 001d 02       		.uleb128 0x2
+ 1506 001e 01       		.byte	0x1
+ 1507 001f 06       		.byte	0x6
+ 1508 0020 B9010000 		.4byte	.LASF0
+ 1509 0024 02       		.uleb128 0x2
+ 1510 0025 01       		.byte	0x1
+ 1511 0026 08       		.byte	0x8
+ 1512 0027 65000000 		.4byte	.LASF1
+ 1513 002b 02       		.uleb128 0x2
+ 1514 002c 02       		.byte	0x2
+ 1515 002d 05       		.byte	0x5
+ 1516 002e A0010000 		.4byte	.LASF2
+ 1517 0032 02       		.uleb128 0x2
+ 1518 0033 02       		.byte	0x2
+ 1519 0034 07       		.byte	0x7
+ 1520 0035 85000000 		.4byte	.LASF3
+ 1521 0039 02       		.uleb128 0x2
+ 1522 003a 04       		.byte	0x4
+ 1523 003b 05       		.byte	0x5
+ 1524 003c B0010000 		.4byte	.LASF4
+ 1525 0040 02       		.uleb128 0x2
+ 1526 0041 04       		.byte	0x4
+ 1527 0042 07       		.byte	0x7
+ 1528 0043 73000000 		.4byte	.LASF5
+ 1529 0047 02       		.uleb128 0x2
+ 1530 0048 08       		.byte	0x8
+ 1531 0049 05       		.byte	0x5
+ 1532 004a 8D010000 		.4byte	.LASF6
+ 1533 004e 02       		.uleb128 0x2
+ 1534 004f 08       		.byte	0x8
+ 1535 0050 07       		.byte	0x7
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 28
+
+
+ 1536 0051 CE000000 		.4byte	.LASF7
+ 1537 0055 03       		.uleb128 0x3
+ 1538 0056 04       		.byte	0x4
+ 1539 0057 05       		.byte	0x5
+ 1540 0058 696E7400 		.ascii	"int\000"
+ 1541 005c 02       		.uleb128 0x2
+ 1542 005d 04       		.byte	0x4
+ 1543 005e 07       		.byte	0x7
+ 1544 005f C1000000 		.4byte	.LASF8
+ 1545 0063 04       		.uleb128 0x4
+ 1546 0064 AA010000 		.4byte	.LASF21
+ 1547 0068 02       		.byte	0x2
+ 1548 0069 A1       		.byte	0xa1
+ 1549 006a 24000000 		.4byte	0x24
+ 1550 006e 02       		.uleb128 0x2
+ 1551 006f 04       		.byte	0x4
+ 1552 0070 04       		.byte	0x4
+ 1553 0071 5F000000 		.4byte	.LASF9
+ 1554 0075 02       		.uleb128 0x2
+ 1555 0076 08       		.byte	0x8
+ 1556 0077 04       		.byte	0x4
+ 1557 0078 98000000 		.4byte	.LASF10
+ 1558 007c 02       		.uleb128 0x2
+ 1559 007d 01       		.byte	0x1
+ 1560 007e 08       		.byte	0x8
+ 1561 007f 9B010000 		.4byte	.LASF11
+ 1562 0083 05       		.uleb128 0x5
+ 1563 0084 63000000 		.4byte	0x63
+ 1564 0088 94000000 		.4byte	0x94
+ 1565 008c 06       		.uleb128 0x6
+ 1566 008d 94000000 		.4byte	0x94
+ 1567 0091 8B05     		.2byte	0x58b
+ 1568 0093 00       		.byte	0
+ 1569 0094 02       		.uleb128 0x2
+ 1570 0095 04       		.byte	0x4
+ 1571 0096 07       		.byte	0x7
+ 1572 0097 84010000 		.4byte	.LASF12
+ 1573 009b 07       		.uleb128 0x7
+ 1574 009c AF000000 		.4byte	.LASF13
+ 1575 00a0 01       		.byte	0x1
+ 1576 00a1 1C       		.byte	0x1c
+ 1577 00a2 AC000000 		.4byte	0xac
+ 1578 00a6 05       		.uleb128 0x5
+ 1579 00a7 03       		.byte	0x3
+ 1580 00a8 00000000 		.4byte	cy_meta_configecc
+ 1581 00ac 08       		.uleb128 0x8
+ 1582 00ad 83000000 		.4byte	0x83
+ 1583 00b1 05       		.uleb128 0x5
+ 1584 00b2 63000000 		.4byte	0x63
+ 1585 00b6 C1000000 		.4byte	0xc1
+ 1586 00ba 09       		.uleb128 0x9
+ 1587 00bb 94000000 		.4byte	0x94
+ 1588 00bf 03       		.byte	0x3
+ 1589 00c0 00       		.byte	0
+ 1590 00c1 07       		.uleb128 0x7
+ 1591 00c2 9F000000 		.4byte	.LASF14
+ 1592 00c6 01       		.byte	0x1
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 29
+
+
+ 1593 00c7 D8       		.byte	0xd8
+ 1594 00c8 D2000000 		.4byte	0xd2
+ 1595 00cc 05       		.uleb128 0x5
+ 1596 00cd 03       		.byte	0x3
+ 1597 00ce 00000000 		.4byte	cy_meta_custnvl
+ 1598 00d2 08       		.uleb128 0x8
+ 1599 00d3 B1000000 		.4byte	0xb1
+ 1600 00d7 07       		.uleb128 0x7
+ 1601 00d8 76010000 		.4byte	.LASF15
+ 1602 00dc 01       		.byte	0x1
+ 1603 00dd E3       		.byte	0xe3
+ 1604 00de E8000000 		.4byte	0xe8
+ 1605 00e2 05       		.uleb128 0x5
+ 1606 00e3 03       		.byte	0x3
+ 1607 00e4 00000000 		.4byte	cy_meta_wonvl
+ 1608 00e8 08       		.uleb128 0x8
+ 1609 00e9 B1000000 		.4byte	0xb1
+ 1610 00ed 05       		.uleb128 0x5
+ 1611 00ee 63000000 		.4byte	0x63
+ 1612 00f2 FD000000 		.4byte	0xfd
+ 1613 00f6 09       		.uleb128 0x9
+ 1614 00f7 94000000 		.4byte	0x94
+ 1615 00fb FF       		.byte	0xff
+ 1616 00fc 00       		.byte	0
+ 1617 00fd 07       		.uleb128 0x7
+ 1618 00fe 61010000 		.4byte	.LASF16
+ 1619 0102 01       		.byte	0x1
+ 1620 0103 EE       		.byte	0xee
+ 1621 0104 0E010000 		.4byte	0x10e
+ 1622 0108 05       		.uleb128 0x5
+ 1623 0109 03       		.byte	0x3
+ 1624 010a 00000000 		.4byte	cy_meta_flashprotect
+ 1625 010e 08       		.uleb128 0x8
+ 1626 010f ED000000 		.4byte	0xed
+ 1627 0113 05       		.uleb128 0x5
+ 1628 0114 63000000 		.4byte	0x63
+ 1629 0118 23010000 		.4byte	0x123
+ 1630 011c 09       		.uleb128 0x9
+ 1631 011d 94000000 		.4byte	0x94
+ 1632 0121 0B       		.byte	0xb
+ 1633 0122 00       		.byte	0
+ 1634 0123 0A       		.uleb128 0xa
+ 1635 0124 53000000 		.4byte	.LASF17
+ 1636 0128 01       		.byte	0x1
+ 1637 0129 1801     		.2byte	0x118
+ 1638 012b 35010000 		.4byte	0x135
+ 1639 012f 05       		.uleb128 0x5
+ 1640 0130 03       		.byte	0x3
+ 1641 0131 00000000 		.4byte	cy_metadata
+ 1642 0135 08       		.uleb128 0x8
+ 1643 0136 13010000 		.4byte	0x113
+ 1644 013a 00       		.byte	0
+ 1645              		.section	.debug_abbrev,"",%progbits
+ 1646              	.Ldebug_abbrev0:
+ 1647 0000 01       		.uleb128 0x1
+ 1648 0001 11       		.uleb128 0x11
+ 1649 0002 01       		.byte	0x1
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 30
+
+
+ 1650 0003 25       		.uleb128 0x25
+ 1651 0004 0E       		.uleb128 0xe
+ 1652 0005 13       		.uleb128 0x13
+ 1653 0006 0B       		.uleb128 0xb
+ 1654 0007 03       		.uleb128 0x3
+ 1655 0008 0E       		.uleb128 0xe
+ 1656 0009 1B       		.uleb128 0x1b
+ 1657 000a 0E       		.uleb128 0xe
+ 1658 000b 10       		.uleb128 0x10
+ 1659 000c 17       		.uleb128 0x17
+ 1660 000d 00       		.byte	0
+ 1661 000e 00       		.byte	0
+ 1662 000f 02       		.uleb128 0x2
+ 1663 0010 24       		.uleb128 0x24
+ 1664 0011 00       		.byte	0
+ 1665 0012 0B       		.uleb128 0xb
+ 1666 0013 0B       		.uleb128 0xb
+ 1667 0014 3E       		.uleb128 0x3e
+ 1668 0015 0B       		.uleb128 0xb
+ 1669 0016 03       		.uleb128 0x3
+ 1670 0017 0E       		.uleb128 0xe
+ 1671 0018 00       		.byte	0
+ 1672 0019 00       		.byte	0
+ 1673 001a 03       		.uleb128 0x3
+ 1674 001b 24       		.uleb128 0x24
+ 1675 001c 00       		.byte	0
+ 1676 001d 0B       		.uleb128 0xb
+ 1677 001e 0B       		.uleb128 0xb
+ 1678 001f 3E       		.uleb128 0x3e
+ 1679 0020 0B       		.uleb128 0xb
+ 1680 0021 03       		.uleb128 0x3
+ 1681 0022 08       		.uleb128 0x8
+ 1682 0023 00       		.byte	0
+ 1683 0024 00       		.byte	0
+ 1684 0025 04       		.uleb128 0x4
+ 1685 0026 16       		.uleb128 0x16
+ 1686 0027 00       		.byte	0
+ 1687 0028 03       		.uleb128 0x3
+ 1688 0029 0E       		.uleb128 0xe
+ 1689 002a 3A       		.uleb128 0x3a
+ 1690 002b 0B       		.uleb128 0xb
+ 1691 002c 3B       		.uleb128 0x3b
+ 1692 002d 0B       		.uleb128 0xb
+ 1693 002e 49       		.uleb128 0x49
+ 1694 002f 13       		.uleb128 0x13
+ 1695 0030 00       		.byte	0
+ 1696 0031 00       		.byte	0
+ 1697 0032 05       		.uleb128 0x5
+ 1698 0033 01       		.uleb128 0x1
+ 1699 0034 01       		.byte	0x1
+ 1700 0035 49       		.uleb128 0x49
+ 1701 0036 13       		.uleb128 0x13
+ 1702 0037 01       		.uleb128 0x1
+ 1703 0038 13       		.uleb128 0x13
+ 1704 0039 00       		.byte	0
+ 1705 003a 00       		.byte	0
+ 1706 003b 06       		.uleb128 0x6
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 31
+
+
+ 1707 003c 21       		.uleb128 0x21
+ 1708 003d 00       		.byte	0
+ 1709 003e 49       		.uleb128 0x49
+ 1710 003f 13       		.uleb128 0x13
+ 1711 0040 2F       		.uleb128 0x2f
+ 1712 0041 05       		.uleb128 0x5
+ 1713 0042 00       		.byte	0
+ 1714 0043 00       		.byte	0
+ 1715 0044 07       		.uleb128 0x7
+ 1716 0045 34       		.uleb128 0x34
+ 1717 0046 00       		.byte	0
+ 1718 0047 03       		.uleb128 0x3
+ 1719 0048 0E       		.uleb128 0xe
+ 1720 0049 3A       		.uleb128 0x3a
+ 1721 004a 0B       		.uleb128 0xb
+ 1722 004b 3B       		.uleb128 0x3b
+ 1723 004c 0B       		.uleb128 0xb
+ 1724 004d 49       		.uleb128 0x49
+ 1725 004e 13       		.uleb128 0x13
+ 1726 004f 3F       		.uleb128 0x3f
+ 1727 0050 19       		.uleb128 0x19
+ 1728 0051 02       		.uleb128 0x2
+ 1729 0052 18       		.uleb128 0x18
+ 1730 0053 00       		.byte	0
+ 1731 0054 00       		.byte	0
+ 1732 0055 08       		.uleb128 0x8
+ 1733 0056 26       		.uleb128 0x26
+ 1734 0057 00       		.byte	0
+ 1735 0058 49       		.uleb128 0x49
+ 1736 0059 13       		.uleb128 0x13
+ 1737 005a 00       		.byte	0
+ 1738 005b 00       		.byte	0
+ 1739 005c 09       		.uleb128 0x9
+ 1740 005d 21       		.uleb128 0x21
+ 1741 005e 00       		.byte	0
+ 1742 005f 49       		.uleb128 0x49
+ 1743 0060 13       		.uleb128 0x13
+ 1744 0061 2F       		.uleb128 0x2f
+ 1745 0062 0B       		.uleb128 0xb
+ 1746 0063 00       		.byte	0
+ 1747 0064 00       		.byte	0
+ 1748 0065 0A       		.uleb128 0xa
+ 1749 0066 34       		.uleb128 0x34
+ 1750 0067 00       		.byte	0
+ 1751 0068 03       		.uleb128 0x3
+ 1752 0069 0E       		.uleb128 0xe
+ 1753 006a 3A       		.uleb128 0x3a
+ 1754 006b 0B       		.uleb128 0xb
+ 1755 006c 3B       		.uleb128 0x3b
+ 1756 006d 05       		.uleb128 0x5
+ 1757 006e 49       		.uleb128 0x49
+ 1758 006f 13       		.uleb128 0x13
+ 1759 0070 3F       		.uleb128 0x3f
+ 1760 0071 19       		.uleb128 0x19
+ 1761 0072 02       		.uleb128 0x2
+ 1762 0073 18       		.uleb128 0x18
+ 1763 0074 00       		.byte	0
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 32
+
+
+ 1764 0075 00       		.byte	0
+ 1765 0076 00       		.byte	0
+ 1766              		.section	.debug_aranges,"",%progbits
+ 1767 0000 14000000 		.4byte	0x14
+ 1768 0004 0200     		.2byte	0x2
+ 1769 0006 00000000 		.4byte	.Ldebug_info0
+ 1770 000a 04       		.byte	0x4
+ 1771 000b 00       		.byte	0
+ 1772 000c 0000     		.2byte	0
+ 1773 000e 0000     		.2byte	0
+ 1774 0010 00000000 		.4byte	0
+ 1775 0014 00000000 		.4byte	0
+ 1776              		.section	.debug_line,"",%progbits
+ 1777              	.Ldebug_line0:
+ 1778 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1778      02004900 
+ 1778      00000201 
+ 1778      FB0E0D00 
+ 1778      01010101 
+ 1779              	.LASF20:
+ 1780 0000 433A5C55 		.ascii	"C:\\Users\\Leiuqeze\\Desktop\\Oscope_Alpha.cydsn\000"
+ 1780      73657273 
+ 1780      5C4C6569 
+ 1780      7571657A 
+ 1780      655C4465 
+ 1781              	.LASF19:
+ 1782 002d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1782      6E657261 
+ 1782      7465645F 
+ 1782      536F7572 
+ 1782      63655C50 
+ 1783              	.LASF17:
+ 1784 0053 63795F6D 		.ascii	"cy_metadata\000"
+ 1784      65746164 
+ 1784      61746100 
+ 1785              	.LASF9:
+ 1786 005f 666C6F61 		.ascii	"float\000"
+ 1786      7400
+ 1787              	.LASF1:
+ 1788 0065 756E7369 		.ascii	"unsigned char\000"
+ 1788      676E6564 
+ 1788      20636861 
+ 1788      7200
+ 1789              	.LASF5:
+ 1790 0073 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1790      20756E73 
+ 1790      69676E65 
+ 1790      6420696E 
+ 1790      7400
+ 1791              	.LASF3:
+ 1792 0085 73686F72 		.ascii	"short unsigned int\000"
+ 1792      7420756E 
+ 1792      7369676E 
+ 1792      65642069 
+ 1792      6E7400
+ 1793              	.LASF10:
+ 1794 0098 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 33
+
+
+ 1794      6C6500
+ 1795              	.LASF14:
+ 1796 009f 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1796      6574615F 
+ 1796      63757374 
+ 1796      6E766C00 
+ 1797              	.LASF13:
+ 1798 00af 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1798      6574615F 
+ 1798      636F6E66 
+ 1798      69676563 
+ 1798      6300
+ 1799              	.LASF8:
+ 1800 00c1 756E7369 		.ascii	"unsigned int\000"
+ 1800      676E6564 
+ 1800      20696E74 
+ 1800      00
+ 1801              	.LASF7:
+ 1802 00ce 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1802      206C6F6E 
+ 1802      6720756E 
+ 1802      7369676E 
+ 1802      65642069 
+ 1803              	.LASF18:
+ 1804 00e5 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1804      4320342E 
+ 1804      382E3420 
+ 1804      32303134 
+ 1804      30353236 
+ 1805 0118 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1805      20726576 
+ 1805      6973696F 
+ 1805      6E203231 
+ 1805      31333538 
+ 1806 014b 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 1806      66756E63 
+ 1806      74696F6E 
+ 1806      2D736563 
+ 1806      74696F6E 
+ 1807              	.LASF16:
+ 1808 0161 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1808      6574615F 
+ 1808      666C6173 
+ 1808      6870726F 
+ 1808      74656374 
+ 1809              	.LASF15:
+ 1810 0176 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1810      6574615F 
+ 1810      776F6E76 
+ 1810      6C00
+ 1811              	.LASF12:
+ 1812 0184 73697A65 		.ascii	"sizetype\000"
+ 1812      74797065 
+ 1812      00
+ 1813              	.LASF6:
+ 1814 018d 6C6F6E67 		.ascii	"long long int\000"
+ 1814      206C6F6E 
+ARM GAS  C:\Users\Leiuqeze\AppData\Local\Temp\ccs3eNBs.s 			page 34
+
+
+ 1814      6720696E 
+ 1814      7400
+ 1815              	.LASF11:
+ 1816 019b 63686172 		.ascii	"char\000"
+ 1816      00
+ 1817              	.LASF2:
+ 1818 01a0 73686F72 		.ascii	"short int\000"
+ 1818      7420696E 
+ 1818      7400
+ 1819              	.LASF21:
+ 1820 01aa 75696E74 		.ascii	"uint8\000"
+ 1820      3800
+ 1821              	.LASF4:
+ 1822 01b0 6C6F6E67 		.ascii	"long int\000"
+ 1822      20696E74 
+ 1822      00
+ 1823              	.LASF0:
+ 1824 01b9 7369676E 		.ascii	"signed char\000"
+ 1824      65642063 
+ 1824      68617200 
+ 1825              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
