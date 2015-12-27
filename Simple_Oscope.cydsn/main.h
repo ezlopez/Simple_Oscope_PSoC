@@ -38,3 +38,4 @@
 typedef enum {SINE, SQUARE, SAW, TRIANGLE, ARB} waveform;
 void parseCommand(char *cmd);
 void DMA_ADC_MEM_Config();
+void initVariables();

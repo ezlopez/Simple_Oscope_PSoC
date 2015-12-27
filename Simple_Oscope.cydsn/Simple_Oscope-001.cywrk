@@ -2,14 +2,14 @@
 <CyXmlSerializer>
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
-<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspc" version="5" xml_contents_version="3" name="Simple_Oscope-000" persistent="" platform="NOT_USED">
-<current_project name="..\..\..\Simple_Oscope_Schematics.cydsn\Simple_Oscope_Schematics.cyprj" />
+<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspc" version="5" xml_contents_version="3" name="Simple_Oscope-001" persistent="" platform="NOT_USED">
+<current_project name=".\Simple_Oscope.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
-<v>..\..\..\Simple_Oscope_Schematics.cydsn\Simple_Oscope_Schematics.cyprj</v>
+<v>.\Simple_Oscope.cyprj</v>
 </projects>
-<workspace_id v="6a3bec7b-964d-4b77-8d5c-868ffd93dc97" />
+<workspace_id v="b2cd97a9-8717-4176-bc59-f451a058c634" />
 <WriteAppVersionLastSavedWith v="3.1.0.2288" />
 <WriteAppMarketingVersionLastSavedWith v="3.1 SP3" />
 <CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjDependencyList" version="4">

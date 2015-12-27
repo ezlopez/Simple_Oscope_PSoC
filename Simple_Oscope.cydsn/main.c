@@ -12,26 +12,26 @@ uint8 initialized = 0;
 
 // UART variables
 char  rxBuffer[RX_BUFFER_SIZE];
-uint8 rxBufLen = 0;
-uint8 commandReady = 0;
-char  command[RX_BUFFER_SIZE] = {0};
+uint8 rxBufLen;
+uint8 commandReady;
+char  command[RX_BUFFER_SIZE];
 
 // ADC Variables
-uint8  adcOn         = 0;
-uint   adcRez        = DEFAULT_ADC_RESOLUTION;
-uint32 adcSPS        = DEFAULT_ADC_SPS;
+uint8  adcOn;
+uint   adcRez;
+uint32 adcSPS;
 uint16 adcFrame[ADC_FRAME_SIZE];
-uint8  adcFrameReady = 0;
+uint8  adcFrameReady;
 
 // DAC Variables
-uint8    dacOn     = 0;
-uint32   dacFreq   = DEFAULT_DAC_FREQUENCY;
-float    dacVPP    = DEFAULT_DAC_VPP;
-float    dacOffset = DEFAULT_DAC_OFFSET;
-waveform dacWave   = DEFAULT_DAC_WAVE;
-uint    dacDuty   = DEFAULT_DAC_DUTY;
-uint8    ws        = 0;
-uint8    ms        = 0;
+uint8    dacOn;
+uint32   dacFreq;
+float    dacVPP;
+float    dacOffset;
+waveform dacWave;
+uint     dacDuty;
+uint8    ws;
+uint8    ms;
 
 /* Variable declarations for DMA_ADC_MEM */
 uint8 DMA_ADC_MEM_Chan;
@@ -57,6 +57,7 @@ int main() {
             if (commandReady) {
                 commandReady = 0;
                 if (strcmp(command, PC_CONNECT) == 0) {
+                    initVariables();
                     initialized = 1;
                     UART_PutString(PSOC_ACK);
                 }
@@ -271,6 +272,9 @@ void parseCommand(char *cmd) {
     }
     else if (strcmp(command, PC_DISCONNECT) == 0) {
         // Set everything to default and uninitialize
+        initVariables();
+    
+        // Need to make sure all modules are shut off *****************************
     }
     else { // Unspecified command
         DEBUG_PRINT("Unspecified command\n\r");
@@ -306,6 +310,26 @@ CY_ISR(UART_RX_INTER) {
     }
 }
 
+// Used to initialize variables to default
+void initVariables() {
+    initialized   = 0;
+    rxBufLen      = 0;
+    commandReady  = 0;
+    *command      = 0;
+    adcOn         = 0;
+    adcRez        = DEFAULT_ADC_RESOLUTION;
+    adcSPS        = DEFAULT_ADC_SPS;
+    adcFrameReady = 0;
+    dacOn         = 0;
+    dacFreq       = DEFAULT_DAC_FREQUENCY;
+    dacVPP        = DEFAULT_DAC_VPP;
+    dacOffset     = DEFAULT_DAC_OFFSET;
+    dacWave       = DEFAULT_DAC_WAVE;
+    dacDuty       = DEFAULT_DAC_DUTY;
+    ws            = 0;
+    ms            = 0;
+}
+
 // Used to reenable the ADC to MEM DMA so that another frame can be captured
 CY_ISR(TIMER_DMA_INTER) {
     DEBUG_PRINT("DMa Reenabled\r\n");
@@ -325,9 +349,13 @@ CY_ISR(DMA_FRAME_INTER) {
 void DMA_ADC_MEM_Config() {
     DMA_ADC_MEM_Chan = DMA_ADC_MEM_DmaInitialize(DMA_ADC_MEM_BYTES_PER_BURST, DMA_ADC_MEM_REQUEST_PER_BURST, 
      HI16(DMA_ADC_MEM_SRC_BASE), HI16(DMA_ADC_MEM_DST_BASE));
+    
     DMA_ADC_MEM_TD[0] = CyDmaTdAllocate();
+    
     CyDmaTdSetConfiguration(DMA_ADC_MEM_TD[0], 2 * ADC_FRAME_SIZE, CY_DMA_DISABLE_TD,
      DMA_ADC_MEM__TD_TERMOUT_EN | TD_INC_DST_ADR);
+    
     CyDmaTdSetAddress(DMA_ADC_MEM_TD[0], LO16((uint32)ADC_SAR_WRK0_PTR), LO16((uint32)adcFrame));
+    
     CyDmaChSetInitialTd(DMA_ADC_MEM_Chan, DMA_ADC_MEM_TD[0]);
 }
