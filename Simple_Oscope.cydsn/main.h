@@ -10,7 +10,8 @@
 // Default settings
 #define DEFAULT_ADC_RESOLUTION  12
 #define DEFAULT_ADC_SPS         100000
-#define ADC_FRAME_SIZE          400
+#define DEFAULT_ADC_FRAME_SIZE  400
+#define DEFAULT_ADC_FPS         6
 
 #define DEFAULT_DAC_FREQUENCY   100
 #define DEFAULT_DAC_VPP         2.0
@@ -38,4 +39,3 @@
 typedef enum {SINE, SQUARE, SAW, TRIANGLE, ARB} waveform;
 void parseCommand(char *cmd);
 void DMA_ADC_MEM_Config();
-void initVariables();
