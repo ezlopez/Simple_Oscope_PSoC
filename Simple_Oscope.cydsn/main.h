@@ -8,16 +8,19 @@
 #define DAC_PARAMS      "ADFOVWZ#"
 
 // Default settings
-#define DEFAULT_ADC_RESOLUTION  12
-#define DEFAULT_ADC_SPS         100000
-#define DEFAULT_ADC_FRAME_SIZE  400
-#define DEFAULT_ADC_FPS         6
+#define DEFAULT_ADC_RESOLUTION 12
+#define DEFAULT_ADC_SPS        100000
+#define DEFAULT_ADC_FRAME_SIZE 400
+#define DEFAULT_ADC_FPS        6
 
-#define DEFAULT_DAC_FREQUENCY   100
-#define DEFAULT_DAC_VPP         2.0
-#define DEFAULT_DAC_OFFSET      1.0
-#define DEFAULT_DAC_WAVE        SQUARE
-#define DEFAULT_DAC_DUTY        50
+#define DEFAULT_DAC_FREQUENCY  100
+#define DEFAULT_DAC_VPP        2.0
+#define DEFAULT_DAC_OFFSET     1.0
+#define DEFAULT_DAC_WAVE       SQUARE
+#define DEFAULT_DAC_DUTY       50
+
+// Misc defines
+#define TIMER_DMA_CLOCK_FREQ   24000000
 
 /* DMA Configuration for DMA_ADC_MEM */
 #define DMA_ADC_MEM_BYTES_PER_BURST 2

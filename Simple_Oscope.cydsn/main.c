@@ -20,7 +20,7 @@ char  command[RX_BUFFER_SIZE];
 uint8  adcOn         = 0;
 uint   adcRez        = DEFAULT_ADC_RESOLUTION;
 uint32 adcSPS        = DEFAULT_ADC_SPS;
-uint32 adcFPS        = DEFAULT_ADC_FPS;
+uint8  adcFPS        = DEFAULT_ADC_FPS;
 uint   adcFrameSize  = DEFAULT_ADC_FRAME_SIZE;
 uint16 adcFrame[DEFAULT_ADC_FRAME_SIZE];
 uint8  adcFrameReady = 0;
@@ -89,6 +89,7 @@ int main() {
 
 void parseCommand(char *cmd) {
     char *param = cmd + 1;
+    uint32 temp;
     
     if (*param == 'A') {
         DEBUG_PRINT("ADC");
@@ -121,6 +122,10 @@ void parseCommand(char *cmd) {
                     break;
                 case 'P': // Frames per second
                     DEBUG_PRINT(" FPS");
+                    sscanf(param, "%ld", &temp);
+                    
+                    if(temp && temp <= 255)
+                        TIMER_DMA_WritePeriod(TIMER_DMA_CLOCK_FREQ / temp);
                     
                 case 'S': // Samples per second
                     DEBUG_PRINT(" SPS");
