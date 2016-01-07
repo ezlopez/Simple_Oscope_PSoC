@@ -318,8 +318,18 @@ CY_ISR(UART_RX_INTER) {
 
 // Used to reenable the ADC to MEM DMA so that another frame can be captured
 CY_ISR(TIMER_DMA_INTER) {
-    DEBUG_PRINT("DMa Reenabled\r\n");
-    CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
+    uint8 state;
+    
+    CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
+    
+    // Want to make sure DMA is complete before trying to reactivate it
+    if (!state) {
+        CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
+        DEBUG_PRINT("DMA Reenabled\r\n");
+    }
+    else {
+        DEBUG_PRINT("TIMER_DMA period too small\r\n");
+    }
 }
 
 // Used to notify Main that a frame is ready for transmission
