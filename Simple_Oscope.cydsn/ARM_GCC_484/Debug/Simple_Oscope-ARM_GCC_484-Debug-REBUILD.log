@@ -1,0 +1,78 @@
+--------------- Rebuild Started: 01/08/2016 11:28:22 Project: Simple_Oscope, Configuration: ARM GCC 4.8.4 Debug ---------------
+Deleting file ".\Simple_Oscope.cycdx"
+Deleting file ".\Simple_Oscope.svd"
+Deleting file ".\Simple_Oscope.rpt"
+Deleting file ".\Simple_Oscope_timing.html"
+cydsfit.exe -.appdatapath "C:\Users\Leiuqeze\AppData\Local\Cypress Semiconductor\PSoC Creator\3.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn\Simple_Oscope.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+Analog Placement ...
+Log: apr.M0058: The analog placement iterative improvement is 54% done. (App=cydsfit)
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/main.lst -g -ffunction-sections -O0 -c .\main.c -o .\ARM_GCC_484\Debug\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/cyfitter_cfg.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\ARM_GCC_484\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/cymetadata.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cymetadata.c -o .\ARM_GCC_484\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/Cm3Start.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Cm3Start.c -o .\ARM_GCC_484\Debug\Cm3Start.o
+arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -I.\Generated_Source\PSoC5 -alh=.\ARM_GCC_484\Debug/CyBootAsmGnu.lst -g -o .\ARM_GCC_484\Debug\CyBootAsmGnu.o .\Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/CyDmac.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyDmac.c -o .\ARM_GCC_484\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/CyFlash.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyFlash.c -o .\ARM_GCC_484\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/CyLib.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CyLib.c -o .\ARM_GCC_484\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/cyPm.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyPm.c -o .\ARM_GCC_484\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/CySpc.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\CySpc.c -o .\ARM_GCC_484\Debug\CySpc.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/cyutils.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\cyutils.c -o .\ARM_GCC_484\Debug\cyutils.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/UART_RX.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\UART_RX.c -o .\ARM_GCC_484\Debug\UART_RX.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/UART.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\UART.c -o .\ARM_GCC_484\Debug\UART.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/UART_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\UART_PM.c -o .\ARM_GCC_484\Debug\UART_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/UART_INT.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\UART_INT.c -o .\ARM_GCC_484\Debug\UART_INT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/UART_BOOT.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\UART_BOOT.c -o .\ARM_GCC_484\Debug\UART_BOOT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/UART_IntClock.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\UART_IntClock.c -o .\ARM_GCC_484\Debug\UART_IntClock.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/ADC.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\ADC.c -o .\ARM_GCC_484\Debug\ADC.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/ADC_INT.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\ADC_INT.c -o .\ARM_GCC_484\Debug\ADC_INT.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/ADC_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\ADC_PM.c -o .\ARM_GCC_484\Debug\ADC_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/ADC_IRQ.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\ADC_IRQ.c -o .\ARM_GCC_484\Debug\ADC_IRQ.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/ADC_Clock.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\ADC_Clock.c -o .\ARM_GCC_484\Debug\ADC_Clock.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/ADC_POS.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\ADC_POS.c -o .\ARM_GCC_484\Debug\ADC_POS.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DMA_ADC_MEM_dma.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DMA_ADC_MEM_dma.c -o .\ARM_GCC_484\Debug\DMA_ADC_MEM_dma.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/TIMER_DMA.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\TIMER_DMA.c -o .\ARM_GCC_484\Debug\TIMER_DMA.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/TIMER_DMA_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\TIMER_DMA_PM.c -o .\ARM_GCC_484\Debug\TIMER_DMA_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DMA_ENABLE.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DMA_ENABLE.c -o .\ARM_GCC_484\Debug\DMA_ENABLE.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DMA_FRAME_READY.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DMA_FRAME_READY.c -o .\ARM_GCC_484\Debug\DMA_FRAME_READY.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1.c -o .\ARM_GCC_484\Debug\DAC_1.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1_PM.c -o .\ARM_GCC_484\Debug\DAC_1_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_POS.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_POS.c -o .\ARM_GCC_484\Debug\DAC_POS.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/MUX_DAC.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\MUX_DAC.c -o .\ARM_GCC_484\Debug\MUX_DAC.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2.c -o .\ARM_GCC_484\Debug\DAC_2.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_PM.c -o .\ARM_GCC_484\Debug\DAC_2_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/Control_DAC.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Control_DAC.c -o .\ARM_GCC_484\Debug\Control_DAC.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/Control_DAC_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\Control_DAC_PM.c -o .\ARM_GCC_484\Debug\Control_DAC_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1_DacClk.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1_DacClk.c -o .\ARM_GCC_484\Debug\DAC_1_DacClk.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1_Wave1_DMA_dma.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1_Wave1_DMA_dma.c -o .\ARM_GCC_484\Debug\DAC_1_Wave1_DMA_dma.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1_Wave2_DMA_dma.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1_Wave2_DMA_dma.c -o .\ARM_GCC_484\Debug\DAC_1_Wave2_DMA_dma.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1_VDAC8.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1_VDAC8.c -o .\ARM_GCC_484\Debug\DAC_1_VDAC8.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_1_VDAC8_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_1_VDAC8_PM.c -o .\ARM_GCC_484\Debug\DAC_1_VDAC8_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_DacClk.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_DacClk.c -o .\ARM_GCC_484\Debug\DAC_2_DacClk.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_Wave1_DMA_dma.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_Wave1_DMA_dma.c -o .\ARM_GCC_484\Debug\DAC_2_Wave1_DMA_dma.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_Wave2_DMA_dma.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_Wave2_DMA_dma.c -o .\ARM_GCC_484\Debug\DAC_2_Wave2_DMA_dma.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_VDAC8.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_VDAC8.c -o .\ARM_GCC_484\Debug\DAC_2_VDAC8.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_VDAC8_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_VDAC8_PM.c -o .\ARM_GCC_484\Debug\DAC_2_VDAC8_PM.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_BuffAmp.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_BuffAmp.c -o .\ARM_GCC_484\Debug\DAC_2_BuffAmp.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=.\ARM_GCC_484\Debug/DAC_2_BuffAmp_PM.lst -g -ffunction-sections -O0 -c .\Generated_Source\PSoC5\DAC_2_BuffAmp_PM.c -o .\ARM_GCC_484\Debug\DAC_2_BuffAmp_PM.o
+arm-none-eabi-ar.exe -rs .\ARM_GCC_484\Debug\Simple_Oscope.a .\ARM_GCC_484\Debug\cyfitter_cfg.o .\ARM_GCC_484\Debug\CyBootAsmGnu.o .\ARM_GCC_484\Debug\CyDmac.o .\ARM_GCC_484\Debug\CyFlash.o .\ARM_GCC_484\Debug\CyLib.o .\ARM_GCC_484\Debug\cyPm.o .\ARM_GCC_484\Debug\CySpc.o .\ARM_GCC_484\Debug\cyutils.o .\ARM_GCC_484\Debug\UART_RX.o .\ARM_GCC_484\Debug\UART.o .\ARM_GCC_484\Debug\UART_PM.o .\ARM_GCC_484\Debug\UART_INT.o .\ARM_GCC_484\Debug\UART_BOOT.o .\ARM_GCC_484\Debug\UART_IntClock.o .\ARM_GCC_484\Debug\ADC.o .\ARM_GCC_484\Debug\ADC_INT.o .\ARM_GCC_484\Debug\ADC_PM.o .\ARM_GCC_484\Debug\ADC_IRQ.o .\ARM_GCC_484\Debug\ADC_Clock.o .\ARM_GCC_484\Debug\ADC_POS.o .\ARM_GCC_484\Debug\DMA_ADC_MEM_dma.o .\ARM_GCC_484\Debug\TIMER_DMA.o .\ARM_GCC_484\Debug\TIMER_DMA_PM.o .\ARM_GCC_484\Debug\DMA_ENABLE.o .\ARM_GCC_484\Debug\DMA_FRAME_READY.o .\ARM_GCC_484\Debug\DAC_1.o .\ARM_GCC_484\Debug\DAC_1_PM.o .\ARM_GCC_484\Debug\DAC_POS.o .\ARM_GCC_484\Debug\MUX_DAC.o .\ARM_GCC_484\Debug\DAC_2.o .\ARM_GCC_484\Debug\DAC_2_PM.o .\ARM_GCC_484\Debug\Control_DAC.o .\ARM_GCC_484\Debug\Control_DAC_PM.o .\ARM_GCC_484\Debug\DAC_1_DacClk.o .\ARM_GCC_484\Debug\DAC_1_Wave1_DMA_dma.o .\ARM_GCC_484\Debug\DAC_1_Wave2_DMA_dma.o .\ARM_GCC_484\Debug\DAC_1_VDAC8.o .\ARM_GCC_484\Debug\DAC_1_VDAC8_PM.o .\ARM_GCC_484\Debug\DAC_2_DacClk.o .\ARM_GCC_484\Debug\DAC_2_Wave1_DMA_dma.o .\ARM_GCC_484\Debug\DAC_2_Wave2_DMA_dma.o .\ARM_GCC_484\Debug\DAC_2_VDAC8.o .\ARM_GCC_484\Debug\DAC_2_VDAC8_PM.o .\ARM_GCC_484\Debug\DAC_2_BuffAmp.o .\ARM_GCC_484\Debug\DAC_2_BuffAmp_PM.o
+arm-none-eabi-ar.exe: creating .\ARM_GCC_484\Debug\Simple_Oscope.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\ARM_GCC_484\Debug\Simple_Oscope.elf .\ARM_GCC_484\Debug\main.o .\ARM_GCC_484\Debug\cymetadata.o .\ARM_GCC_484\Debug\Cm3Start.o .\ARM_GCC_484\Debug\Simple_Oscope.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_484\Debug\CyComponentLibrary.a" -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -l m -Wl,-Map,.\ARM_GCC_484\Debug/Simple_Oscope.map -T .\Generated_Source\PSoC5\cm3gcc.ld -g -specs=nano.specs "-u _printf_float" "" -Wl,--gc-sections -Wl,--end-group
+cyelftool.exe -C C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn\ARM_GCC_484\Debug\Simple_Oscope.elf --flash_size 262144 --flash_row_size 256
+cyelftool.exe -S C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn\ARM_GCC_484\Debug\Simple_Oscope.elf
+Flash used: 20006 of 262144 bytes (7.6 %).
+SRAM used: 3573 of 65536 bytes (5.5 %). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Rebuild Succeeded: 01/08/2016 11:29:08 ---------------

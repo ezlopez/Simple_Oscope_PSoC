@@ -170,8 +170,8 @@ extern volatile int16 ADC_shift;
 #define ADC_DEFAULT_REFERENCE      (0u)         /* Default reference */
 #define ADC_DEFAULT_RANGE          (0u)       /* ADC Input Range selection */
 #define ADC_CLOCK_FREQUENCY        (1000000u)   /* Clock frequency */
-#define ADC_NOMINAL_CLOCK_FREQ     (1000000)  /* Nominal Clock Frequency */
-#define ADC_HIGH_POWER_PULSE       (1u)        /* Not zero when clock pulse > 50 ns */
+#define ADC_NOMINAL_CLOCK_FREQ     (12000000)  /* Nominal Clock Frequency */
+#define ADC_HIGH_POWER_PULSE       (0u)        /* Not zero when clock pulse > 50 ns */
 #define ADC_IRQ_REMOVE             (0u)                /* Removes internal interrupt */
 
 /* Use VDDA voltage define directly from cyfitter.h when VDDA reference has been used */

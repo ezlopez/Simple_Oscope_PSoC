@@ -2,6 +2,7 @@
 #include <device.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 CY_ISR_PROTO(UART_RX_INTER);
 CY_ISR_PROTO(TIMER_DMA_INTER);
@@ -123,15 +124,8 @@ void parseCommand(char *cmd) {
                     
                 case 'S': // Samples per second
                     DEBUG_PRINT(" SPS");
-                    sscanf(param, "%ld", &adcSPS);
-                    // Make sure it is a valid value
-                    // Should make it resolution-specific *************************************
-                    if (adcSPS < MINIMUM_ADC_SPS || adcSPS > MAXIMUM_ADC_SPS) {
-                        DEBUG_PRINT(" Invalid SPS");
-                    }
-                    else {
-                        // Do stuff to change the SPS
-                    }
+                    sscanf(param, "%ld", &temp);
+                    changeSPS(temp);
                     break;
                 case 'Z': // Stop
                     DEBUG_PRINT(" Stop");
@@ -284,19 +278,57 @@ void startADC() {
     }
 }
 
-/* Steps to make it safe.
+/* 
+   Steps to make it safe.
    1. Stop the timer
    2. Wait for the DMA to finish
    3. Stop the ADC
-   Don't forget to implement **********************************************************
 */
 void stopADC() {
+    uint8 state;
+    
     if (adcOn) {
         TIMER_DMA_Stop();
+        do {
+            CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
+        }while (state);
+        CyDmaChDisable(DMA_ADC_MEM_Chan); // May not need this. No idea.
         ADC_Stop();
-        CyDmaChDisable(DMA_ADC_MEM_Chan);
         adcOn = 0;
     }
+}
+
+void changeSPS(int sps) {
+    int restoreAdc = 0;
+    int divider, clockNeeded;
+    
+    // Make sure it is a valid value
+    if ((uint)sps < (MINIMUM_ADC_CLOCK_FREQ / (4 + adcRez)) ||
+        (uint)sps > (MAXIMUM_ADC_CLOCK_FREQ / (4 + adcRez))) {
+        DEBUG_PRINT(" Invalid SPS");
+        return;
+    }
+        
+    // Save settings and stop the ADC
+    restoreAdc = adcOn;
+    stopADC();
+    
+    // Calculate divider and set
+    // SPS = clock / 4 + res (from datasheet)
+    clockNeeded = sps * (4 + adcRez);
+    divider = MASTER_CLOCK_FREQ / clockNeeded;
+    
+    if (divider > MAXIMUM_ADC_CLOCK_DIV)      // Min freq is 1 MHz
+        divider = MAXIMUM_ADC_CLOCK_DIV;
+    else if (divider > MINIMUM_ADC_CLOCK_DIV) // Max freq is 16 MHz
+        divider = MINIMUM_ADC_CLOCK_DIV;
+    
+    ADC_Clock_SetDividerValue(divider);
+    adcSPS = (MASTER_CLOCK_FREQ / divider) / (4 + adcRez);
+    
+    // Restart if necessary
+    if (restoreAdc)
+        startADC();
 }
 
 CY_ISR(UART_RX_INTER) {

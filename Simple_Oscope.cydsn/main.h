@@ -21,8 +21,11 @@
 
 // Misc defines
 #define TIMER_DMA_CLOCK_FREQ   24000000
-#define MINIMUM_ADC_SPS        55556
-#define MAXIMUM_ADC_SPS        1000000
+#define MASTER_CLOCK_FREQ      24000000
+#define MINIMUM_ADC_CLOCK_FREQ 1000000
+#define MAXIMUM_ADC_CLOCK_FREQ 16000000
+#define MAXIMUM_ADC_CLOCK_DIV  24
+#define MINIMUM_ADC_CLOCK_DIV  1
 
 /* DMA Configuration for DMA_ADC_MEM */
 #define DMA_ADC_MEM_BYTES_PER_BURST 2
@@ -46,3 +49,4 @@ void parseCommand(char *cmd);
 void DMA_ADC_MEM_Config();
 void startADC();
 void stopADC();
+void changeSPS(int sps);
