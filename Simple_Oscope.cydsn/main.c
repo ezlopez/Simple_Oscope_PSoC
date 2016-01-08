@@ -98,13 +98,7 @@ void parseCommand(char *cmd) {
             switch (*param++) {
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
-                    
-                    if (!adcOn) {
-                        ADC_StartConvert();
-                        TIMER_DMA_Start();
-                        adcOn = 1;
-                        CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
-                    }
+                    startADC();
                     break;
                 case 'F': // Samples per frame
                     DEBUG_PRINT(" SPF");
@@ -131,7 +125,8 @@ void parseCommand(char *cmd) {
                     DEBUG_PRINT(" SPS");
                     sscanf(param, "%ld", &adcSPS);
                     // Make sure it is a valid value
-                    if (adcSPS < 55556 || adcSPS > 1000000) { // Should #define these
+                    // Should make it resolution-specific *************************************
+                    if (adcSPS < MINIMUM_ADC_SPS || adcSPS > MAXIMUM_ADC_SPS) {
                         DEBUG_PRINT(" Invalid SPS");
                     }
                     else {
@@ -140,14 +135,7 @@ void parseCommand(char *cmd) {
                     break;
                 case 'Z': // Stop
                     DEBUG_PRINT(" Stop");
-                    
-                    if (adcOn) {
-                        TIMER_DMA_Stop();
-                        ADC_Stop();
-                        CyDmaChDisable(DMA_ADC_MEM_Chan);
-                        adcOn = 0;
-                    }
-                    
+                    stopADC();
                     break;
                 default:  // Unexpected parameter
                     DEBUG_PRINT(" Unknown");
@@ -284,6 +272,30 @@ void parseCommand(char *cmd) {
     }
     else { // Unspecified command
         DEBUG_PRINT("Unspecified command\n\r");
+    }
+}
+
+void startADC() {
+    if (!adcOn) {
+        ADC_StartConvert();
+        TIMER_DMA_Start();
+        adcOn = 1;
+        CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
+    }
+}
+
+/* Steps to make it safe.
+   1. Stop the timer
+   2. Wait for the DMA to finish
+   3. Stop the ADC
+   Don't forget to implement **********************************************************
+*/
+void stopADC() {
+    if (adcOn) {
+        TIMER_DMA_Stop();
+        ADC_Stop();
+        CyDmaChDisable(DMA_ADC_MEM_Chan);
+        adcOn = 0;
     }
 }
 
