@@ -23,7 +23,7 @@ uint   adcRez        = DEFAULT_ADC_RESOLUTION;
 uint32 adcSPS        = DEFAULT_ADC_SPS;
 uint8  adcFPS        = DEFAULT_ADC_FPS;
 uint   adcFrameSize  = DEFAULT_ADC_FRAME_SIZE;
-uint16 adcFrame[DEFAULT_ADC_FRAME_SIZE];
+uint16 *adcFrame;
 uint8  adcFrameReady = 0;
 
 // DAC Variables
@@ -39,12 +39,14 @@ uint8    ms        = 0;
 /* Variable declarations for DMA_ADC_MEM */
 uint8 DMA_ADC_MEM_Chan;
 uint8 DMA_ADC_MEM_TD[1];
+uint8 DMA_ADC_MEM_BYTES_PER_BURST = 1;
 
 int main() {
     uint16 i;
     char framePrefix[10];
     
     // Init modules
+    adcFrame = malloc(DMA_ADC_MEM_BYTES_PER_BURST * adcFrameSize);
     UART_Start();
     ADC_Start();
     DMA_ADC_MEM_Config();
@@ -54,7 +56,7 @@ int main() {
     DMA_FRAME_READY_StartEx(DMA_FRAME_INTER);
     CYGlobalIntEnable;
     
-    for(;;) {
+    for/*ever*/(;;) {
         // Sync with the GUI
         while(!initialized) {
             if (commandReady) {
@@ -79,7 +81,9 @@ int main() {
             sprintf(framePrefix, "#F%dD", adcFrameSize);
             UART_PutString(framePrefix);
             for (i = 0; i < adcFrameSize; i++) {
-                UART_PutChar((adcFrame[i] >> 8) & 0XFF);
+                // Send both bits only if adcRez != 8
+                if (DMA_ADC_MEM_BYTES_PER_BURST == 2)
+                    UART_PutChar((adcFrame[i] >> 8) & 0XFF);
                 UART_PutChar(adcFrame[i] & 0XFF);
             }
             #endif
@@ -103,25 +107,22 @@ void parseCommand(char *cmd) {
                     break;
                 case 'F': // Samples per frame
                     DEBUG_PRINT(" SPF");
-                    break;
-                case 'R': // Resolution
-                    DEBUG_PRINT(" Res");
-                    sscanf(param, "%d", &adcRez);
-                    // Make sure it is a valid value
-                    if (adcRez != 12 && adcRez != 10 && adcRez != 8) {
-                        DEBUG_PRINT(" Invalid resolution");
-                    }
-                    else {
-                        // Do stuff to change the resolution
-                    }
+                    sscanf(param, "%ld", &temp);
+                    adcFrameResize(temp);
                     break;
                 case 'P': // Frames per second
                     DEBUG_PRINT(" FPS");
                     sscanf(param, "%ld", &temp);
-                    
-                    if(temp && temp <= 255)
+                    if(temp && temp <= 255) // Crappy attempt at an upper limit
                         TIMER_DMA_WritePeriod(TIMER_DMA_CLOCK_FREQ / temp);
-                    
+                     else
+                        DEBUG_PRINT(" FPS too large");
+                    break;
+                case 'R': // Resolution
+                    DEBUG_PRINT(" Res");
+                    sscanf(param, "%ld", &temp);
+                    changeRes(temp);
+                    break;
                 case 'S': // Samples per second
                     DEBUG_PRINT(" SPS");
                     sscanf(param, "%ld", &temp);
@@ -299,7 +300,7 @@ void stopADC() {
 }
 
 void changeSPS(int sps) {
-    int restoreAdc = 0;
+    int restoreAdc = adcOn;
     int divider, clockNeeded;
     
     // Make sure it is a valid value
@@ -309,8 +310,7 @@ void changeSPS(int sps) {
         return;
     }
         
-    // Save settings and stop the ADC
-    restoreAdc = adcOn;
+    // Stop the ADC. Safety first, kids.
     stopADC();
     
     // Calculate divider and set
@@ -329,6 +329,53 @@ void changeSPS(int sps) {
     // Restart if necessary
     if (restoreAdc)
         startADC();
+}
+
+void changeRes(int res) {
+    int restoreADC = adcOn;
+    
+    // Make sure it is a valid value
+    if ((res != 12 && res != 10 && res != 8) || (unsigned)res == adcRez) {
+        DEBUG_PRINT(" Invalid resolution");
+        return;
+    }
+    
+    // Play safely
+    stopADC();
+    
+    // Check to see if changing between incompatible res'
+    if (res == 8 || adcRez == 8) {
+        DMA_ADC_MEM_Destruct();
+        
+        // Resize the frame and DMA settings
+        DMA_ADC_MEM_BYTES_PER_BURST = res == 8 ? 1 : 2;
+        adcFrameResize(adcFrameSize);
+        
+        // Reconfigure the DMA with new settings
+        DMA_ADC_MEM_Config();
+    }
+    
+    // Finally change the resolution
+    ADC_SetResolution(res);
+    
+    // Turn the lights back on
+    if (restoreADC)
+        startADC();
+}
+
+void adcFrameResize(int newSize) {
+    free(adcFrame);
+        
+    // Make sure new size doesn't request more bytes than the DMA can handle
+    if (DMA_ADC_MEM_BYTES_PER_BURST * newSize > MAX_DMA_TRANSFER_SIZE) {
+        adcFrameSize = MAX_DMA_TRANSFER_SIZE / DMA_ADC_MEM_BYTES_PER_BURST;
+        DEBUG_PRINT("Sloppy programming. Data size * frame size must be ");
+        DEBUG_PRINT("less than 4095 bytes.\r\nResized to max frame size.\r\n");
+    }
+    else
+        adcFrameSize = newSize;
+    
+    adcFrame = malloc(DMA_ADC_MEM_BYTES_PER_BURST * adcFrameSize);
 }
 
 CY_ISR(UART_RX_INTER) {
@@ -387,15 +434,24 @@ CY_ISR(DMA_FRAME_INTER) {
  *  reenabled.
  */
 void DMA_ADC_MEM_Config() {
-    DMA_ADC_MEM_Chan = DMA_ADC_MEM_DmaInitialize(DMA_ADC_MEM_BYTES_PER_BURST, DMA_ADC_MEM_REQUEST_PER_BURST, 
-     HI16(DMA_ADC_MEM_SRC_BASE), HI16(DMA_ADC_MEM_DST_BASE));
+    DMA_ADC_MEM_Chan = DMA_ADC_MEM_DmaInitialize(DMA_ADC_MEM_BYTES_PER_BURST,
+        DMA_ADC_MEM_REQUEST_PER_BURST, HI16(DMA_ADC_MEM_SRC_BASE), HI16(DMA_ADC_MEM_DST_BASE));
     
     DMA_ADC_MEM_TD[0] = CyDmaTdAllocate();
     
-    CyDmaTdSetConfiguration(DMA_ADC_MEM_TD[0], 2 * adcFrameSize, CY_DMA_DISABLE_TD,
-     DMA_ADC_MEM__TD_TERMOUT_EN | TD_INC_DST_ADR);
+    CyDmaTdSetConfiguration(DMA_ADC_MEM_TD[0], DMA_ADC_MEM_BYTES_PER_BURST * adcFrameSize,
+     CY_DMA_DISABLE_TD, DMA_ADC_MEM__TD_TERMOUT_EN | TD_INC_DST_ADR);
     
     CyDmaTdSetAddress(DMA_ADC_MEM_TD[0], LO16((uint32)ADC_SAR_WRK0_PTR), LO16((uint32)adcFrame));
     
     CyDmaChSetInitialTd(DMA_ADC_MEM_Chan, DMA_ADC_MEM_TD[0]);
+}
+
+/*
+   Gets rid of the DMA channel and TD, most-likely to update it for some change.
+   User needs to make sure DMA is stopped before attempting to call this function.
+*/
+void DMA_ADC_MEM_Destruct() {
+    DMA_ADC_MEM_DmaRelease();
+    CyDmaTdFree(DMA_ADC_MEM_TD[0]);
 }

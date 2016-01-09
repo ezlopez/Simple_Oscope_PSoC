@@ -164,12 +164,12 @@ extern volatile int16 ADC_shift;
 **************************************/
 
 /* Default config values from user parameters */
-#define ADC_DEFAULT_RESOLUTION     (12u)   /* ADC resolution selected with parameters.*/
+#define ADC_DEFAULT_RESOLUTION     (8u)   /* ADC resolution selected with parameters.*/
 #define ADC_DEFAULT_CONV_MODE      (0u)        /* Default conversion method */
 #define ADC_DEFAULT_INTERNAL_CLK   (0u)             /* Default clock selection */
 #define ADC_DEFAULT_REFERENCE      (0u)         /* Default reference */
 #define ADC_DEFAULT_RANGE          (0u)       /* ADC Input Range selection */
-#define ADC_CLOCK_FREQUENCY        (1000000u)   /* Clock frequency */
+#define ADC_CLOCK_FREQUENCY        (12000000u)   /* Clock frequency */
 #define ADC_NOMINAL_CLOCK_FREQ     (12000000)  /* Nominal Clock Frequency */
 #define ADC_HIGH_POWER_PULSE       (0u)        /* Not zero when clock pulse > 50 ns */
 #define ADC_IRQ_REMOVE             (0u)                /* Removes internal interrupt */
