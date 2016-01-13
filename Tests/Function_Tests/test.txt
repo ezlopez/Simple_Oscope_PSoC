@@ -1,0 +1,4 @@
+% This is a very simple test
+COM5 57600 1000
+#PC_REQ_CONNECT# PSOC_READY Y
+% Done testing

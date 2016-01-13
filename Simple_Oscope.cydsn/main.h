@@ -34,7 +34,7 @@
 #define MAX_DMA_TRANSFER_SIZE         4095
 
 // Uncomment to enable debug output
-//#define DEBUG_OUTPUT
+#define DEBUG_OUTPUT
 
 #ifdef DEBUG_OUTPUT
     #define DEBUG_PRINT(x) {\

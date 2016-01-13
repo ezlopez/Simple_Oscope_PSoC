@@ -1,2 +1,6 @@
---------------- Clean Started: 01/08/2016 11:42:04 Project: Simple_Oscope, Configuration: ARM GCC 4.8.4 Debug ---------------
---------------- Clean Succeeded: 01/08/2016 11:42:04 ---------------
+--------------- Clean Started: 01/08/2016 17:17:55 Project: Simple_Oscope, Configuration: ARM GCC 4.8.4 Debug ---------------
+Deleting file ".\Simple_Oscope.cycdx"
+Deleting file ".\Simple_Oscope.svd"
+Deleting file ".\Simple_Oscope.rpt"
+Deleting file ".\Simple_Oscope_timing.html"
+--------------- Clean Succeeded: 01/08/2016 17:17:55 ---------------
