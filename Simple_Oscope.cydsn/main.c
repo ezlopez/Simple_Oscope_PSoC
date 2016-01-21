@@ -147,13 +147,7 @@ void parseCommand(char *cmd) {
             switch (*param++) {
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
-                    if (!dacOn) {
-                        MUX_DAC_FastSelect(ms);
-                        Control_DAC_Write(ws);
-                        DAC_1_Start();
-                        DAC_2_Start();
-                        dacOn = 1;
-                    }
+                    startDAC();
                     break;
                 case 'D': // Duty cycle
                     DEBUG_PRINT(" Duty");
@@ -165,6 +159,8 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the duty
+                        
+                        
                     }
                     break;
                 case 'F': // Frequency
@@ -177,6 +173,9 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the frequency
+                        
+                        
+                        
                     }
                     break;
                 case 'O': // Offset
@@ -189,6 +188,8 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the offset
+                        
+                        
                     }
                     break;
                 case 'V': // Peak to Peak Voltage
@@ -201,6 +202,8 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the VPP
+                        
+                        
                     }
                     break;
                 case 'W': // Waveform
@@ -231,6 +234,8 @@ void parseCommand(char *cmd) {
                             break;
                         case 'W':
                             // Not yet implemented
+                            
+                        
                             break;
                         default:
                             // Bad parameter
@@ -244,14 +249,7 @@ void parseCommand(char *cmd) {
                     break;
                 case 'Z': // Stop
                     DEBUG_PRINT(" Stop");
-                    
-                    if (dacOn) {
-                        MUX_DAC_DisconnectAll();
-                        DAC_1_Stop();
-                        DAC_2_Stop();
-                        dacOn = 0;
-                    }
-                    
+                    stopDAC();
                     break;
                 default:  // Unexpected parameter
                     DEBUG_PRINT(" Unknown");
@@ -297,6 +295,30 @@ void stopADC() {
         ADC_Stop();
         adcOn = 0;
     }
+}
+
+void startDAC()
+{
+    if (!dacOn) 
+    {
+        MUX_DAC_FastSelect(ms);
+        Control_DAC_Write(ws);
+        DAC_1_Start();
+        DAC_2_Start();
+        dacOn = 1;
+    }
+}
+
+void stopDAC()
+{
+    if (dacOn) 
+    {
+        MUX_DAC_DisconnectAll();
+        DAC_1_Stop();
+        DAC_2_Stop();
+        dacOn = 0;
+    }
+                    
 }
 
 void changeSPS(int sps) {
@@ -455,3 +477,4 @@ void DMA_ADC_MEM_Destruct() {
     DMA_ADC_MEM_DmaRelease();
     CyDmaTdFree(DMA_ADC_MEM_TD[0]);
 }
+

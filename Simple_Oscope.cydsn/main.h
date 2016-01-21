@@ -53,3 +53,5 @@ void stopADC();
 void changeSPS(int sps);
 void changeRes(int res);
 void adcFrameResize(int newSize);
+void startDAC();
+void stopDAC();
