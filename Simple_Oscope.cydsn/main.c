@@ -27,14 +27,15 @@ uint16 *adcFrame;
 uint8  adcFrameReady = 0;
 
 // DAC Variables
-uint8    dacOn     = 0;
-uint32   dacFreq   = DEFAULT_DAC_FREQUENCY;
-float    dacVPP    = DEFAULT_DAC_VPP;
-float    dacOffset = DEFAULT_DAC_OFFSET;
-waveform dacWave   = DEFAULT_DAC_WAVE;
-uint     dacDuty   = DEFAULT_DAC_DUTY;
-uint8    ws        = 0;
-uint8    ms        = 0;
+uint8       dacOn       = 0;
+uint32      dacFreq     = DEFAULT_DAC_FREQUENCY;
+float       dacVPP      = DEFAULT_DAC_VPP;
+float       dacOffset   = DEFAULT_DAC_OFFSET;
+waveform    dacWave     = DEFAULT_DAC_WAVE;
+uint        dacDuty     = DEFAULT_DAC_DUTY;
+uint16      sample_size = 100;
+uint8       ws          = 0;
+uint8       ms          = 0;
 
 /* Variable declarations for DMA_ADC_MEM */
 uint8 DMA_ADC_MEM_Chan;
@@ -158,8 +159,30 @@ void parseCommand(char *cmd) {
                         DEBUG_PRINT(" Invalid duty");
                     }
                     else {
-                        // Do stuff to change the duty
-                        
+                        // Do stuff to change the duty (only for square wave)
+                        if (!ms && ws)
+                        {
+                            // Its a square wave
+                            stopDAC();
+                            // write new square wave
+                            uint8 square[sample_size];
+                            uint8 up = (dacDuty * sample_size) / 100 ;
+                            int i;
+                            // ON phase
+                            for ( i = 0; i < up; i++)
+                            {
+                                square[i] = 252u;
+                            }
+                            // OFF phase
+                            for (; i < sample_size; i++)
+                            {
+                                square[i] = 3u;
+                            }
+                            
+                            DAC_1_Wave1Setup(square, sample_size);
+                            startDAC();
+                            
+                        }
                         
                     }
                     break;
@@ -206,6 +229,7 @@ void parseCommand(char *cmd) {
                         
                     }
                     break;
+                    
                 case 'W': // Waveform
                     DEBUG_PRINT(" Wave");
                     
@@ -304,7 +328,7 @@ void startDAC()
         MUX_DAC_FastSelect(ms);
         Control_DAC_Write(ws);
         DAC_1_Start();
-        DAC_2_Start();
+        //DAC_2_Start();
         dacOn = 1;
     }
 }
@@ -315,7 +339,7 @@ void stopDAC()
     {
         MUX_DAC_DisconnectAll();
         DAC_1_Stop();
-        DAC_2_Stop();
+        //DAC_2_Stop();
         dacOn = 0;
     }
                     
