@@ -13,11 +13,13 @@
 #define DEFAULT_ADC_FRAME_SIZE 400
 #define DEFAULT_ADC_FPS        6
 
-#define DEFAULT_DAC_FREQUENCY  100
-#define DEFAULT_DAC_VPP        2.0
-#define DEFAULT_DAC_OFFSET     1.0
-#define DEFAULT_DAC_WAVE       SQUARE
-#define DEFAULT_DAC_DUTY       50
+#define DEFAULT_DAC_FREQUENCY      2500
+#define DEFAULT_DAC_VPP            2.0
+#define DEFAULT_DAC_OFFSET         1.0
+#define DEFAULT_DAC_WAVE           SQUARE
+#define DEFAULT_DAC_DUTY           50
+#define DEFAULT_DAC_SAMPLE_RATE    250000
+#define DEFAULT_DAC_SAMPLE_SIZE    100
 
 // Misc defines
 #define TIMER_DMA_CLOCK_FREQ   24000000

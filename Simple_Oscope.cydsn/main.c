@@ -36,6 +36,8 @@ uint        dacDuty     = DEFAULT_DAC_DUTY;
 uint16      sample_size = 100;
 uint8       ws          = 0;
 uint8       ms          = 0;
+uint32      sample_rate = DEFAULT_DAC_SAMPLE_RATE;
+
 
 /* Variable declarations for DMA_ADC_MEM */
 uint8 DMA_ADC_MEM_Chan;
@@ -259,7 +261,6 @@ void parseCommand(char *cmd) {
                         case 'W':
                             // Not yet implemented
                             
-                        
                             break;
                         default:
                             // Bad parameter
