@@ -34,9 +34,10 @@ float       dacOffset   = DEFAULT_DAC_OFFSET;
 waveform    dacWave     = DEFAULT_DAC_WAVE;
 uint        dacDuty     = DEFAULT_DAC_DUTY;
 uint16      sample_size = 100;
-uint8       ws          = 0;
+uint8       ws          = 1;
 uint8       ms          = 0;
 uint32      sample_rate = DEFAULT_DAC_SAMPLE_RATE;
+char        wavetype    = 'Q';                      //Default waveform is Square
 
 
 /* Variable declarations for DMA_ADC_MEM */
@@ -154,7 +155,6 @@ void parseCommand(char *cmd) {
                     break;
                 case 'D': // Duty cycle
                     DEBUG_PRINT(" Duty");
-                    
                     sscanf(param, "%d", &dacDuty);
                     // Make sure it is a valid value
                     if (dacDuty > 100) {
@@ -162,30 +162,7 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the duty (only for square wave)
-                        if (!ms && ws)
-                        {
-                            // Its a square wave
-                            stopDAC();
-                            // write new square wave
-                            uint8 square[sample_size];
-                            uint8 up = (dacDuty * sample_size) / 100 ;
-                            int i;
-                            // ON phase
-                            for ( i = 0; i < up; i++)
-                            {
-                                square[i] = 252u;
-                            }
-                            // OFF phase
-                            for (; i < sample_size; i++)
-                            {
-                                square[i] = 3u;
-                            }
-                            
-                            DAC_1_Wave1Setup(square, sample_size);
-                            startDAC();
-                            
-                        }
-                        
+                        changeDuty();
                     }
                     break;
                 case 'F': // Frequency
@@ -193,13 +170,12 @@ void parseCommand(char *cmd) {
                     
                     sscanf(param, "%ld", &dacFreq);
                     // Make sure it is a valid value
-                    if (dacFreq > 240000) {
+                    if (dacFreq > 240000 || dacFreq < 62) {
                         DEBUG_PRINT(" Invalid frequency");
                     }
                     else {
                         // Do stuff to change the frequency
-                        
-                        
+                        sample_size = DEFAULT_DAC_SAMPLE_RATE / dacFreq;
                         
                     }
                     break;
@@ -212,9 +188,9 @@ void parseCommand(char *cmd) {
                         DEBUG_PRINT(" Invalid offset");
                     }
                     else {
-                        // Do stuff to change the offset
-                        
-                        
+                        // Changes offset to a value between 0 to 250u
+                        dacVPP = floor( dacVPP / 4.0 * 250 );
+                        regenerateWave();
                     }
                     break;
                 case 'V': // Peak to Peak Voltage
@@ -227,50 +203,18 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the VPP
-                        
-                        
+                        // ranges from 0u to 255u but for uncertainty use 3u to 253u
+                        // changes the Vpp to a value between 0 to 250u
+                        dacVPP = floor( dacVPP / 4.0 * 250 );
+                        regenerateWave();
                     }
                     break;
                     
                 case 'W': // Waveform
                     DEBUG_PRINT(" Wave");
+                    wavetype = *(param++);
                     
-                    // Settings for current DAC setup
-                    //       MUX 0   MUX 1
-                    // REG0  Sine    Triangle
-                    // REG1  Square  Arbitrary
-                    //
-                    // S(I)ne, S(Q)uare, Sa(W)tooth, (T)riangle, (A)rbitrary
-                    switch (*(param++)) {
-                        case 'A':
-                            ms = 1;
-                            ws = 1;
-                            break;
-                        case 'I':
-                            ms = 0;
-                            ws = 0;
-                            break;
-                        case 'Q':
-                            ms = 0;
-                            ws = 1;
-                            break;
-                        case 'T':
-                            ms = 1;
-                            ws = 0;
-                            break;
-                        case 'W':
-                            // Not yet implemented
-                            
-                            break;
-                        default:
-                            // Bad parameter
-                            DEBUG_PRINT(" Invalid waveform");
-                            break;
-                    }
-                    
-                    Control_DAC_Write(ws);
-                    MUX_DAC_FastSelect(ms);
-                    
+                    regenerateWave();
                     break;
                 case 'Z': // Stop
                     DEBUG_PRINT(" Stop");
@@ -292,6 +236,71 @@ void parseCommand(char *cmd) {
         DEBUG_PRINT("Unspecified command\n\r");
     }
 }
+
+void regenerateWave()
+{
+    uint8 wave[sample_size];
+    
+    stopDAC();
+    // Settings for current DAC setup
+    //       MUX 0   MUX 1
+    // REG0  Sine    Triangle
+    // REG1  Square  Arbitrary
+    //
+    // S(I)ne, S(Q)uare, Sa(W)tooth, (T)riangle, (A)rbitrary
+                    
+    switch (wavetype) {
+        case 'A':
+            
+            break;
+        case 'I':
+            
+            break;
+        case 'Q':
+            
+            break;
+        case 'T':
+            
+            break;
+        case 'W':
+            // Not yet implemented
+        
+            break;
+        default:
+            // Bad parameter
+            DEBUG_PRINT(" Invalid waveform");
+            break;
+    }
+    startDAC();
+}
+
+void changeDuty()
+{
+    if (!ms && ws)
+    {
+        // Its a square wave
+        stopDAC();
+        // write new square wave
+        uint8 square[sample_size];
+        uint8 up_time = (dacDuty * sample_size) / 100 ;
+        int i;
+        // ON phase
+        for ( i = 0; i < up_time; i++)
+        {
+            square[i] = 252u;
+        }
+        // OFF phase
+        for (; i < sample_size; i++)
+        {
+            square[i] = 3u;
+        }
+        
+        DAC_1_Wave1Setup(square, sample_size);
+        startDAC();
+        
+    }
+}
+
 
 void startADC() {
     if (!adcOn) {

@@ -57,3 +57,5 @@ void changeRes(int res);
 void adcFrameResize(int newSize);
 void startDAC();
 void stopDAC();
+void changeDuty();
+void regenerateWave();
