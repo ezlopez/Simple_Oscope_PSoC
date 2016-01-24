@@ -1,25 +1,25 @@
 #define RX_BUFFER_SIZE  32
 
 // Command Defines
-#define PC_CONNECT      "#PC_REQ_CONNECT#"
-#define PC_DISCONNECT   "#PC_REQ_DISCONNECT#"
-#define PSOC_ACK        "PSOC_READY"
-#define ADC_PARAMS      "AFRSZ#"
-#define DAC_PARAMS      "ADFOVWZ#"
+#define PC_CONNECT    "#PC_REQ_CONNECT#"
+#define PC_DISCONNECT "#PC_REQ_DISCONNECT#"
+#define PSOC_ACK      "PSOC_READY"
+#define ADC_PARAMS    "AFRSZ#"
+#define DAC_PARAMS    "ADFOVWZ#"
 
 // Default settings
 #define DEFAULT_ADC_RESOLUTION 8
-#define DEFAULT_ADC_SPS        100000
+#define DEFAULT_ADC_SPS        50000
 #define DEFAULT_ADC_FRAME_SIZE 400
 #define DEFAULT_ADC_FPS        6
 
-#define DEFAULT_DAC_FREQUENCY      2500
-#define DEFAULT_DAC_VPP            2.0
-#define DEFAULT_DAC_OFFSET         1.0
-#define DEFAULT_DAC_WAVE           SQUARE
-#define DEFAULT_DAC_DUTY           50
-#define DEFAULT_DAC_SAMPLE_RATE    250000
-#define DEFAULT_DAC_SAMPLE_SIZE    100
+#define DEFAULT_DAC_FREQUENCY   2500
+#define DEFAULT_DAC_VPP         2.0
+#define DEFAULT_DAC_OFFSET      1.0
+#define DEFAULT_DAC_WAVE        SQUARE
+#define DEFAULT_DAC_DUTY        50
+#define DEFAULT_DAC_SAMPLE_RATE 250000
+#define DEFAULT_DAC_SAMPLE_SIZE 100
 
 // Misc defines
 #define TIMER_DMA_CLOCK_FREQ   24000000
@@ -36,7 +36,7 @@
 #define MAX_DMA_TRANSFER_SIZE         4095
 
 // Uncomment to enable debug output
-#define DEBUG_OUTPUT
+//#define DEBUG_OUTPUT
 
 #ifdef DEBUG_OUTPUT
     #define DEBUG_PRINT(x) {\

@@ -20,6 +20,7 @@
 #include <CyLib.h>
 #include <UART_RX.h>
 
+
 #if !defined(UART_RX__REMOVED) /* Check for removal by optimization */
 
 /*******************************************************************************
@@ -158,6 +159,10 @@ void UART_RX_Stop(void)
 *******************************************************************************/
 CY_ISR(UART_RX_Interrupt)
 {
+    #ifdef UART_RX_INTERRUPT_INTERRUPT_CALLBACK
+        UART_RX_Interrupt_InterruptCallback();
+    #endif /* UART_RX_INTERRUPT_INTERRUPT_CALLBACK */ 
+
     /*  Place your Interrupt code here. */
     /* `#START UART_RX_Interrupt` */
 

@@ -18,13 +18,16 @@ uint8 commandReady = 0;
 char  command[RX_BUFFER_SIZE];
 
 // ADC Variables
-uint8  adcOn         = 0;
-uint   adcRez        = DEFAULT_ADC_RESOLUTION;
-uint32 adcSPS        = DEFAULT_ADC_SPS;
-uint8  adcFPS        = DEFAULT_ADC_FPS;
-uint   adcFrameSize  = DEFAULT_ADC_FRAME_SIZE;
+uint8  adcOn           = 0;
+uint   adcRez          = DEFAULT_ADC_RESOLUTION;
+uint32 adcSPS          = DEFAULT_ADC_SPS;
+uint8  adcFPS          = DEFAULT_ADC_FPS;
+uint   adcFrameSize    = DEFAULT_ADC_FRAME_SIZE;
 uint16 *adcFrame;
-uint8  adcFrameReady = 0;
+uint8  adcFrameReady   = 0;
+uint32 adcSPSValues[6] = {  50, 250, 1000, 50000, 250000, 1000000};
+uint8  adcDiv8Bit[6]   = {  40,  40,   40,    40,     16,       4};
+uint16 adcCount8Bit[6] = {2000, 400,  100,     2,      1,       1};
 
 // DAC Variables
 uint8       dacOn       = 0;
@@ -53,8 +56,10 @@ int main() {
     adcFrame = malloc(DMA_ADC_MEM_BYTES_PER_BURST * adcFrameSize);
     UART_Start();
     ADC_Start();
+    
     DMA_ADC_MEM_Config();
     TIMER_DMA_Init();
+    SPS_Divider_Counter_Start();
     UART_RX_StartEx(UART_RX_INTER);
     DMA_ENABLE_StartEx(TIMER_DMA_INTER);
     DMA_FRAME_READY_StartEx(DMA_FRAME_INTER);
@@ -82,7 +87,7 @@ int main() {
         if (adcFrameReady) {
             adcFrameReady = 0;
             #ifndef DEBUG_OUTPUT
-            sprintf(framePrefix, "#F%dD", adcFrameSize);
+            sprintf(framePrefix, "#F%dK%luD", adcFrameSize, adcSPS);
             UART_PutString(framePrefix);
             for (i = 0; i < adcFrameSize; i++) {
                 // Send both bits only if adcRez != 8
@@ -331,8 +336,7 @@ void stopADC() {
     }
 }
 
-void startDAC()
-{
+void startDAC() {
     if (!dacOn) 
     {
         MUX_DAC_FastSelect(ms);
@@ -343,44 +347,65 @@ void startDAC()
     }
 }
 
-void stopDAC()
-{
-    if (dacOn) 
-    {
+void stopDAC() {
+    if (dacOn) {
         MUX_DAC_DisconnectAll();
         DAC_1_Stop();
         //DAC_2_Stop();
         dacOn = 0;
     }
-                    
 }
 
 void changeSPS(int sps) {
     int restoreAdc = adcOn;
-    int divider, clockNeeded;
+    int i;
+    
+    // Don't have 10- or 12-bit implemented yet *****************************
+    if (adcRez != 8) {
+        DEBUG_PRINT("Not implemented for 10- or 12-bit yet. Rejecting request.\n\r");
+        return;
+    }
     
     // Make sure it is a valid value
-    if ((uint)sps < (MINIMUM_ADC_CLOCK_FREQ / (4 + adcRez)) ||
-        (uint)sps > (MAXIMUM_ADC_CLOCK_FREQ / (4 + adcRez))) {
-        DEBUG_PRINT(" Invalid SPS");
+    for (i = 0; i < 6; i++) {
+        if (adcSPSValues[1] == (uint32)sps)
+           break;
+    }
+    
+    if (i == 6) {
+        DEBUG_PRINT("Invalid SPS. Rejecting request.\n\r");
         return;
     }
         
     // Stop the ADC. Safety first, kids.
     stopADC();
     
-    // Calculate divider and set
-    // SPS = clock / 4 + res (from datasheet)
-    clockNeeded = sps * (4 + adcRez);
-    divider = MASTER_CLOCK_FREQ / clockNeeded;
+    // <i> should now point to the table entry for the SPS
+    // Set the clock divider
+    if (adcRez == 8)
+        ADC_Clock_SetDividerValue(adcDiv8Bit[i]);
+    else if (adcRez == 10) {
+    }
+    else {
+    }
     
-    if (divider > MAXIMUM_ADC_CLOCK_DIV)      // Min freq is 1 MHz
-        divider = MAXIMUM_ADC_CLOCK_DIV;
-    else if (divider > MINIMUM_ADC_CLOCK_DIV) // Max freq is 16 MHz
-        divider = MINIMUM_ADC_CLOCK_DIV;
+    // Set the counter period
+    if (adcRez == 8)
+        SPS_Divider_Counter_WritePeriod(adcCount8Bit[i]);
+    else if (adcRez == 10) {
+    }
+    else {
+    }
     
-    ADC_Clock_SetDividerValue(divider);
-    adcSPS = (MASTER_CLOCK_FREQ / divider) / (4 + adcRez);
+    // Set the mux control register
+    if (adcRez == 8)
+        SPS_Divider_Control_Reg_Write(adcCount8Bit[i] != 1);
+    else if (adcRez == 10) {
+    }
+    else {
+    }
+    
+    adcSPS = sps;
     
     // Restart if necessary
     if (restoreAdc)

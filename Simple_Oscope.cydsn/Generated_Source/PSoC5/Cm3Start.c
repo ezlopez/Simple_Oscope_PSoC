@@ -1,12 +1,12 @@
 /*******************************************************************************
 * File Name: Cm3Start.c
-* Version 4.20
+* Version 5.20
 *
 *  Description:
 *  Startup code for the ARM CM3.
 *
 ********************************************************************************
-* Copyright 2008-2014, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2008-2015, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -20,6 +20,7 @@
 #include "CyDmac.h"
 #include "cyfitter.h"
 
+
 #define CY_NUM_INTERRUPTS           (32u)
 #define CY_NUM_VECTORS              (CYINT_IRQ_BASE + CY_NUM_INTERRUPTS)
 #define CY_NUM_ROM_VECTORS          (4u)
@@ -28,16 +29,6 @@
 #define CY_NVIC_APINT_PRIGROUP_3_5  (0x00000400u)  /* Priority group 3.5 split */
 #define CY_NVIC_APINT_VECTKEY       (0x05FA0000u)  /* This key is required in order to write the NVIC_APINT register */
 #define CY_NVIC_CFG_STACKALIGN      (0x00000200u)  /* This specifies that the exception stack must be 8 byte aligned */
-
-
-/* Extern functions */
-extern void CyBtldr_CheckLaunch(void);
-
-/* Function prototypes */
-void initialize_psoc(void);
-CY_ISR(IntDefaultHandler);
-void Reset(void);
-CY_ISR(IntDefaultHandler);
 
 #if defined(__ARMCC_VERSION)
     #define INITIAL_STACK_POINTER ((cyisraddress)(uint32)&Image$$ARM_LIB_STACK$$ZI$$Limit)
@@ -57,6 +48,15 @@ CY_ISR(IntDefaultHandler);
     extern int  errno;
     extern int  end;
 #endif  /* defined(__GNUC__) */
+
+/* Extern functions */
+extern void CyBtldr_CheckLaunch(void);
+
+/* Function prototypes */
+void initialize_psoc(void);
+CY_ISR(IntDefaultHandler);
+void Reset(void);
+CY_ISR(IntDefaultHandler);
 
 /* Global variables */
 #if !defined (__ICCARM__)
@@ -97,6 +97,9 @@ cyisraddress CyRamVectors[CY_NUM_VECTORS];
 *******************************************************************************/
 CY_ISR(IntDefaultHandler)
 {
+    #ifdef CY_BOOT_INT_DEFAULT_HANDLER_EXCEPTION_ENTRY_CALLBACK
+        CyBoot_IntDefaultHandler_Exception_EntryCallback();
+    #endif /* CY_BOOT_INT_DEFAULT_HANDLER_EXCEPTION_ENTRY_CALLBACK */
 
     while(1)
     {
@@ -140,7 +143,7 @@ extern int __main(void);
 *******************************************************************************/
 void Reset(void)
 {
-    #if(CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE)
+    #if(CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE && CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
         /* For PSoC 5LP, debugging is enabled by default */
         #if(CYDEV_DEBUGGING_ENABLE == 0)
@@ -152,11 +155,11 @@ void Reset(void)
         */
         *(reg32 *)(CYREG_PHUB_CFGMEM23_CFG1) = *(reg32 *)(CYREG_RESET_SR0);
 
-    #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE) */
+    #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE && CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER) */
 
-    #if(CYDEV_BOOTLOADER_ENABLE)
+    #if ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER))
         CyBtldr_CheckLaunch();
-    #endif /* (CYDEV_BOOTLOADER_ENABLE) */
+    #endif /* ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)) */
 
     __main();
 }
@@ -241,10 +244,7 @@ extern const char __cy_region_num __attribute__((weak));
 __attribute__((weak))
 void _exit(int status)
 {
-    /* Cause divide by 0 exception */
-    int x = status / (int) INT_MAX;
-    x = 4 / x;
-
+    CyHalt((uint8) status);
     while(1)
     {
 
@@ -312,7 +312,7 @@ void * _sbrk (int nbytes)
 *******************************************************************************/
 void Reset(void)
 {
-    #if(CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE)
+    #if(CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE && CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
         /* For PSoC 5LP, debugging is enabled by default */
         #if(CYDEV_DEBUGGING_ENABLE == 0)
@@ -324,11 +324,11 @@ void Reset(void)
         */
         *(reg32 *)(CYREG_PHUB_CFGMEM23_CFG1) = *(reg32 *)(CYREG_RESET_SR0);
 
-    #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE) */
+    #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE && CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER) */
 
-    #if(CYDEV_BOOTLOADER_ENABLE)
+    #if ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER))
         CyBtldr_CheckLaunch();
-    #endif /* (CYDEV_BOOTLOADER_ENABLE) */
+    #endif /* ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)) */
 
     Start_c();
 }
@@ -414,7 +414,7 @@ void Start_c(void)
 *******************************************************************************/
 int __low_level_init(void)
 {
-    #if(CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE)
+    #if (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE && CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)
 
         /* For PSoC 5LP, debugging is enabled by default */
         #if(CYDEV_DEBUGGING_ENABLE == 0)
@@ -426,11 +426,11 @@ int __low_level_init(void)
         */
         *(reg32 *)(CYREG_PHUB_CFGMEM23_CFG1) = *(reg32 *)(CYREG_RESET_SR0);
 
-    #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE) */
+    #endif  /* (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLE && CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER) */
 
-    #if (CYDEV_BOOTLOADER_ENABLE)
+    #if ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER))
         CyBtldr_CheckLaunch();
-    #endif /* CYDEV_BOOTLOADER_ENABLE */
+    #endif /* ((CYDEV_BOOTLOADER_ENABLE) && (CYDEV_PROJ_TYPE != CYDEV_PROJ_TYPE_LOADABLEANDBOOTLOADER)) */
 
     /* Initialize data sections */
     __iar_data_init3();

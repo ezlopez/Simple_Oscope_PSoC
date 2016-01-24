@@ -20,6 +20,7 @@
 #include <CyLib.h>
 #include <DMA_ENABLE.h>
 
+
 #if !defined(DMA_ENABLE__REMOVED) /* Check for removal by optimization */
 
 /*******************************************************************************
@@ -158,6 +159,10 @@ void DMA_ENABLE_Stop(void)
 *******************************************************************************/
 CY_ISR(DMA_ENABLE_Interrupt)
 {
+    #ifdef DMA_ENABLE_INTERRUPT_INTERRUPT_CALLBACK
+        DMA_ENABLE_Interrupt_InterruptCallback();
+    #endif /* DMA_ENABLE_INTERRUPT_INTERRUPT_CALLBACK */ 
+
     /*  Place your Interrupt code here. */
     /* `#START DMA_ENABLE_Interrupt` */
 

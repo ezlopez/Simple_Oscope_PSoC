@@ -20,6 +20,7 @@
 #include <CyLib.h>
 #include <DMA_FRAME_READY.h>
 
+
 #if !defined(DMA_FRAME_READY__REMOVED) /* Check for removal by optimization */
 
 /*******************************************************************************
@@ -158,6 +159,10 @@ void DMA_FRAME_READY_Stop(void)
 *******************************************************************************/
 CY_ISR(DMA_FRAME_READY_Interrupt)
 {
+    #ifdef DMA_FRAME_READY_INTERRUPT_INTERRUPT_CALLBACK
+        DMA_FRAME_READY_Interrupt_InterruptCallback();
+    #endif /* DMA_FRAME_READY_INTERRUPT_INTERRUPT_CALLBACK */ 
+
     /*  Place your Interrupt code here. */
     /* `#START DMA_FRAME_READY_Interrupt` */
 

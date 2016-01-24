@@ -5,32 +5,33 @@
   <Toolchains>
     <Toolchain Name="ARM GCC Generic" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
-      <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m3 -mthumb -I. -I.\Generated_Source\PSoC5 -alh=${OutputDir}/${CompileFile}.lst -g" />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -Wno-main -I. -I.\Generated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -ffunction-sections -O0" />
-      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mthumb -march=armv7-m -mfix-cortex-m3-ldrd -l m -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T .\Generated_Source\PSoC5\cm3gcc.ld -g -specs=nano.specs &quot;-u _printf_float&quot; &quot;&quot; -Wl,--gc-sections" />
+      <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=${OutputDir}/${CompileFile}.lst -g" />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -ffunction-sections -O0 -ffat-lto-objects" />
+      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -g -ffunction-sections -O0 -l m -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM MDK Generic" Selected="False">
       <Tool Name="prebuild" Command="" Options="" />
-      <Tool Name="assembler" Command="armasm.exe" Options="--cpu=Cortex-M3 --diag_style=gnu --thumb -i. -i.\Generated_Source\PSoC5 -g --list=${OutputDir}/${CompileFile}.lst" />
-      <Tool Name="compiler" Command="armcc.exe" Options="--cpu=Cortex-M3 --diag_style=gnu --diag_suppress=951 -I. -I.\Generated_Source\PSoC5 --list --signed_chars -g -O0 --split_sections" />
-      <Tool Name="linker" Command="armlink.exe" Options="--cpu=Cortex-M3 --diag_style=gnu --no_startup --map --list ${OutputDir}/${ProjectShortName}.map --scatter .\Generated_Source\PSoC5\Cm3RealView.scat" />
+      <Tool Name="assembler" Command="armasm.exe" Options="--cpu=Cortex-M3 --diag_style=gnu --thumb -i. -iGenerated_Source\PSoC5 -g --list=${OutputDir}/${CompileFile}.lst" />
+      <Tool Name="compiler" Command="armcc.exe" Options="--cpu=Cortex-M3 --diag_style=gnu --diag_suppress=951 -I. -IGenerated_Source\PSoC5 --list --signed_chars -g -O0 --split_sections" />
+      <Tool Name="linker" Command="armlink.exe" Options="--cpu=Cortex-M3 --diag_style=gnu --no_startup --library_type=microlib --map --list ${OutputDir}/${ProjectShortName}.map --scatter Generated_Source\PSoC5\Cm3RealView.scat" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM IAR Generic" Selected="False">
       <Tool Name="prebuild" Command="" Options="" />
-      <Tool Name="assembler" Command="iasmarm.exe" Options="--cpu Cortex-M3 -I. -I.\Generated_Source\PSoC5 -s+ -M&lt;&gt; -w+ -r -DDEBUG --fpu None" />
-      <Tool Name="compiler" Command="iccarm.exe" Options="--cpu Cortex-M3 -I. -I.\Generated_Source\PSoC5 -D DEBUG --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little -e --fpu=None -On --no_wrap_diagnostics" />
+      <Tool Name="assembler" Command="iasmarm.exe" Options="--cpu Cortex-M3 -I. -IGenerated_Source\PSoC5 -s+ -M&lt;&gt; -w+ -r -DDEBUG --fpu None" />
+      <Tool Name="compiler" Command="iccarm.exe" Options="--cpu Cortex-M3 -I. -IGenerated_Source\PSoC5 -D DEBUG --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little -e --fpu=None -On --no_wrap_diagnostics" />
       <Tool Name="linker" Command="ilinkarm.exe" Options="--semihosting --entry __iar_program_start --vfe" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="Simple_Oscope" Path="C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn" Version="4.20" Type="Normal">
+  <Project Name="Simple_Oscope" Path="C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn" Version="5.20" Type="Normal">
     <CMSIS_SVD_File>Simple_Oscope.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
       <LinkerFile Toolchain="ARM GCC Generic">.\Generated_Source\PSoC5\cm3gcc.ld</LinkerFile>
       <LinkerFile Toolchain="ARM MDK Generic">.\Generated_Source\PSoC5\Cm3RealView.scat</LinkerFile>
+      <LinkerFile Toolchain="ARM IAR Generic">.\Generated_Source\PSoC5\Cm3Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
       <Folder BuildType="BUILD" Path="C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn">
@@ -62,7 +63,7 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\core_cm3_psoc5.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\core_cm3.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">.\Generated_Source\PSoC5\CyBootAsmGnu.s</File>
-          <File BuildType="BUILD" Toolchain="ARM RVDS Generic">.\Generated_Source\PSoC5\CyBootAsmRv.s</File>
+          <File BuildType="BUILD" Toolchain="ARM MDK Generic">.\Generated_Source\PSoC5\CyBootAsmRv.s</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CyDmac.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CyDmac.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\CyFlash.c</File>
@@ -87,8 +88,6 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_PM.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_INT.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_BOOT.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_IntClock.c</File>
-          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\UART_IntClock.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_INT.c</File>
@@ -144,6 +143,14 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\DAC_2_BuffAmp.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\DAC_2_BuffAmp.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\DAC_2_BuffAmp_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Clock_1.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\Clock_1.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Counter.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Counter.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Counter_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Control_Reg.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Control_Reg.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Control_Reg_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn\Export\ARM_GCC_Generic">
@@ -170,7 +177,7 @@
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
         <Files Root="C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn" />
       </Folder>
-      <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_951">
+      <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
         <Files Root="C:\Users\Leiuqeze\Desktop\GitHub\Simple_Oscope_PSoC\Simple_Oscope.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
