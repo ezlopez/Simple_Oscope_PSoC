@@ -166,12 +166,12 @@ extern volatile int16 ADC_shift;
 /* Default config values from user parameters */
 #define ADC_DEFAULT_RESOLUTION     (8u)   /* ADC resolution selected with parameters.*/
 #define ADC_DEFAULT_CONV_MODE      (0u)        /* Default conversion method */
-#define ADC_DEFAULT_INTERNAL_CLK   (0u)             /* Default clock selection */
+#define ADC_DEFAULT_INTERNAL_CLK   (1u)             /* Default clock selection */
 #define ADC_DEFAULT_REFERENCE      (0u)         /* Default reference */
-#define ADC_DEFAULT_RANGE          (4u)       /* ADC Input Range selection */
-#define ADC_CLOCK_FREQUENCY        (12000002u)   /* Clock frequency */
-#define ADC_NOMINAL_CLOCK_FREQ     (12000000)  /* Nominal Clock Frequency */
-#define ADC_HIGH_POWER_PULSE       (0u)        /* Not zero when clock pulse > 50 ns */
+#define ADC_DEFAULT_RANGE          (0u)       /* ADC Input Range selection */
+#define ADC_CLOCK_FREQUENCY        (1599996u)   /* Clock frequency */
+#define ADC_NOMINAL_CLOCK_FREQ     (1600000)  /* Nominal Clock Frequency */
+#define ADC_HIGH_POWER_PULSE       (1u)        /* Not zero when clock pulse > 50 ns */
 #define ADC_IRQ_REMOVE             (0u)                /* Removes internal interrupt */
 
 /* Use VDDA voltage define directly from cyfitter.h when VDDA reference has been used */
@@ -182,7 +182,7 @@ extern volatile int16 ADC_shift;
                                      (CYDEV_VDDA / 2) : \
                                    (((ADC_DEFAULT_REFERENCE != (uint8)ADC__EXT_REF) && \
                                      (ADC_DEFAULT_RANGE == (uint8)ADC__VNEG_VDDA_2_DIFF)) ? \
-                                     CYDEV_VDDA : (5)))      /* ADC reference voltage. */
+                                     CYDEV_VDDA : (1.024)))      /* ADC reference voltage. */
 #define ADC_DEFAULT_REF_VOLTAGE_MV \
                                    (((ADC_DEFAULT_REFERENCE != (uint8)ADC__EXT_REF) && \
                                     ((ADC_DEFAULT_RANGE == (uint8)ADC__VSSA_TO_VDDA) || \
@@ -190,7 +190,7 @@ extern volatile int16 ADC_shift;
                                      (CYDEV_VDDA_MV / 2) : \
                                   (((ADC_DEFAULT_REFERENCE != (uint8)ADC__EXT_REF) && \
                                     (ADC_DEFAULT_RANGE == (uint8)ADC__VNEG_VDDA_2_DIFF)) ? \
-                                     CYDEV_VDDA_MV : (5000)))   /* ADC reference voltage in mV */
+                                     CYDEV_VDDA_MV : (1024)))   /* ADC reference voltage in mV */
 /* The power is set to normal power, 1/2, 1/4 power depend on the clock setting. */
 #define ADC_DEFAULT_POWER \
        ((ADC_NOMINAL_CLOCK_FREQ > (ADC_MAX_FREQUENCY / 4)) ? ADC__HIGHPOWER : \
@@ -198,7 +198,7 @@ extern volatile int16 ADC_shift;
                                                                                        ADC__MINPOWER))
 /* Constant for a global usage */
 /* Number of additional clocks for sampling data*/
-#define ADC_SAMPLE_PRECHARGE       (6u)
+#define ADC_SAMPLE_PRECHARGE       (4u)
 
 
 /***************************************
