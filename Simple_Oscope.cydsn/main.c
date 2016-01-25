@@ -24,10 +24,12 @@ uint32 adcSPS          = DEFAULT_ADC_SPS;
 uint8  adcFPS          = DEFAULT_ADC_FPS;
 uint   adcFrameSize    = DEFAULT_ADC_FRAME_SIZE;
 uint16 adcFrame[DEFAULT_ADC_FRAME_SIZE];
-uint8  adcFrameReady   = 0;
-uint32 adcSPSValues[6] = {  50, 250, 1000, 50000, 250000, 1000000};
-uint8  adcDiv8Bit[6]   = {  40,  40,   40,    40,     16,       4};
-uint16 adcCount8Bit[6] = {2000, 400,  100,     2,      1,       1};
+uint8  adcFrameReady    = 0;
+uint32 adcSPSValues[6]  = {  50, 250, 1000, 50000, 250000, 1000000};
+uint8  adcDiv8Bit[6]    = {  40,  40,   40,    40,     16,       4};
+uint16 adcCount8Bit[6]  = {2000, 400,  100,     2,      1,       1};
+uint8  adcDiv12Bit[6]   = {  26,  26,   26,    26,     10,       3};
+uint16 adcCount12Bit[6] = {2000, 400,  100,     2,      1,       1};
 
 // DAC Variables
 uint8       dacOn       = 0;
@@ -65,7 +67,7 @@ int main() {
     
     DMA_ADC_MEM_Config();
     TIMER_DMA_Init();
-//    SPS_Divider_Counter_Start();
+    SPS_Divider_Counter_Start();
     UART_RX_StartEx(UART_RX_INTER);
     DMA_ENABLE_StartEx(TIMER_DMA_INTER);
     DMA_FRAME_READY_StartEx(DMA_FRAME_INTER);
@@ -97,7 +99,7 @@ int main() {
             UART_PutString(framePrefix);
             //for (i = 0; i < adcFrameSize; i++) {
                 #ifndef DEBUG_OUTPUT
-                UART_PutArray((uint8*)adcFrame, 800);
+                UART_PutArray((uint8*)adcFrame, 2 * adcFrameSize);
                 //UART_PutChar((adcFrame[i] >> 8) & 0x0F);
                 //UART_PutChar(adcFrame[i] & 0XFF);
                 #else
@@ -394,8 +396,8 @@ void changeSPS(int sps) {
     int i;
     
     // Don't have 10- or 12-bit implemented yet *****************************
-    if (adcRez != 8) {
-        DEBUG_PRINT("Not implemented for 10- or 12-bit yet. Rejecting request.\n\r");
+    if (adcRez != 12) {
+        DEBUG_PRINT("Not implemented for 8- or 10-bit yet. Rejecting request.\n\r");
         return;
     }
     
@@ -415,16 +417,16 @@ void changeSPS(int sps) {
     
     // <i> should now point to the table entry for the SPS
     // Set the clock divider
-    if (adcRez == 8)
-        ADC_Clock_SetDividerValue(adcDiv8Bit[i]);
+    if (adcRez == 12)
+        ADC_Clock_SetDividerValue(adcDiv12Bit[i]);
     else if (adcRez == 10) {
     }
     else {
     }
     
     // Set the counter period
-    if (adcRez == 8){
-     //   SPS_Divider_Counter_WritePeriod(adcCount8Bit[i]);
+    if (adcRez == 12){
+        SPS_Divider_Counter_WritePeriod(adcCount12Bit[i]);
     }
     else if (adcRez == 10) {
     }
@@ -432,8 +434,8 @@ void changeSPS(int sps) {
     }
     
     // Set the mux control register
-    if (adcRez == 8) {
-    //    SPS_Divider_Control_Reg_Write(adcCount8Bit[i] != 1);
+    if (adcRez == 12) {
+        SPS_Divider_Control_Reg_Write(adcCount12Bit[i] != 1);
     }
     else if (adcRez == 10) {
     }

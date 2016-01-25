@@ -10,7 +10,7 @@
 // Default settings
 #define DEFAULT_ADC_RESOLUTION 12
 #define DEFAULT_ADC_SPS        50000
-#define DEFAULT_ADC_FRAME_SIZE 400
+#define DEFAULT_ADC_FRAME_SIZE 800
 #define DEFAULT_ADC_FPS        6
 
 #define DEFAULT_DAC_FREQUENCY   2500

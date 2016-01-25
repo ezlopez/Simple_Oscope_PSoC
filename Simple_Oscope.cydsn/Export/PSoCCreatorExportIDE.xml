@@ -125,6 +125,12 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\DAC_1_VDAC8.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\DAC_1_VDAC8.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\DAC_1_VDAC8_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Counter.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Counter.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Counter_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Control_Reg.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Control_Reg.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\SPS_Divider_Control_Reg_PM.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_NEG_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_NEG.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC5\ADC_NEG.h</File>

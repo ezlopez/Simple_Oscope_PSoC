@@ -48,6 +48,8 @@
 #include "UART_ACK_Light_1_Clock_3.h"
 #include "UART_ACK_Light_1_Clock_1.h"
 #include "UART_ACK_Light_1_Clock_4.h"
+#include "SPS_Divider_Counter.h"
+#include "SPS_Divider_Control_Reg.h"
 #include "core_cm3_psoc5.h"
 #include "core_cm3.h"
 #include "CyDmac.h"
