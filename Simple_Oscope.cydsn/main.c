@@ -374,8 +374,8 @@ void stopADC() {
 void startDAC() {
     if (!dacOn) 
     {
-        MUX_DAC_FastSelect(ms);
-        Control_DAC_Write(ws);
+//        MUX_DAC_FastSelect(ms);
+//        Control_DAC_Write(ws);
         DAC_1_Start();
         //DAC_2_Start();
         dacOn = 1;
@@ -384,7 +384,7 @@ void startDAC() {
 
 void stopDAC() {
     if (dacOn) {
-        MUX_DAC_DisconnectAll();
+//        MUX_DAC_DisconnectAll();
         DAC_1_Stop();
         //DAC_2_Stop();
         dacOn = 0;
