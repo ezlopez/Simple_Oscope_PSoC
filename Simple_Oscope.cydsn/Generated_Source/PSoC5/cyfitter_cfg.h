@@ -28,11 +28,11 @@ extern void MUX_DAC_Unset(uint8 channel);
 /* MUX_DAC__addrTable is an implementation detail of the AMux.
    Code that depends on it may be incompatible with other versions
    of PSoC Creator. */
-extern uint8 CYXDATA * const CYCODE MUX_DAC__addrTable[4];
+extern uint8 CYXDATA * const CYCODE MUX_DAC__addrTable[2];
 /* MUX_DAC__maskTable is an implementation detail of the AMux.
    Code that depends on it may be incompatible with other versions
    of PSoC Creator. */
-extern const uint8 CYCODE MUX_DAC__maskTable[4];
+extern const uint8 CYCODE MUX_DAC__maskTable[2];
 
 
 #endif /* CYFITTER_CFG_H */

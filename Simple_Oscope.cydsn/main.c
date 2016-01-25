@@ -94,7 +94,8 @@ int main() {
         if (adcFrameReady) {
             adcFrameReady = 0;
             #ifndef DEBUG_OUTPUT
-            sprintf(framePrefix, "#F%dK%luD", adcFrameSize, adcSPS);
+            //sprintf(framePrefix, "#F%dK%luD", adcFrameSize, adcSPS);
+            sprintf(framePrefix, "#F%dD", adcFrameSize); // **** Change back after revision
             UART_PutString(framePrefix);
             for (i = 0; i < adcFrameSize; i++) {
                 // Send both bits only if adcRez != 8
@@ -102,6 +103,8 @@ int main() {
                     UART_PutChar((adcFrame[i] >> 8) & 0XFF);
                 UART_PutChar(adcFrame[i] & 0XFF);
             }
+            #else
+            DEBUG_PRINT("Sending Frame\n\r");
             #endif
         }
     }
@@ -522,17 +525,23 @@ CY_ISR(UART_RX_INTER) {
 
 // Used to reenable the ADC to MEM DMA so that another frame can be captured
 CY_ISR(TIMER_DMA_INTER) {
-    uint8 state;
+    uint8 state = 0;
+    cystatus status = 0;
     
-    CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
+    status = CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
     
     // Want to make sure DMA is complete before trying to reactivate it
-    if (!state) {
-        CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
-        DEBUG_PRINT("DMA Reenabled\r\n");
+    if (status == CYRET_SUCCESS) {
+        if (!(state & 0x03)) { // Only bottom two bits used
+            CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
+            DEBUG_PRINT("DMA Reenabled\r\n");
+        }
+        else {
+            DEBUG_PRINT("TIMER_DMA period too small\r\n");
+        }
     }
     else {
-        DEBUG_PRINT("TIMER_DMA period too small\r\n");
+        DEBUG_PRINT("Error reading DMA status.\r\n");
     }
 }
 
@@ -568,4 +577,3 @@ void DMA_ADC_MEM_Destruct() {
     DMA_ADC_MEM_DmaRelease();
     CyDmaTdFree(DMA_ADC_MEM_TD[0]);
 }
-
