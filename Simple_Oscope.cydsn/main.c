@@ -366,7 +366,7 @@ void stopADC() {
         do {
             CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
         }while (state & 0x03);
-        CyDmaChDisable(DMA_ADC_MEM_Chan); // May not need this. No idea.
+        //CyDmaChDisable(DMA_ADC_MEM_Chan); // May not need this. No idea.
         ADC_Stop();
         adcOn = 0;
     }
@@ -404,7 +404,7 @@ void changeSPS(uint32 sps) {
     
     // Make sure it is a valid value
     for (i = 0; i < 6; i++) {
-        if (adcSPSValues[1] == sps)
+        if (adcSPSValues[i] == sps)
            break;
     }
     
