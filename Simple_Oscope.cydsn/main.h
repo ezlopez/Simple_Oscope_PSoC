@@ -8,7 +8,7 @@
 #define DAC_PARAMS    "ADFOVWZ#"
 
 // Default settings
-#define DEFAULT_ADC_RESOLUTION 8
+#define DEFAULT_ADC_RESOLUTION 12
 #define DEFAULT_ADC_SPS        50000
 #define DEFAULT_ADC_FRAME_SIZE 400
 #define DEFAULT_ADC_FPS        6
@@ -31,6 +31,7 @@
 
 /* DMA Configuration for DMA_ADC_MEM */
 #define DMA_ADC_MEM_REQUEST_PER_BURST 1
+#define DMA_ADC_MEM_BYTES_PER_BURST   2
 #define DMA_ADC_MEM_SRC_BASE          (CYDEV_PERIPH_BASE)
 #define DMA_ADC_MEM_DST_BASE          (CYDEV_SRAM_BASE)
 #define MAX_DMA_TRANSFER_SIZE         4095
