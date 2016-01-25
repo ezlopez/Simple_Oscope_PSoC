@@ -36,6 +36,7 @@ float       dacVPP      = DEFAULT_DAC_VPP;
 float       dacOffset   = DEFAULT_DAC_OFFSET;
 waveform    dacWave     = DEFAULT_DAC_WAVE;
 uint        dacDuty     = DEFAULT_DAC_DUTY;
+
 uint16      sample_size = 100;
 uint8       ws          = 1;
 uint8       ms          = 0;
