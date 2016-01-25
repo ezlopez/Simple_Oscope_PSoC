@@ -29,8 +29,8 @@ uint8  adcFrameReady    = 0;
 uint32 adcSPSValues[6]  = {  50, 250, 1000, 50000, 250000, 1000000};
 uint8  adcDiv8Bit[6]    = {  40,  40,   40,    40,     16,       4};
 uint16 adcCount8Bit[6]  = {2000, 400,  100,     2,      1,       1};
-uint8  adcDiv12Bit[6]   = {  26,  26,   26,    26,     10,       3};
-uint16 adcCount12Bit[6] = {2000, 400,  100,     2,      1,       1};
+uint8  adcDiv12Bit[6]   = {  26,  26,   26,    26,      5,       3};
+uint16 adcCount12Bit[6] = {2000, 200,   50,     1,      1,       1};
 
 // DAC Variables
 uint8       dacOn       = 0;
@@ -367,7 +367,7 @@ void stopADC() {
             CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
         }while (state & 0x03);
         //CyDmaChDisable(DMA_ADC_MEM_Chan); // May not need this. No idea.
-        ADC_Stop();
+        //ADC_Stop();
         adcOn = 0;
     }
 }
@@ -426,7 +426,7 @@ void changeSPS(uint32 sps) {
     }
     
     // Set the counter period
-    if (adcRez == 12){
+    if (adcRez == 12 && adcCount12Bit[i] != 1){
         SPS_Divider_Counter_WritePeriod(adcCount12Bit[i]);
     }
     else if (adcRez == 10) {
@@ -436,7 +436,10 @@ void changeSPS(uint32 sps) {
     
     // Set the mux control register
     if (adcRez == 12) {
-        SPS_Divider_Control_Reg_Write(adcCount12Bit[i] != 1);
+        if (adcCount12Bit[i] == 1)
+            SPS_Divider_Control_Reg_Write(0x00);
+        else
+            SPS_Divider_Control_Reg_Write(0xFF);
     }
     else if (adcRez == 10) {
     }
