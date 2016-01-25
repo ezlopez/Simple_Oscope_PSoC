@@ -30,7 +30,7 @@ uint32 adcSPSValues[6]  = {  50, 250, 1000, 50000, 250000, 1000000};
 uint8  adcDiv8Bit[6]    = {  40,  40,   40,    40,     16,       4};
 uint16 adcCount8Bit[6]  = {2000, 400,  100,     2,      1,       1};
 uint8  adcDiv12Bit[6]   = {  26,  26,   26,    26,      5,       3};
-uint16 adcCount12Bit[6] = {2000, 200,   50,     1,      1,       1};
+uint16 adcCount12Bit[6] = {1000, 200,   50,     1,      1,       1};
 
 // DAC Variables
 uint8       dacOn       = 0;
@@ -39,6 +39,7 @@ float       dacVPP      = DEFAULT_DAC_VPP;
 float       dacOffset   = DEFAULT_DAC_OFFSET;
 waveform    dacWave     = DEFAULT_DAC_WAVE;
 uint        dacDuty     = DEFAULT_DAC_DUTY;
+uint8 wave[100];
 
 uint16      sample_size = 100;
 uint8       ws          = 1;
@@ -167,7 +168,8 @@ void parseCommand(char *cmd) {
             switch (*param++) {
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
-                    startDAC();
+                    //startDAC();
+                    regenerateWave();
                     break;
                 case 'D': // Duty cycle
                     DEBUG_PRINT(" Duty");
@@ -256,7 +258,6 @@ void parseCommand(char *cmd) {
 
 void regenerateWave()
 {
-    uint8 wave[sample_size];
     int i;
     stopDAC();
     // Settings for current DAC setup
