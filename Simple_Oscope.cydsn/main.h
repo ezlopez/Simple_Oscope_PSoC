@@ -53,7 +53,6 @@ void DMA_ADC_MEM_Config();
 void DMA_ADC_MEM_Destruct();
 void startADC();
 void stopADC();
-void changeSPS(int sps);
 void changeRes(int res);
 void adcFrameResize(int newSize);
 void startDAC();

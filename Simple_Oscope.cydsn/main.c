@@ -7,6 +7,7 @@
 CY_ISR_PROTO(UART_RX_INTER);
 CY_ISR_PROTO(TIMER_DMA_INTER);
 CY_ISR_PROTO(DMA_FRAME_INTER);
+void changeSPS(uint32 sps);
 
 // Value describes sync state with PC GUI
 uint8 initialized = 0;
@@ -364,7 +365,7 @@ void stopADC() {
         TIMER_DMA_Stop();
         do {
             CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
-        }while (state);
+        }while (state & 0x03);
         CyDmaChDisable(DMA_ADC_MEM_Chan); // May not need this. No idea.
         ADC_Stop();
         adcOn = 0;
@@ -391,7 +392,7 @@ void stopDAC() {
     }
 }
 
-void changeSPS(int sps) {
+void changeSPS(uint32 sps) {
     int restoreAdc = adcOn;
     int i;
     
@@ -403,7 +404,7 @@ void changeSPS(int sps) {
     
     // Make sure it is a valid value
     for (i = 0; i < 6; i++) {
-        if (adcSPSValues[1] == (uint32)sps)
+        if (adcSPSValues[1] == sps)
            break;
     }
     
