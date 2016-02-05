@@ -27,9 +27,9 @@ uint   adcFrameSize    = DEFAULT_ADC_FRAME_SIZE;
 uint16 adcFrame[DEFAULT_ADC_FRAME_SIZE];
 uint8  adcFrameReady    = 0;
 uint32 adcSPSValues[6]  = {  50, 250, 1000, 50000, 250000, 1000000};
-uint8  adcDiv8Bit[6]    = {  40,  40,   40,    40,     16,       4};
+uint16  adcDiv8Bit[6]    = {  40,  40,   40,    40,     16,       4};
 uint16 adcCount8Bit[6]  = {2000, 400,  100,     2,      1,       1};
-uint8  adcDiv12Bit[6]   = {  26,  26,   26,    26,      5,       3};
+uint16 adcDiv12Bit[6]   = {  26,  26,   26,    26,      5,       3};
 uint16 adcCount12Bit[6] = {1000, 200,   50,     1,      1,       1};
 
 // DAC Variables
@@ -87,12 +87,6 @@ int main() {
             }
         }
         
-        // Parse a command if available
-        if (commandReady) {
-            parseCommand(command);
-            commandReady = 0;
-        }
-        
         // Send ADC frame to PC if available
         if (adcFrameReady) {
             adcFrameReady = 0;
@@ -108,6 +102,12 @@ int main() {
                 DEBUG_PRINT("Sending Frame\n\r");
                 #endif
            // }
+        }
+        
+        // Parse a command if available
+        if (commandReady) {
+            parseCommand(command);
+            commandReady = 0;
         }
     }
     return 0;
@@ -125,6 +125,7 @@ void parseCommand(char *cmd) {
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
                     startADC();
+                    ADC_SetPower(ADC__HIGHPOWER);
                     break;
                 case 'F': // Samples per frame
                     DEBUG_PRINT(" SPF");
@@ -421,18 +422,16 @@ void changeSPS(uint32 sps) {
     // Set the clock divider
     if (adcRez == 12)
         ADC_Clock_SetDividerValue(adcDiv12Bit[i]);
-    else if (adcRez == 10) {
-    }
     else {
+        return;
     }
     
     // Set the counter period
-    if (adcRez == 12 && adcCount12Bit[i] != 1){
+    if (adcRez == 12){
         SPS_Divider_Counter_WritePeriod(adcCount12Bit[i]);
     }
-    else if (adcRez == 10) {
-    }
     else {
+        return;
     }
     
     // Set the mux control register
@@ -441,10 +440,11 @@ void changeSPS(uint32 sps) {
             SPS_Divider_Control_Reg_Write(0x00);
         else
             SPS_Divider_Control_Reg_Write(0xFF);
-    }
-    else if (adcRez == 10) {
+            
+        SPS_Divider_Control_Reg_SaveConfig();
     }
     else {
+        return;
     }
     
     adcSPS = sps;
