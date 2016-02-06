@@ -168,7 +168,7 @@ void TIMER_DMA_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define TIMER_DMA_INIT_PERIOD             199999u
+#define TIMER_DMA_INIT_PERIOD             7999999u
 #define TIMER_DMA_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << TIMER_DMA_CTRL_CAP_MODE_SHIFT))
 #define TIMER_DMA_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << TIMER_DMA_CTRL_TRIG_MODE_SHIFT))
 #if (TIMER_DMA_UsingFixedFunction)

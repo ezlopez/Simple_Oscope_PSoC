@@ -45,7 +45,7 @@
 #define UART_USE23POLLING                   (1u)
 #define UART_FLOW_CONTROL                   (0u)
 #define UART_CLK_FREQ                       (0u)
-#define UART_TX_BUFFER_SIZE                 (800u)
+#define UART_TX_BUFFER_SIZE                 (2000u)
 #define UART_RX_BUFFER_SIZE                 (4u)
 
 /* Check to see if required defines such as CY_PSOC5LP are available */

@@ -27,7 +27,7 @@ uint   adcFrameSize    = DEFAULT_ADC_FRAME_SIZE;
 uint16 adcFrame[DEFAULT_ADC_FRAME_SIZE];
 uint8  adcFrameReady    = 0;
 uint32 adcSPSValues[6]  = {  50, 250, 1000, 50000, 250000, 1000000};
-uint16  adcDiv8Bit[6]    = {  40,  40,   40,    40,     16,       4};
+uint16  adcDiv8Bit[6]   = {  40,  40,   40,    40,     16,       4};
 uint16 adcCount8Bit[6]  = {2000, 400,  100,     2,      1,       1};
 uint16 adcDiv12Bit[6]   = {  26,  26,   26,    26,      5,       3};
 uint16 adcCount12Bit[6] = {1000, 200,   50,     1,      1,       1};
@@ -89,7 +89,6 @@ int main() {
         
         // Send ADC frame to PC if available
         if (adcFrameReady) {
-            adcFrameReady = 0;
             //sprintf(framePrefix, "#F%dK%luD", adcFrameSize, adcSPS);
             sprintf(framePrefix, "#F%dD", adcFrameSize); // **** Change back after revision
             UART_PutString(framePrefix);
@@ -102,6 +101,7 @@ int main() {
                 DEBUG_PRINT("Sending Frame\n\r");
                 #endif
            // }
+            adcFrameReady = 0;
         }
         
         // Parse a command if available
@@ -503,7 +503,7 @@ void adcFrameResize(int newSize) {
 
 CY_ISR(UART_RX_INTER) {
     char c;
-    
+
     // Build the command if no other command is pending
     // Need error checking for command greater than 32 chars**************************
     while (UART_GetRxBufferSize() && !commandReady) {
@@ -537,8 +537,8 @@ CY_ISR(TIMER_DMA_INTER) {
     
     status = CyDmaChStatus(DMA_ADC_MEM_Chan, NULL, &state);
     
-    // Want to make sure DMA is complete before trying to reactivate it
-    if (status == CYRET_SUCCESS) {
+    // Want to make sure DMA and UART are complete before trying to reactivate it
+    if (!adcFrameReady && status == CYRET_SUCCESS) {
         if (!(state & 0x03)) { // Only bottom two bits used
             CyDmaChEnable(DMA_ADC_MEM_Chan, 1);
             DEBUG_PRINT("DMA Reenabled\r\n");
