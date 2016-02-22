@@ -20,6 +20,8 @@
 * Custom Declarations
 ***************************************/
 /* `#START CUSTOM_DECLARATIONS` Place your declaration here */
+#define UART_RXISR_EXIT_CALLBACK
+void UART_RXISR_ExitCallback();
 /* `#END` */
 
 #if (UART_RX_INTERRUPT_ENABLED && (UART_RX_ENABLED || UART_HD_ENABLED))

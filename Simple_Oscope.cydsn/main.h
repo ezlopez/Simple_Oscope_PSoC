@@ -1,3 +1,6 @@
+// Used to enable callback on UART receive
+//#define UART_RXISR_EXIT_CALLBACK
+
 #define RX_BUFFER_SIZE  32
 
 // Command Defines
@@ -59,3 +62,4 @@ void startDAC();
 void stopDAC();
 void changeDuty();
 void regenerateWave();
+//void UART_RXISR_ExitCallback();

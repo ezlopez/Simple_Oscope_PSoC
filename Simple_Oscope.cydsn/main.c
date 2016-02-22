@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 
-CY_ISR_PROTO(UART_RX_INTER);
+//CY_ISR_PROTO(UART_RX_INTER);
 CY_ISR_PROTO(TIMER_DMA_INTER);
 CY_ISR_PROTO(DMA_FRAME_INTER);
 void changeSPS(uint32 sps);
@@ -70,7 +70,7 @@ int main() {
     DMA_ADC_MEM_Config();
     TIMER_DMA_Init();
     SPS_Divider_Counter_Start();
-    UART_RX_StartEx(UART_RX_INTER);
+    //UART_RX_StartEx(UART_RX_INTER);
     DMA_ENABLE_StartEx(TIMER_DMA_INTER);
     DMA_FRAME_READY_StartEx(DMA_FRAME_INTER);
     CYGlobalIntEnable;
@@ -501,8 +501,10 @@ void adcFrameResize(int newSize) {
     //adcFrame = malloc(DMA_ADC_MEM_BYTES_PER_BURST * adcFrameSize);
 }
 
-CY_ISR(UART_RX_INTER) {
+void UART_RXISR_ExitCallback() {
     char c;
+    
+    CYGlobalIntDisable;
 
     // Build the command if no other command is pending
     // Need error checking for command greater than 32 chars**************************
@@ -518,6 +520,9 @@ CY_ISR(UART_RX_INTER) {
             }
         }
         else {
+            while (UART_GetRxBufferSize())
+               UART_GetChar();
+            rxBufLen = 0;
             DEBUG_PRINT("Random bytes\n\r");
         }
     }
@@ -528,6 +533,8 @@ CY_ISR(UART_RX_INTER) {
         // Maybe do something about it
         // Clear buffer and request resend
     }
+        
+    CYGlobalIntEnable;
 }
 
 // Used to reenable the ADC to MEM DMA so that another frame can be captured
