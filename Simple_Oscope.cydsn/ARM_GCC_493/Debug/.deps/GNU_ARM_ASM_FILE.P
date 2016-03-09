@@ -1,0 +1,10 @@
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/CyBootAsmGnu.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevicegnu.inc D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfittergnu.inc 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevicegnu.inc : 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevicegnu_trm.inc : 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfittergnu.inc : 
+

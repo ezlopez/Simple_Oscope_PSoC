@@ -66,7 +66,7 @@
 
 #define DAC_1_CLOCK_INT      (1u)
 #define DAC_1_CLOCK_EXT      (0u)
-#define DAC_1_CLOCK_SRC      (1u)
+#define DAC_1_CLOCK_SRC      (0u)
 
 #if(DAC_1_CLOCK_SRC == DAC_1_CLOCK_INT)  
 	#include <DAC_1_DacClk.h>

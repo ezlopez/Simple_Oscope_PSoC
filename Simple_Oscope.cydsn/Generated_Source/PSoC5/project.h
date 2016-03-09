@@ -1,7 +1,7 @@
 /*******************************************************************************
 * File Name: project.h
 * 
-* PSoC Creator  3.3 CP1
+* PSoC Creator  3.3 SP1
 *
 * Description:
 * It contains references to all generated header files and should not be modified.
@@ -38,9 +38,9 @@
 #include "ACK_Light.h"
 #include "ADC_NEG_aliases.h"
 #include "ADC_NEG.h"
+#include "DAC_Clock.h"
 #include "UART_IntClock.h"
 #include "ADC_IRQ.h"
-#include "DAC_1_DacClk.h"
 #include "DAC_1_Wave1_DMA_dma.h"
 #include "DAC_1_Wave2_DMA_dma.h"
 #include "DAC_1_VDAC8.h"
