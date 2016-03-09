@@ -36,7 +36,7 @@ uint16 adcCount12Bit[6] = {1000, 200,   50,     1,      1,       1};
 uint8       dacOn       = 0;
 uint32      dacFreq     = DEFAULT_DAC_FREQUENCY;
 float       dacVPP      = DEFAULT_DAC_VPP;
-float       dacOffset   = DEFAULT_DAC_OFFSET;
+uint8       dacOffset   = DEFAULT_DAC_OFFSET;
 waveform    dacWave     = DEFAULT_DAC_WAVE;
 uint        dacDuty     = DEFAULT_DAC_DUTY;
 uint        dacSample   = DEFAULT_DAC_SAMPLE_RATE;
@@ -165,58 +165,57 @@ void parseCommand(char *cmd) {
         ++param;
         while (*param != '#') {
             switch (*param++) {
-                
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
                     regenerateWave();
                     break;
-                    
                 case 'D': // Duty cycle
                     DEBUG_PRINT(" Duty");
                     uint dutyTemp;
                     sscanf(param, "%d", &dutyTemp);
                     if (dacDuty > 100 || wavetype != 'Q') {
                         DEBUG_PRINT(" Invalid duty");
-                    } else {
+                    }
+                    else {
                        dacDuty = dutyTemp;
                        regenerateWave();
                     }
                     break;
-                    
                 case 'F': // Frequency
                     DEBUG_PRINT(" Freq");                    
-                    sscanf(param, "%ld", &dacFreq);
+                    sscanf(param, "%lu", &dacFreq);
                     if (dacFreq > 25000) {
                         DEBUG_PRINT(" Invalid frequency");
-                    } else if (dacFreq < 100) {
+                        
+                    } else if (dacFreq < 62)
+                    {
                         dacSample = 24000;
                         DAC_Clock_SetDividerValue(dacSample);
                         sample_size = 2000 / dacFreq;
                         regenerateWave();
-                    } else {
+                    }
+                    else 
+                    {
                         dacSample = 192;
                         DAC_Clock_SetDividerValue(dacSample);
                         sample_size = DEFAULT_DAC_SAMPLE_RATE / dacFreq;
                         regenerateWave();
                     }
                     break;
-                    
                 case 'O': // Offset
                     DEBUG_PRINT(" Offset");
-                    
-                    sscanf(param, "%f", &dacOffset);
+                    float temp_offset;
+                    sscanf(param, "%f", &temp_offset);
                     // Make sure it is a valid value
-                    if (dacOffset < 0 || dacOffset > 4.0) {
+                    if (temp_offset < 0 || temp_offset > 4.0) {
                         DEBUG_PRINT(" Invalid offset");
                     }
                     else {
                         // Changes offset to a value between 0 to 250
-                        dacOffset = dacOffset - 2;
-                        dacOffset = floor( dacOffset / 4.0 * 250 );
+                        dacOffset = floor( temp_offset / 4.0 * 250 ) - DEFAULT_DAC_OFFSET;
                         regenerateWave();
                     }
                     break;
-                    
                 case 'V': // Peak to Peak Voltage / Amplitude
                     DEBUG_PRINT(" VPP");
                     
@@ -236,12 +235,10 @@ void parseCommand(char *cmd) {
                     wavetype = *(param++);
                     regenerateWave();
                     break;
-                    
                 case 'Z': // Stop
                     DEBUG_PRINT(" Stop");
                     stopDAC();
                     break;
-                    
                 default:  // Unexpected parameter
                     DEBUG_PRINT(" Unknown");
                     break;
@@ -263,26 +260,23 @@ void regenerateWave()
 {
     int i;
     uint8 wave[sample_size];
-    double percent = dacDuty / 100.0;
     stopDAC();   
     switch (wavetype) {
         case 'I': // Sine
-            for(i = 0;i< sample_size;i++)
-            {
+            for(i = 0; i < sample_size; i++) {
                 wave[i] = sine[(int)((i /(double)sample_size) * 4000)];
-                wave[i] = wave[i] * dacVPP / 4.0;
-                wave[i] = (wave[i] - dacOffset < 0u)?   0u  :wave[i];
-                wave[i] = (wave[i] - dacOffset > 250u)? 250u:wave[i];
+                //wave[i] = wave[i] * dacVPP / 4.0;
+                //wave[i] = ((wave[i] + dacOffset) < 0)?   0u  :wave[i] + dacOffset;
+                //wave[i] = ((wave[i] + dacOffset) > 250)? 250u:wave[i] + dacOffset;
             }
             break;
         case 'Q': // Square
-            for(i = 0;i< sample_size;i++)
-            {
-                wave[i] = (i < (int)( percent * sample_size))? 250u : 0u;
+            for(i = 0; i < sample_size; i++) {
+                wave[i] = (i < (int)((dacDuty / 100.0)* sample_size))? 250u : 0u;
             }
             break;
         case 'T': // Triangle
-            for(i = 0;i< sample_size;i++)
+            for(i = 0; i < sample_size; i++)
             {
                 wave[i] = triangle[(int)((i /(double)sample_size) * 4000)];
             }

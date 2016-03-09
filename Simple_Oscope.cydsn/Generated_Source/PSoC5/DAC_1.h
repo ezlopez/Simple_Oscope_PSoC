@@ -36,8 +36,8 @@
 #define DAC_1_ARB_DRAW_WAVE  (10u) /* Arbitrary (draw) */
 #define DAC_1_ARB_FILE_WAVE  (11u) /* Arbitrary (from file) */
 
-#define DAC_1_WAVE1_LENGTH   (268u)   /* Length for wave1 */
-#define DAC_1_WAVE2_LENGTH   (268u)   /* Length for wave2 */
+#define DAC_1_WAVE1_LENGTH   (250u)   /* Length for wave1 */
+#define DAC_1_WAVE2_LENGTH   (100u)   /* Length for wave2 */
 	
 #define DAC_1_DEFAULT_RANGE    (1u) /* Default DAC range */
 #define DAC_1_DAC_RANGE_1V     (0u)
