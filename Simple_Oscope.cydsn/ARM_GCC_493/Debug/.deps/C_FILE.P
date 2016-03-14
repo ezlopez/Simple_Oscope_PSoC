@@ -1,106 +1,106 @@
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/main.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light_aliases.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_Clock.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_IRQ.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG_aliases.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS_aliases.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyDmac.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_Clock.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG_aliases.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS_aliases.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ADC_MEM_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ENABLE.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_FRAME_READY.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Control_Reg.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Counter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/TIMER_DMA.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_1.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_2.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_3.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_4.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_IntClock.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_RX.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmFunc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmInstr.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydisabledsheets.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cypins.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/project.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/device.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.h 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/main.o : C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light_aliases.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_Clock.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_IRQ.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG_aliases.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS_aliases.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_Clock.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG_aliases.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS_aliases.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ADC_MEM_dma.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ENABLE.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_FRAME_READY.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Control_Reg.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Counter.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/TIMER_DMA.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_1.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_2.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_3.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_4.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_IntClock.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_RX.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmFunc.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmInstr.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/project.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/device.h C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.c C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.h 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light_aliases.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ACK_Light_aliases.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_Clock.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_Clock.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_IRQ.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_IRQ.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG_aliases.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_NEG_aliases.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS_aliases.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/ADC_POS_aliases.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_Clock.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_Clock.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG_aliases.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_NEG_aliases.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS_aliases.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_POS_aliases.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ADC_MEM_dma.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ADC_MEM_dma.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ENABLE.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_ENABLE.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_FRAME_READY.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DMA_FRAME_READY.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Control_Reg.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Control_Reg.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Counter.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/SPS_Divider_Counter.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/TIMER_DMA.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/TIMER_DMA.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_1.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_1.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_2.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_2.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_3.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_3.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_4.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_ACK_Light_1_Clock_4.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_RX.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_RX.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmFunc.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmFunc.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmInstr.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/core_cmInstr.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cypins.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cypins.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/project.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/project.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/device.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/device.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.c : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.c : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.h : 
+C:/Users/Leiuqeze/Desktop/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/main.h : 
 
