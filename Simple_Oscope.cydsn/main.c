@@ -35,8 +35,8 @@ uint16 adcCount12Bit[6] = {1000, 200,   50,     1,      1,       1};
 // DAC Variables
 uint8    dacOn       = 0;
 uint32   dacFreq     = DEFAULT_DAC_FREQUENCY;
-int16    dacVPP      = DEFAULT_DAC_VPP;
-int16    dacOffset   = 0;
+uint8    dacVPP      = DEFAULT_DAC_VPP;
+int8      dacOffset   = 0;
 waveform dacWave     = DEFAULT_DAC_WAVE;
 uint     dacDuty     = DEFAULT_DAC_DUTY;
 uint     dacSample   = DEFAULT_DAC_SAMPLE_RATE;
@@ -220,7 +220,7 @@ void parseCommand(char *cmd) {
                     }
                     else {
                         // Do stuff to change the VPP
-                        dacVPP = floor( temp_VPP / 4.0 * 125 );
+                        dacVPP = (int8)floor( (temp_VPP * 125) / 4.0 );
                         regenerateWave();
                     }
                     break;
@@ -253,33 +253,48 @@ void parseCommand(char *cmd) {
 
 void regenerateWave()
 {
-    int i;
-    int temp;
-    float phase;
-    stopDAC();   
+    int i, temp;
+    float phase = 0;
+    
+    // Working variables: Vp = 0-125 for 0-4Vpp
+    uint8 VPP = 62;
+    // Working Offset
+    int8 offset = 125;
+    
+    stopDAC();
     switch (wavetype) {
         case 'I': // Sine
-            for(i = 0; i < sample_size; i++) {
-                temp = sine[(int)((i /(double)sample_size) * 4000)];
-                temp = (temp/125.0) * dacVPP;
-                wave[i] = (temp > 250)?250u:(temp < 0)?0u:temp;
+            for(i = 0; i < sample_size; i++) 
+            {
+                temp = dacVPP * sin(phase) + 125; // write value into array
+                phase = phase + (2*M_PI)/sample_size;
+                //temp += offset;
+                wave[i] = (temp > 250)? 250u : temp;
             }
             break;
         case 'Q': // Square
             for(i = 0; i < sample_size; i++) {
-                wave[i] = (i < (int)((dacDuty / 100.0)* sample_size))? 250u : 0u;
+                temp = (i < (int)((dacDuty / 100.0)* sample_size))? VPP * 2 : 0u;
+                //temp += offset;
+                wave[i] = (temp > 250)? 250u : temp;
             }
             break;
         case 'T': // Triangle
             for(i = 0; i < sample_size; i++)
             {
-                wave[i] = triangle[(int)((i /(double)sample_size) * 4000)];
+                temp = triangle[(int)((i /(double)sample_size) * 4000)];
+                temp = (temp / 250.0) * (VPP * 2);
+                //temp += offset;
+                wave[i] = (temp > 250)? 250u : temp;
             }
             break;
         case 'W': // Sawtooth
             for(i = 0;i< sample_size;i++)
             {
-                wave[i] = sawtooth[(int)((i /(double)sample_size) * 4000)];
+                temp = sawtooth[(int)((i /(double)sample_size) * 4000)];
+                temp = (temp / 250.0) * (VPP * 2);
+                //temp += offset;
+                wave[i] = (temp > 250)? 250u : temp;
             }
             break;
         default:
