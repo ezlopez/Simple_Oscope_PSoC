@@ -1,7 +1,7 @@
 /*******************************************************************************
 * File Name: cymetadata.c
 * 
-* PSoC Creator  3.3 CP1
+* PSoC Creator  3.3 SP1
 *
 * Description:
 * This file defines all extra memory spaces that need to be included.
@@ -19,7 +19,10 @@
 
 
 #if defined(__GNUC__) || defined(__ARMCC_VERSION)
-__attribute__ ((__section__(".cyconfigecc"), used))
+#ifndef CY_CONFIG_ECC_SECTION
+#define CY_CONFIG_ECC_SECTION __attribute__ ((__section__(".cyconfigecc"), used))
+#endif
+CY_CONFIG_ECC_SECTION
 #elif defined(__ICCARM__)
 #pragma  location=".cyconfigecc"
 #else
@@ -248,7 +251,10 @@ const uint8 cy_meta_configecc[] = {
 };
 
 #if defined(__GNUC__) || defined(__ARMCC_VERSION)
-__attribute__ ((__section__(".cycustnvl"), used))
+#ifndef CY_CUST_NVL_SECTION
+#define CY_CUST_NVL_SECTION __attribute__ ((__section__(".cycustnvl"), used))
+#endif
+CY_CUST_NVL_SECTION
 #elif defined(__ICCARM__)
 #pragma  location=".cycustnvl"
 #else
@@ -259,7 +265,10 @@ const uint8 cy_meta_custnvl[] = {
 };
 
 #if defined(__GNUC__) || defined(__ARMCC_VERSION)
-__attribute__ ((__section__(".cywolatch"), used))
+#ifndef CY_WO_NVL_SECTION
+#define CY_WO_NVL_SECTION __attribute__ ((__section__(".cywolatch"), used))
+#endif
+CY_WO_NVL_SECTION
 #elif defined(__ICCARM__)
 #pragma  location=".cywolatch"
 #else
@@ -270,7 +279,10 @@ const uint8 cy_meta_wonvl[] = {
 };
 
 #if defined(__GNUC__) || defined(__ARMCC_VERSION)
-__attribute__ ((__section__(".cyflashprotect"), used))
+#ifndef CY_FLASH_PROT_SECTION
+#define CY_FLASH_PROT_SECTION __attribute__ ((__section__(".cyflashprotect"), used))
+#endif
+CY_FLASH_PROT_SECTION
 #elif defined(__ICCARM__)
 #pragma  location=".cyflashprotect"
 #else
@@ -312,7 +324,10 @@ const uint8 cy_meta_flashprotect[] = {
 };
 
 #if defined(__GNUC__) || defined(__ARMCC_VERSION)
-__attribute__ ((__section__(".cymeta"), used))
+#ifndef CY_META_SECTION
+#define CY_META_SECTION __attribute__ ((__section__(".cymeta"), used))
+#endif
+CY_META_SECTION
 #elif defined(__ICCARM__)
 #pragma  location=".cymeta"
 #else

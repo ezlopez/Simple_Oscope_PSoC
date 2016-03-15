@@ -17,8 +17,8 @@
 #define DEFAULT_ADC_FPS        6
 
 #define DEFAULT_DAC_FREQUENCY   1000
-#define DEFAULT_DAC_VPP         4.0
-#define DEFAULT_DAC_OFFSET      125
+#define DEFAULT_DAC_VPP         125
+#define DEFAULT_DAC_OFFSET      0
 #define DEFAULT_DAC_WAVE        SQUARE
 #define DEFAULT_DAC_DUTY        50
 #define DEFAULT_DAC_SAMPLE_RATE 250000
