@@ -36,7 +36,7 @@ uint16 adcCount12Bit[6] = {1000, 200,   50,     1,      1,       1};
 uint8    dacOn       = 0;
 uint32   dacFreq     = DEFAULT_DAC_FREQUENCY;
 uint8    dacVPP      = DEFAULT_DAC_VPP;
-int8      dacOffset   = 0;
+uint8    dacOffset   = DEFAULT_DAC_OFFSET;
 waveform dacWave     = DEFAULT_DAC_WAVE;
 uint     dacDuty     = DEFAULT_DAC_DUTY;
 uint     dacSample   = DEFAULT_DAC_SAMPLE_RATE;
@@ -198,14 +198,14 @@ void parseCommand(char *cmd) {
                 case 'O': // Offset
                     DEBUG_PRINT(" Offset");
                     float temp_offset;
-                    sscanf(param, "%f", &temp_offset);
+                    sscanf(param, "%2.2f", &temp_offset);
                     // Make sure it is a valid value
                     if (temp_offset < 0 || temp_offset > 4.0) {
                        DEBUG_PRINT(" Invalid offset");
                     }
                     else {
                        // Changes offset to a value between 0 to 250
-                       dacOffset = floor( temp_offset / 4.0 * 250 ) - DEFAULT_DAC_OFFSET;
+                       dacOffset = (uint8)floor( (temp_offset / 4.0) * 250 );
                        regenerateWave();
                     }
                     break; 
@@ -213,7 +213,7 @@ void parseCommand(char *cmd) {
                 case 'V': // Peak to Peak Voltage / Amplitude
                     DEBUG_PRINT(" VPP");
                     float temp_VPP;
-                    sscanf(param, "%f", &temp_VPP);
+                    sscanf(param, "%2.2f", &temp_VPP);
                     // Make sure it is a valid value
                     if (temp_VPP < 0 || temp_VPP > 4.0) {
                         DEBUG_PRINT(" Invalid VPP");
@@ -259,24 +259,22 @@ void regenerateWave()
     // Working variables: Vp = 0-125 for 0-4Vpp
     uint8 VPP = 62;
     // Working Offset
-    int8 offset = 125;
+    uint8 offset = 0;
     
     stopDAC();
     switch (wavetype) {
         case 'I': // Sine
             for(i = 0; i < sample_size; i++) 
             {
-                temp = dacVPP * sin(phase) + 125; // write value into array
+                temp = VPP * sin(phase) + 125; // write value into array
                 phase = phase + (2*M_PI)/sample_size;
-                //temp += offset;
-                wave[i] = (temp > 250)? 250u : temp;
+                wave[i] = (temp+dacOffset > 250)? 250u : temp+dacOffset;
             }
             break;
         case 'Q': // Square
             for(i = 0; i < sample_size; i++) {
                 temp = (i < (int)((dacDuty / 100.0)* sample_size))? VPP * 2 : 0u;
-                //temp += offset;
-                wave[i] = (temp > 250)? 250u : temp;
+                wave[i] = (temp+offset > 250)? 250u : temp+offset;
             }
             break;
         case 'T': // Triangle
@@ -284,8 +282,7 @@ void regenerateWave()
             {
                 temp = triangle[(int)((i /(double)sample_size) * 4000)];
                 temp = (temp / 250.0) * (VPP * 2);
-                //temp += offset;
-                wave[i] = (temp > 250)? 250u : temp;
+                wave[i] = (temp+offset > 250)? 250u : temp+offset;
             }
             break;
         case 'W': // Sawtooth
@@ -293,8 +290,7 @@ void regenerateWave()
             {
                 temp = sawtooth[(int)((i /(double)sample_size) * 4000)];
                 temp = (temp / 250.0) * (VPP * 2);
-                //temp += offset;
-                wave[i] = (temp > 250)? 250u : temp;
+                wave[i] = (temp+offset > 250)? 250u : temp+offset;
             }
             break;
         default:
@@ -339,19 +335,15 @@ void stopADC() {
 void startDAC() {
     if (!dacOn) 
     {
-//        MUX_DAC_FastSelect(ms);
-//        Control_DAC_Write(ws);
         DAC_1_Start();
-        //DAC_2_Start();
         dacOn = 1;
     }
 }
 
 void stopDAC() {
-    if (dacOn) {
-//        MUX_DAC_DisconnectAll();
+    if (dacOn) 
+    {
         DAC_1_Stop();
-        //DAC_2_Stop();
         dacOn = 0;
     }
 }
