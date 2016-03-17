@@ -1,8 +1,4 @@
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/DAC_1.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h 
-
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H : 
-
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H : 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/UART.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_IntClock.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h 
 
 D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h : 
 
@@ -10,17 +6,11 @@ D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PS
 
 D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.c : 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.c : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h : 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h : 
-
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h : 
-
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h : 
-
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h : 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
 
 D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h : 
 
@@ -28,9 +18,19 @@ D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PS
 
 D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
 D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h : 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/DAC_1_PM.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYDMAC.H D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CYFITTER.H D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_DacClk.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_PM.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_VDAC8.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave1_DMA_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_Wave2_DMA_dma.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/UART_BOOT.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_BOOT.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h 
 
-D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/DAC_1_PM.c : 
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_BOOT.c : 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/UART_INT.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_INT.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_INT.c : 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/ARM_GCC_493/Debug/UART_PM.o : D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyFlash.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CyLib.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/CySpc.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_PM.c D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyPm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cydevice_trm.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cyfitter.h D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/cytypes.h 
+
+D:/School/Code/GitHub/Simple_Oscope_PSoC/Simple_Oscope.cydsn/Generated_Source/PSoC5/UART_PM.c : 
 

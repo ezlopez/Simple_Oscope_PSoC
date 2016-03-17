@@ -157,14 +157,14 @@ void parseCommand(char *cmd) {
         }
         DEBUG_PRINT("\n\r");
     }
-    else if (*param == 'D') {
+    else if (*param  == 'D') {
         DEBUG_PRINT("DAC");
         ++param;
         while (*param != '#') {
             switch (*param++) {
                 case 'A': // Start
                     DEBUG_PRINT(" Start");
-                    regenerateWave();
+                    startDAC();
                     break;
                 case 'D': // Duty cycle
                     DEBUG_PRINT(" Duty");
@@ -179,8 +179,8 @@ void parseCommand(char *cmd) {
                     break;
                 case 'F': // Frequency
                     DEBUG_PRINT(" Freq"); 
-                    uint32 temp_freq;
-                    sscanf(param, "%lu", &temp_freq);
+                    uint temp_freq;
+                    sscanf(param, "%d", &temp_freq);
                     if (temp_freq > 25000) {
                         DEBUG_PRINT(" Invalid frequency");
                     } else if (temp_freq < 62) {
@@ -198,29 +198,27 @@ void parseCommand(char *cmd) {
                 case 'O': // Offset
                     DEBUG_PRINT(" Offset");
                     float temp_offset;
-                    sscanf(param, "%2.2f", &temp_offset);
+                    sscanf(param, "%f", &temp_offset);
                     // Make sure it is a valid value
                     if (temp_offset < 0 || temp_offset > 4.0) {
-                       DEBUG_PRINT(" Invalid offset");
-                    }
-                    else {
-                       // Changes offset to a value between 0 to 250
-                       dacOffset = (uint8)floor( (temp_offset / 4.0) * 250 );
-                       regenerateWave();
+                        DEBUG_PRINT(" Invalid offset");
+                    } else {
+                        // Changes offset to a value between 0 to 250
+                        dacOffset = (uint8)floor( (temp_offset / 4.0) * 250 );
+                        regenerateWave();
                     }
                     break; 
                     
                 case 'V': // Peak to Peak Voltage / Amplitude
                     DEBUG_PRINT(" VPP");
                     float temp_VPP;
-                    sscanf(param, "%2.2f", &temp_VPP);
+                    sscanf(param, "%f", &temp_VPP);
                     // Make sure it is a valid value
                     if (temp_VPP < 0 || temp_VPP > 4.0) {
                         DEBUG_PRINT(" Invalid VPP");
-                    }
-                    else {
+                    } else {
                         // Do stuff to change the VPP
-                        dacVPP = (int8)floor( (temp_VPP * 125) / 4.0 );
+                        //dacVPP = (int8)floor( (temp_VPP / 4.0) * 125 );
                         regenerateWave();
                     }
                     break;
@@ -259,22 +257,24 @@ void regenerateWave()
     // Working variables: Vp = 0-125 for 0-4Vpp
     uint8 VPP = 62;
     // Working Offset
-    uint8 offset = 0;
+    uint8 offset = 125;
     
     stopDAC();
     switch (wavetype) {
         case 'I': // Sine
             for(i = 0; i < sample_size; i++) 
             {
-                temp = VPP * sin(phase) + 125; // write value into array
+                temp = (VPP * sin(phase)) + VPP; // write value into array
                 phase = phase + (2*M_PI)/sample_size;
-                wave[i] = (temp+dacOffset > 250)? 250u : temp+dacOffset;
+                wave[i] = (temp+offset > 250)? 250u : temp+offset;
+                //wave[i] = temp;
             }
             break;
         case 'Q': // Square
             for(i = 0; i < sample_size; i++) {
                 temp = (i < (int)((dacDuty / 100.0)* sample_size))? VPP * 2 : 0u;
                 wave[i] = (temp+offset > 250)? 250u : temp+offset;
+                //wave[i] = temp;
             }
             break;
         case 'T': // Triangle
@@ -283,6 +283,7 @@ void regenerateWave()
                 temp = triangle[(int)((i /(double)sample_size) * 4000)];
                 temp = (temp / 250.0) * (VPP * 2);
                 wave[i] = (temp+offset > 250)? 250u : temp+offset;
+                //wave[i] = temp;
             }
             break;
         case 'W': // Sawtooth
@@ -291,10 +292,10 @@ void regenerateWave()
                 temp = sawtooth[(int)((i /(double)sample_size) * 4000)];
                 temp = (temp / 250.0) * (VPP * 2);
                 wave[i] = (temp+offset > 250)? 250u : temp+offset;
+                //wave[i] = temp;
             }
             break;
-        default:
-            // Bad parameter
+        default: // Bad parameter
             DEBUG_PRINT(" Invalid waveform");
             break;
     }
